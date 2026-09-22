@@ -1,0 +1,14 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Day-plan edits (the "Add plan / Edit plan" buttons).
+    match /plans/{planId} {
+      allow read, write: if true;
+    }
+    // Metadata (name, url, contentType) for attached files.
+    // The files themselves live in Storage, see storage.rules.
+    match /attachments/{attachmentId} {
+      allow read, write: if true;
+    }
+  }
+}

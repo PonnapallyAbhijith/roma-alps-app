@@ -1,0 +1,16 @@
+{
+  "name": "Roma to the Alps",
+  "short_name": "Roma & Alps",
+  "description": "Ponnapally family trip guide — Rome, Milan and the Swiss Alps, 8–22 October 2026.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#eee7d6",
+  "theme_color": "#1d323a",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

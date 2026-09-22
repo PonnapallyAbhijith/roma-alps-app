@@ -1,0 +1,2475 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<script>window.__tripFirebaseReady = new Promise(function(resolve){ window.__resolveTripFirebase = resolve; });</script>
+<title>Roma to the Alps</title>
+<meta name="description" content="A day-by-day infographic for the Ponnapally family trip through Rome, Milan and Switzerland, 8-22 October 2026.">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1d323a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Roma &amp; Alps">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="https://apis.google.com/js/api.js" async defer></script>
+<style>
+  :root{
+    --hero-1:#101a22;
+    --hero-2:#1d323a;
+    --paper:#eee7d6;
+    --surface:#fbf8ee;
+    --surface-2:#f3ecd9;
+    --text:#241f17;
+    --text-soft:#5c5442;
+    --italy:#a13d2c;
+    --italy-soft:#f1ddd2;
+    --swiss:#215d68;
+    --swiss-soft:#dbe7e4;
+    --gold:#a8792f;
+    --gold-soft:#f2e6cc;
+    --line:rgba(36,31,23,0.15);
+    --shadow:0 18px 40px -24px rgba(28,20,10,0.45);
+    --todo-bg: repeating-linear-gradient(135deg, rgba(36,31,23,0.05) 0 10px, rgba(36,31,23,0.09) 10px 20px);
+    --map-sea1:#dcefe9;
+    --map-sea2:#eef1df;
+    --map-land:#f3ead2;
+    --map-land-line:rgba(36,31,23,0.32);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#141821;
+      --surface:#1c212c;
+      --surface-2:#232938;
+      --text:#eef1f4;
+      --text-soft:#a7aebb;
+      --italy:#e39178;
+      --italy-soft:rgba(227,145,120,0.16);
+      --swiss:#7fb8bd;
+      --swiss-soft:rgba(127,184,189,0.16);
+      --gold:#d9ac5f;
+      --gold-soft:rgba(217,172,95,0.16);
+      --line:rgba(238,241,244,0.16);
+      --shadow:0 18px 40px -22px rgba(0,0,0,0.6);
+      --todo-bg: repeating-linear-gradient(135deg, rgba(238,241,244,0.045) 0 10px, rgba(238,241,244,0.09) 10px 20px);
+      --map-sea1:#0e1922;
+      --map-sea2:#141f28;
+      --map-land:#242b37;
+      --map-land-line:rgba(238,241,244,0.24);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#141821;
+    --surface:#1c212c;
+    --surface-2:#232938;
+    --text:#eef1f4;
+    --text-soft:#a7aebb;
+    --italy:#e39178;
+    --italy-soft:rgba(227,145,120,0.16);
+    --swiss:#7fb8bd;
+    --swiss-soft:rgba(127,184,189,0.16);
+    --gold:#d9ac5f;
+    --gold-soft:rgba(217,172,95,0.16);
+    --line:rgba(238,241,244,0.16);
+    --shadow:0 18px 40px -22px rgba(0,0,0,0.6);
+    --todo-bg: repeating-linear-gradient(135deg, rgba(238,241,244,0.045) 0 10px, rgba(238,241,244,0.09) 10px 20px);
+    --map-sea1:#0e1922;
+    --map-sea2:#141f28;
+    --map-land:#242b37;
+    --map-land-line:rgba(238,241,244,0.24);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--paper);
+    color:var(--text);
+    font-family:"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    padding-inline:0;
+  }
+  .wrap{max-width:920px;margin-inline:auto;padding-inline:20px;}
+  h1,h2,h3{font-family:"Fraunces", Georgia, serif; text-wrap:balance; margin:0; font-weight:600;}
+  a{color:inherit;}
+  .mono{font-family:"IBM Plex Mono", ui-monospace, monospace;}
+  .eyebrow{
+    font:600 12px/1 "IBM Plex Sans", sans-serif; letter-spacing:.12em; text-transform:uppercase; color:var(--text-soft);
+  }
+
+  /* ---------- nav ---------- */
+  .topnav{
+    position:sticky; top:env(safe-area-inset-top,0px); z-index:40;
+    display:flex; gap:4px; overflow-x:auto; padding:10px 20px;
+    background:color-mix(in srgb, var(--paper) 86%, transparent);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+    scrollbar-width:none;
+  }
+  .topnav::-webkit-scrollbar{display:none;}
+  .topnav a{
+    flex:none; font:600 12.5px/1 "IBM Plex Sans"; letter-spacing:.03em;
+    padding:8px 13px; border-radius:999px; text-decoration:none; color:var(--text-soft);
+    border:1px solid transparent; white-space:nowrap;
+  }
+  .topnav a:hover{border-color:var(--line); color:var(--text);}
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:linear-gradient(180deg,var(--hero-1),var(--hero-2) 100%);
+    color:#f2efe3; padding-block:44px 0; overflow:hidden;
+  }
+  .hero .wrap{position:relative;}
+  .hero-eyebrow{font:600 12px/1 "IBM Plex Sans"; letter-spacing:.16em; text-transform:uppercase; color:#d9ac5f; margin-bottom:14px;}
+  .hero h1{font-size:clamp(34px,7vw,58px); line-height:1.02; color:#faf7ee; font-weight:600;}
+  .hero h1 em{color:#d9ac5f; font-style:italic; font-weight:400;}
+  .hero p.lede{font-size:16px; max-width:52ch; color:#cdd3da; margin-top:14px; line-height:1.55;}
+  .hero-meta{display:flex; flex-wrap:wrap; gap:10px; margin-top:22px;}
+  .chip{
+    display:inline-flex; align-items:center; gap:6px; font:500 12.5px/1 "IBM Plex Sans";
+    padding:8px 12px; border-radius:999px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.14);
+  }
+  .chip svg{width:13px;height:13px;}
+  .google-bar{
+    display:flex; align-items:center; gap:10px 14px; flex-wrap:wrap; margin-top:14px;
+    padding:10px 14px; border-radius:12px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14);
+  }
+  .google-status{font:500 12.5px/1.4 "IBM Plex Sans"; color:#cdd3da;}
+  .google-actions{display:flex; gap:8px; flex-wrap:wrap; margin-left:auto;}
+  .google-btn{
+    display:inline-flex; align-items:center; gap:6px; font:600 12px/1 "IBM Plex Sans"; padding:8px 12px;
+    border-radius:999px; background:#d9ac5f; color:#1d1810; border:none; cursor:pointer;
+  }
+  .google-btn svg{width:13px;height:13px;}
+  .google-btn.ghost{background:rgba(255,255,255,0.1); color:#f2efe3;}
+  .google-btn:disabled{opacity:.55; cursor:default;}
+  .skyline{display:block; width:100%; height:auto; margin-top:32px;}
+  .skyline .route{stroke-dasharray:1 6.5;}
+  .skyline .leg-tag{font:600 10px/1 "IBM Plex Sans"; letter-spacing:.1em; text-transform:uppercase; fill:#cdd3da;}
+
+  /* ---------- leg dividers ---------- */
+  .leg-divider{
+    position:relative; margin:30px 0 6px; border-radius:14px; overflow:hidden;
+    min-height:88px; display:flex; align-items:flex-end; padding:14px 18px;
+    background-color:var(--accent-soft,var(--surface-2)); background-size:cover; background-position:center;
+  }
+  .leg-divider::before{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(0deg, rgba(10,8,4,0.62), rgba(10,8,4,0.06) 65%);
+  }
+  .leg-divider .leg-label{text-shadow:0 1px 6px rgba(0,0,0,0.45); color:#faf7ee;}
+  .leg-label{position:relative; z-index:1; font:700 14px/1 "Fraunces"; letter-spacing:.04em; text-transform:uppercase; color:var(--accent,var(--text));}
+
+  /* ---------- sections ---------- */
+  section{padding-block:46px;}
+  .section-head{display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:22px; flex-wrap:wrap;}
+  .section-head h2{font-size:clamp(22px,4vw,30px);}
+  .section-sub{color:var(--text-soft); font-size:13.5px; max-width:40ch;}
+
+  /* ---------- documents ---------- */
+  .doc-row{display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,1fr)); gap:14px;}
+  .doc-card{
+    text-align:left; background:var(--surface); border:1px solid var(--line); border-radius:14px;
+    padding:16px; cursor:pointer; font:inherit; color:inherit; box-shadow:var(--shadow);
+    display:flex; flex-direction:column; gap:10px; position:relative; overflow:hidden;
+  }
+  .doc-card:hover{ outline:2px solid var(--accent, var(--gold)); outline-offset:-1px; }
+  .doc-card:focus-visible{ outline:2px solid var(--accent, var(--gold)); outline-offset:2px; }
+  .doc-card .cover{
+    width:calc(100% + 32px); margin:-16px -16px 0; aspect-ratio:16/10; object-fit:cover; display:block;
+  }
+  .doc-card .tag.on-cover{top:14px; right:14px;}
+  .doc-card .ico{
+    width:38px; height:38px; border-radius:10px; display:grid; place-items:center;
+    background:var(--accent-soft, var(--gold-soft)); color:var(--accent, var(--gold));
+  }
+  .doc-card .ico svg{width:20px;height:20px;}
+  .doc-card .tag{
+    position:absolute; top:14px; right:14px; font:600 10px/1 "IBM Plex Sans"; letter-spacing:.06em;
+    padding:5px 8px; border-radius:999px; text-transform:uppercase;
+  }
+  .tag.confirmed{background:var(--swiss-soft); color:var(--swiss);}
+  .tag.pending{background:var(--gold-soft); color:var(--gold);}
+  .doc-card h3{font-size:16.5px; font-weight:600; padding-right:64px;}
+  .doc-card .sub{font-size:12.5px; color:var(--text-soft);}
+  .doc-card .tap{font:500 11px/1 "IBM Plex Sans"; color:var(--text-soft); margin-top:auto; display:flex; align-items:center; gap:5px;}
+  .doc-card .tap svg{width:11px;height:11px;}
+
+  /* ---------- dialogs ---------- */
+  dialog{
+    border:none; border-radius:18px; padding:0; max-width:min(480px,90vw); width:100%;
+    max-height:min(640px, 85vh);
+    background:var(--surface); color:var(--text); box-shadow:0 30px 70px -20px rgba(0,0,0,0.5);
+    overflow-y:auto; overflow-x:hidden; overscroll-behavior:contain;
+  }
+  dialog::backdrop{background:rgba(10,8,4,0.55); backdrop-filter:blur(2px);}
+  .dlg-hero{width:100%; height:190px; object-fit:cover; display:block;}
+  .dish-note{
+    display:flex; align-items:center; gap:9px; font-size:12px; color:var(--text-soft); margin-top:2px;
+  }
+  .dish-note img{width:46px; height:46px; border-radius:9px; object-fit:cover; flex:none; box-shadow:var(--shadow);}
+  .dish-note span{line-height:1.4;}
+  .dish-note b{color:var(--text); font-weight:600;}
+  .dlg-head{
+    display:flex; align-items:center; gap:12px; padding:18px 20px; border-bottom:1px dashed var(--line);
+    background:var(--accent-soft, var(--gold-soft));
+  }
+  .dlg-head .ico{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:var(--surface);color:var(--accent,var(--gold));flex:none;}
+  .dlg-head .ico svg{width:18px;height:18px;}
+  .dlg-head h3{font-size:17px; flex:1;}
+  .dlg-close{background:none;border:none;color:var(--text-soft);font-size:20px;line-height:1;cursor:pointer;padding:4px;}
+  .dlg-body{padding:18px 20px 22px; display:flex; flex-direction:column; gap:14px;}
+  .dlg-row{display:flex; justify-content:space-between; gap:12px; font-size:13.5px; border-bottom:1px solid var(--line); padding-bottom:10px;}
+  .dlg-row:last-child{border-bottom:none;padding-bottom:0;}
+  .dlg-row .k{color:var(--text-soft);}
+  .dlg-row .v{font-weight:600; text-align:right;}
+  .dlg-note{font-size:12.5px; color:var(--text-soft); background:var(--surface-2); border-radius:10px; padding:10px 12px; line-height:1.5;}
+  .dlg-travelers{display:flex; flex-direction:column; gap:8px;}
+  .traveler-line{display:flex; justify-content:space-between; font-size:12.5px; background:var(--surface-2); border-radius:8px; padding:8px 10px;}
+  .traveler-line b{font-weight:600;}
+  .maplink{
+    display:inline-flex; align-items:center; gap:6px; font:600 12.5px/1 "IBM Plex Sans"; text-decoration:none;
+    color:var(--accent,var(--gold)); border:1px solid var(--line); padding:9px 13px; border-radius:10px; justify-content:center;
+  }
+  .maplink svg{width:14px;height:14px;}
+  .maplink:hover{background:var(--accent-soft,var(--gold-soft));}
+
+  /* ---------- attachments ---------- */
+  .attach-section{margin-top:4px; padding-top:14px; border-top:1px dashed var(--line); display:flex; flex-direction:column; gap:9px;}
+  .attach-head{display:flex; align-items:center; justify-content:space-between; gap:8px;}
+  .attach-add{
+    display:inline-flex; align-items:center; gap:6px; font:600 11.5px/1 "IBM Plex Sans"; color:var(--gold);
+    border:1px solid var(--line); padding:7px 11px; border-radius:9px; cursor:pointer;
+  }
+  .attach-add:hover{background:var(--gold-soft);}
+  .attach-add svg{width:13px;height:13px;}
+  .attach-list{display:flex; flex-wrap:wrap; gap:10px;}
+  .attach-item{position:relative; display:flex; flex-direction:column; align-items:center; gap:4px; width:72px; text-decoration:none; color:var(--text);}
+  .attach-item img{width:60px; height:60px; object-fit:cover; border-radius:9px; border:1px solid var(--line); display:block;}
+  .attach-file-ico{width:60px; height:60px; border-radius:9px; background:var(--surface-2); display:grid; place-items:center; color:var(--text-soft);}
+  .attach-file-ico svg{width:22px;height:22px;}
+  .attach-name{font-size:10px; text-align:center; line-height:1.3; max-width:70px; overflow:hidden; text-overflow:ellipsis; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;}
+  .attach-remove{
+    position:absolute; top:-6px; right:-6px; width:18px; height:18px; border-radius:50%; border:1px solid var(--line);
+    background:var(--surface); color:var(--text-soft); font-size:13px; line-height:1; cursor:pointer; display:grid; place-items:center; padding:0;
+  }
+  .attach-remove:hover{color:var(--italy);}
+  .attach-empty{font-size:11.5px; color:var(--text-soft);}
+  .attach-hint{font-size:11px; color:var(--text-soft); min-height:14px;}
+
+  /* ---------- itinerary ---------- */
+  .timeline{display:flex; flex-direction:column;}
+  .day{
+    display:grid; grid-template-columns:64px 1fr; gap:14px; padding-block:16px; position:relative;
+  }
+  .day::before{
+    content:""; position:absolute; left:31px; top:0; bottom:0; width:2px; background:var(--line);
+  }
+  .day:first-child::before{top:16px;}
+  .day:last-child::before{bottom:calc(100% - 16px);}
+  .datebadge{
+    position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    width:64px; height:64px; border-radius:14px; background:var(--surface); border:2px solid var(--accent,var(--line));
+    color:var(--accent,var(--text)); box-shadow:var(--shadow);
+  }
+  .datebadge .num{font:700 21px/1 "Fraunces";}
+  .datebadge .mon{font:600 9px/1 "IBM Plex Sans"; letter-spacing:.08em; text-transform:uppercase; margin-top:3px;}
+  .daycard{
+    background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:14px 16px;
+    display:flex; flex-direction:column; gap:8px;
+  }
+  .daycard.todo{background:var(--todo-bg); border-style:dashed;}
+  .day-top{display:flex; align-items:flex-start; justify-content:space-between; gap:10px; flex-wrap:wrap;}
+  .day-city{
+    display:inline-flex; align-items:center; gap:6px; font:600 11px/1 "IBM Plex Sans"; letter-spacing:.05em; text-transform:uppercase;
+    color:var(--accent,var(--text-soft));
+  }
+  .day-city svg{width:12px;height:12px;}
+  .daycard h3{font-size:17px; font-weight:600;}
+  .daycard p{font-size:13.5px; color:var(--text-soft); line-height:1.55; margin:0;}
+  .status-pill{font:600 10px/1 "IBM Plex Sans"; letter-spacing:.05em; text-transform:uppercase; padding:5px 9px; border-radius:999px; flex:none;}
+  .status-pill.confirmed{background:var(--swiss-soft); color:var(--swiss);}
+  .status-pill.partial{background:var(--gold-soft); color:var(--gold);}
+  .status-pill.todo{background:var(--surface-2); color:var(--text-soft);}
+  .day-actions{display:flex; gap:8px; margin-top:2px; flex-wrap:wrap;}
+  .icon-badge{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;background:var(--accent-soft,var(--surface-2));color:var(--accent,var(--text-soft));flex:none;}
+  .icon-badge svg{width:16px;height:16px;}
+  .day-head-row{display:flex; gap:10px; align-items:flex-start;}
+
+  button.maplink{background:none; appearance:none; -webkit-appearance:none; font-family:inherit;}
+  .plan-edit{display:flex; flex-direction:column; gap:8px; margin-top:2px;}
+  .plan-textarea{
+    width:100%; resize:vertical; min-height:64px; font:13px/1.5 "IBM Plex Sans", sans-serif;
+    padding:10px 12px; border-radius:10px; border:1px solid var(--line); background:var(--surface-2); color:var(--text);
+  }
+  .plan-textarea:focus{outline:2px solid var(--gold); outline-offset:1px;}
+  .plan-edit-actions{display:flex; gap:8px;}
+  .plan-save, .plan-cancel{
+    font:600 12px/1 "IBM Plex Sans"; padding:8px 14px; border-radius:8px; border:1px solid var(--line); cursor:pointer; background:var(--surface); color:var(--text);
+  }
+  .plan-save{background:var(--gold); color:#241f17; border-color:var(--gold);}
+  .plan-save:disabled{opacity:.6; cursor:default;}
+  .plan-cancel{color:var(--text-soft);}
+
+  /* ---------- weather ---------- */
+  .weather-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:14px;}
+  .wx-card{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:16px; box-shadow:var(--shadow);}
+  .wx-card .place{font:600 15px "Fraunces"; margin-bottom:2px;}
+  .wx-card .dates{font-size:11.5px; color:var(--text-soft); margin-bottom:10px;}
+  .wx-temp{display:flex; align-items:center; gap:10px; margin-bottom:8px;}
+  .wx-temp .ico{color:var(--accent,var(--gold));}
+  .wx-temp .ico svg{width:26px;height:26px;}
+  .wx-temp .nums{font:700 20px/1 "IBM Plex Mono";}
+  .wx-temp .nums .lo{color:var(--text-soft); font-weight:500; font-size:15px;}
+  .wx-card .note{font-size:12px; color:var(--text-soft); line-height:1.5;}
+  .wx-precip{display:flex; align-items:center; gap:6px; font:600 12px/1 "IBM Plex Sans"; color:var(--swiss); margin-bottom:10px;}
+  .wx-precip svg{width:14px; height:14px;}
+  .wx-precip .precip-lo{color:var(--text-soft); font-weight:500;}
+
+  /* ---------- packing ---------- */
+  .pack-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:22px;}
+  .pack-card{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:16px; box-shadow:var(--shadow);}
+  .pack-card .head{display:flex; align-items:center; gap:9px; margin-bottom:10px;}
+  .pack-card .head .icon-badge{background:var(--accent-soft,var(--gold-soft)); color:var(--accent,var(--gold));}
+  .pack-card h4{font:600 14.5px "Fraunces"; margin:0;}
+  .pack-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:2px;}
+  .pack-list li{border-bottom:1px solid var(--line);}
+  .pack-list li:last-child{border-bottom:none;}
+  .pack-list label{display:flex; align-items:center; gap:9px; font-size:13px; padding:7px 2px; cursor:pointer;}
+  .pack-list input{width:15px;height:15px;accent-color:var(--gold);flex:none;}
+  .pack-list input:checked + span{color:var(--text-soft); text-decoration:line-through;}
+
+  /* ---------- cost sheet ---------- */
+  .cost-stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:14px; margin-bottom:22px;}
+  .cost-stat{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:16px; box-shadow:var(--shadow);}
+  .cost-stat .label{display:flex; align-items:center; gap:6px; font:600 11px/1 "IBM Plex Sans"; letter-spacing:.07em; text-transform:uppercase; color:var(--text-soft); margin-bottom:10px;}
+  .cost-stat .label svg{width:13px; height:13px; color:var(--accent,var(--gold));}
+  .cost-stat .amount{font:700 23px/1 "IBM Plex Mono"; font-variant-numeric:tabular-nums;}
+  .cost-stat .amount.refund{color:var(--text-soft);}
+  .cost-stat .sub{font-size:12px; color:var(--text-soft); margin-top:7px; line-height:1.4;}
+  .cost-table-wrap{overflow-x:auto; border:1px solid var(--line); border-radius:14px; background:var(--surface); box-shadow:var(--shadow);}
+  .cost-table{width:100%; border-collapse:collapse; font-size:13px; min-width:660px;}
+  .cost-table th{text-align:left; font:600 10.5px/1 "IBM Plex Sans"; letter-spacing:.06em; text-transform:uppercase; color:var(--text-soft); padding:12px 14px; border-bottom:1px solid var(--line); white-space:nowrap;}
+  .cost-table td{padding:11px 14px; border-bottom:1px solid var(--line); vertical-align:top;}
+  .cost-table tbody tr:last-child td{border-bottom:1px solid var(--line);}
+  .cost-table td.amount, .cost-table th.amount{font-family:"IBM Plex Mono"; font-variant-numeric:tabular-nums; text-align:right; white-space:nowrap;}
+  .cost-table tr.cancelled td{color:var(--text-soft);}
+  .cost-table tr.cancelled .stay-name{text-decoration:line-through; text-decoration-color:var(--line);}
+  .cost-table tfoot td{font-weight:700; border-top:2px solid var(--line); border-bottom:none;}
+  .status-pill.refunded{background:var(--surface-2); color:var(--text-soft);}
+
+  footer{border-top:1px solid var(--line); padding-block:26px 40px;}
+  footer .wrap{display:flex; flex-wrap:wrap; gap:8px 18px; font-size:11.5px; color:var(--text-soft);}
+  footer b{color:var(--text);}
+
+  @media (max-width:520px){
+    .day{grid-template-columns:52px 1fr;}
+    .datebadge{width:52px;height:52px;border-radius:12px;}
+    .datebadge .num{font-size:17px;}
+  }
+
+  /* ---------- trip map ---------- */
+  .mapshell{display:grid; grid-template-columns:1.75fr 1fr; gap:16px; align-items:stretch; position:relative;}
+  .mapstage{
+    position:relative; border-radius:18px; overflow:hidden; border:1px solid var(--line); box-shadow:var(--shadow);
+    background:linear-gradient(160deg,var(--map-sea1),var(--map-sea2));
+    aspect-ratio:620/520; min-height:420px;
+    transition:inset .32s cubic-bezier(.2,.65,.18,1);
+  }
+  .map-backdrop{position:fixed; inset:0; background:rgba(10,8,4,0.62); backdrop-filter:blur(2px); z-index:190;}
+  .mapstage.expanded{
+    position:fixed; inset:4vh 4vw; z-index:200; aspect-ratio:unset; width:auto; height:auto; min-height:0;
+    box-shadow:0 40px 100px -20px rgba(0,0,0,0.6);
+  }
+  @media (max-width:640px){ .mapstage.expanded{ inset:3vw; } }
+  #tripmap{display:block; width:100%; height:100%;}
+  #mapLayer{transition:transform 1.15s cubic-bezier(.2,.65,.18,1);}
+  @media (prefers-reduced-motion:reduce){
+    #mapLayer, .travel-icon{transition:none !important;}
+  }
+  .map-landmass{fill:var(--map-land); stroke:var(--map-land-line); stroke-width:1.4; stroke-linejoin:round;}
+  .map-route{fill:none; stroke:var(--text-soft); stroke-width:1.3; stroke-dasharray:1 6; opacity:.55; stroke-linecap:round;}
+  .map-route.leg-active{stroke-dasharray:none; opacity:.95; stroke-width:2.4;}
+  .map-pin{cursor:pointer;}
+  .map-pin .pin-halo{fill:none; stroke:currentColor; stroke-width:1.2; opacity:0; transform-origin:center;}
+  .map-pin.current .pin-halo{opacity:.55; animation:pinPulse 1.8s ease-out infinite;}
+  @keyframes pinPulse{
+    0%{opacity:.55; transform:scale(1);}
+    100%{opacity:0; transform:scale(2.4);}
+  }
+  .map-pin .pin-dot{fill:var(--surface); stroke:currentColor; stroke-width:2;}
+  .map-pin.current .pin-dot{fill:currentColor;}
+  .map-pin.current .pin-ic{color:var(--surface);}
+  .map-pin .pin-ic{color:currentColor;}
+  .map-pin .pin-label{
+    font:600 9.5px/1 "IBM Plex Sans"; fill:var(--text); paint-order:stroke; stroke:var(--map-sea2); stroke-width:3;
+    opacity:0; transition:opacity .3s ease;
+  }
+  .map-pin.current .pin-label, .map-pin.visited .pin-label{opacity:1;}
+  .mapstage:hover .map-pin .pin-label, .mapstage:focus-within .map-pin .pin-label{opacity:1;}
+  .travel-icon{pointer-events:none; opacity:0; transition:opacity .25s ease;}
+  .travel-icon.on{opacity:1;}
+  .travel-icon .ti-halo{fill:var(--surface); filter:drop-shadow(0 3px 8px rgba(0,0,0,0.35));}
+  .map-controls{position:absolute; top:10px; right:10px; display:flex; gap:6px; z-index:2;}
+  .map-btn{
+    display:flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:9px;
+    background:color-mix(in srgb, var(--surface) 88%, transparent); border:1px solid var(--line); color:var(--text-soft);
+    cursor:pointer; backdrop-filter:blur(4px);
+  }
+  .map-btn svg{width:15px;height:15px;}
+  .map-btn:hover{color:var(--text);}
+  .mode-badge{
+    position:absolute; left:10px; bottom:10px; z-index:2; display:flex; align-items:center; gap:7px;
+    padding:7px 12px 7px 8px; border-radius:999px; background:color-mix(in srgb, var(--surface) 90%, transparent);
+    border:1px solid var(--line); font:600 11.5px/1 "IBM Plex Sans"; color:var(--text);
+    opacity:0; transform:translateY(6px); transition:opacity .3s ease, transform .3s ease; backdrop-filter:blur(4px);
+  }
+  .mode-badge.on{opacity:1; transform:translateY(0);}
+  .mode-badge .mb-ico{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--gold-soft);color:var(--gold);flex:none;}
+  .mode-badge .mb-ico svg{width:12px;height:12px;}
+
+  .daypanel{
+    background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:18px;
+    display:flex; flex-direction:column; gap:10px; box-shadow:var(--shadow);
+  }
+  .daypanel .dp-top{display:flex; gap:12px; align-items:flex-start;}
+  .daypanel .dp-badge{
+    flex:none; width:52px; height:52px; border-radius:13px; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    background:var(--surface-2); border:2px solid var(--accent,var(--line)); color:var(--accent,var(--text));
+  }
+  .daypanel .dp-badge .num{font:700 18px/1 "Fraunces";}
+  .daypanel .dp-badge .mon{font:600 8px/1 "IBM Plex Sans"; letter-spacing:.07em; text-transform:uppercase; margin-top:2px;}
+  .daypanel .dp-city{
+    display:inline-flex; align-items:center; gap:6px; font:600 11px/1 "IBM Plex Sans"; letter-spacing:.05em; text-transform:uppercase; color:var(--accent,var(--text-soft));
+  }
+  .daypanel .dp-city svg{width:12px;height:12px;}
+  .daypanel h3{font-size:18px; margin-top:3px;}
+  .daypanel .dp-headrow{display:flex; justify-content:space-between; gap:10px; align-items:flex-start; flex:1;}
+  .daypanel p.dp-desc{font-size:13.5px; color:var(--text-soft); line-height:1.6; margin:0;}
+  .dp-modes{display:flex; flex-wrap:wrap; gap:6px;}
+  .dp-mode-chip{
+    display:inline-flex; align-items:center; gap:5px; font:600 10.5px/1 "IBM Plex Sans"; letter-spacing:.02em;
+    padding:5px 9px 5px 6px; border-radius:999px; background:var(--surface-2); color:var(--text-soft);
+  }
+  .dp-mode-chip svg{width:12px;height:12px;}
+  .daypanel .dp-actions{display:flex; gap:8px; flex-wrap:wrap; margin-top:2px;}
+  .daypanel.todo{background:var(--todo-bg);}
+  .gmap-embed{border-radius:12px; overflow:hidden; border:1px solid var(--line); background:var(--surface-2);}
+  .gmap-embed iframe{width:100%; height:170px; border:0; display:block;}
+  .gmap-embed .gmap-empty{display:flex; align-items:center; justify-content:center; height:100px; font-size:12.5px; color:var(--text-soft); text-align:center; padding:0 16px;}
+
+  .dayrail-wrap{margin-top:16px;}
+  .dayrail{
+    display:flex; gap:8px; overflow-x:auto; padding:4px 2px 10px; scroll-snap-type:x proximity;
+    scrollbar-width:thin;
+  }
+  .day-chip{
+    scroll-snap-align:start; flex:none; display:flex; flex-direction:column; align-items:center; gap:3px;
+    width:58px; padding:9px 4px 8px; border-radius:13px; border:1px solid var(--line); background:var(--surface);
+    cursor:pointer; color:var(--text-soft); font-family:inherit;
+  }
+  .day-chip .dc-n{font:700 16px/1 "Fraunces"; color:var(--text);}
+  .day-chip .dc-m{font:600 8px/1 "IBM Plex Sans"; letter-spacing:.06em; text-transform:uppercase;}
+  .day-chip .dc-dot{width:6px; height:6px; border-radius:50%; margin-top:3px; background:var(--text-soft); opacity:.4;}
+  .day-chip .dc-dot.confirmed{background:var(--swiss); opacity:1;}
+  .day-chip .dc-dot.partial{background:var(--gold); opacity:1;}
+  .day-chip.active{
+    border-color:var(--accent,var(--gold)); background:var(--accent-soft,var(--gold-soft)); color:var(--accent,var(--gold));
+    box-shadow:inset 0 0 0 1px var(--accent,var(--gold));
+  }
+  .day-chip.active .dc-n{color:var(--accent,var(--gold));}
+
+  @media (max-width:760px){
+    .mapshell{grid-template-columns:1fr;}
+    .mapstage{aspect-ratio:4/3.1;}
+  }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-plane" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M21 11.5 3.6 5.2c-.6-.2-1.2.4-.9 1l3 5.8-3 5.8c-.3.6.3 1.2.9 1L21 12.5c.7-.3.7-1.3 0-1.6Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M8.5 12h12"/></symbol>
+<symbol id="i-colosseum" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M3 19h18M4 19v-6.5c0-.5.3-.9.8-1L6 11l1-3.2M20 19v-6.5c0-.5-.3-.9-.8-1L18 11l-1-3.2M6.2 19v-8.3M9.4 19v-9M12 19v-9.3M14.6 19v-9M17.8 19v-8.3M9 7.8h6M8 4.8c0-1.7 8-1.7 8 0"/></symbol>
+<symbol id="i-duomo" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M4 20h16M5 20V9.5L12 3l7 6.5V20M9 20v-5.5h6V20M12 3v3.2M9.5 9h5M8 20v-7M16 20v-7"/></symbol>
+<symbol id="i-house" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M4 11 12 4l8 7M6 9.5V20h12V9.5M10 20v-6h4v6"/></symbol>
+<symbol id="i-train" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M6 4h12a1 1 0 0 1 1 1v10a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3V5a1 1 0 0 1 1-1Z M5 15h14M8 18l-2 3M16 18l2 3M8 8h8"/><circle cx="8.5" cy="12.5" r="1" fill="currentColor" stroke="none"/><circle cx="15.5" cy="12.5" r="1" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-mountain" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="m3 19 6.5-11L13 13l2-3 6 9H3Z M11.2 10.4 12.6 8"/></symbol>
+<symbol id="i-transfer" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M4 8h13l-3-3M20 16H7l3 3"/></symbol>
+<symbol id="i-car" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M4 16.5V12l2-5h12l2 5v4.5M4 16.5a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V15h10v1.5a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V12M4 12h16M7.5 7.5h9"/><circle cx="7.5" cy="16" r="1.4" fill="currentColor" stroke="none"/><circle cx="16.5" cy="16" r="1.4" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" d="m15.2 8.8-1.6 5-5 1.6 1.6-5Z"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.3" r="3.4" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M4.8 20c.9-3.6 3.9-5.8 7.2-5.8s6.3 2.2 7.2 5.8"/></symbol>
+<symbol id="i-folder" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M3.5 6.5a1 1 0 0 1 1-1h5l2 2.2h8a1 1 0 0 1 1 1V18a1 1 0 0 1-1 1h-15a1 1 0 0 1-1-1Z"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M8 5.5v13l11-6.5Z"/></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><rect x="6.5" y="5" width="4" height="14" rx="1" fill="currentColor" stroke="none"/><rect x="13.5" y="5" width="4" height="14" rx="1" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-expand" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6"/></symbol>
+<symbol id="i-collapse" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M9 3v6H3M15 3v6h6M3 15h6v6M21 15h-6v6"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 21s7-7.1 7-12a7 7 0 1 0-14 0c0 4.9 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M12 2.5v2.3M12 19.2v2.3M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.3M19.2 12h2.3M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></symbol>
+<symbol id="i-cloud" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M6.5 18.5a4 4 0 0 1-.5-8 5.5 5.5 0 0 1 10.6-1.7A4.2 4.2 0 0 1 17 18.5H6.5Z"/></symbol>
+<symbol id="i-drop" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" d="M12 3.5c3 4 6 7.6 6 11.3a6 6 0 0 1-12 0c0-3.7 3-7.3 6-11.3Z"/></symbol>
+<symbol id="i-snow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M12 2v20M4 7l16 10M20 7 4 17M6 4l2 3M18 4l-2 3M6 20l2-3M18 20l-2-3"/></symbol>
+<symbol id="i-shirt" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" d="M8 3 4 6l1.5 3L8 7.7V21h8V7.7l2.5 1.3L20 6l-4-3-2 1.6h-4L8 3Z"/></symbol>
+<symbol id="i-shoe" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" d="M3 17.5c0-2 1.3-3 2.6-3.8C7 13 8 12 8 10V6l3.3 3c.9.8 2 1.3 3.2 1.3H16c2.8 0 5 2 5 4.2V18a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-.5Z"/><path fill="none" stroke="currentColor" stroke-width="1.4" d="M3 17h18"/></symbol>
+<symbol id="i-bag" viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="none" stroke="currentColor" stroke-width="1.6" d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></symbol>
+<symbol id="i-doc" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M6 3h9l4 4v14H6z"/><path fill="none" stroke="currentColor" stroke-width="1.4" d="M15 3v4h4M9 12h7M9 15.5h7M9 8.5h3"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="m5 5 14 14M19 5 5 19"/></symbol>
+<symbol id="i-ticket" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M3 9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v1.2a1.6 1.6 0 0 0 0 3.2V15a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1.6a1.6 1.6 0 0 0 0-3.2V9Z"/><path stroke="currentColor" stroke-width="1.4" stroke-dasharray="1.6 2.2" d="M12 8v9"/></symbol>
+<symbol id="i-edit" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M4 20h4L18.5 9.5a2.1 2.1 0 0 0 0-3L18 6a2.1 2.1 0 0 0-3 0L4.5 16.5 4 20Z M13.5 7.5l3 3"/></symbol>
+<symbol id="i-wave" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M2 9c1.5-1.6 3.5-1.6 5 0s3.5 1.6 5 0 3.5-1.6 5 0 3.5 1.6 5 0M2 15c1.5-1.6 3.5-1.6 5 0s3.5 1.6 5 0 3.5-1.6 5 0 3.5 1.6 5 0"/></symbol>
+<symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M12 7.5v9M14.7 9.3c-.4-.7-1.3-1.1-2.4-1.1-1.5 0-2.6.8-2.6 1.9s1 1.6 2.6 1.9c1.7.3 2.6.9 2.6 2 0 1.1-1.1 1.9-2.6 1.9-1.2 0-2.1-.4-2.5-1.1"/></symbol>
+<symbol id="i-trullo" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M5 20h14M6 20v-6.5a6 6 0 0 1 12 0V20M12 7.5V4M9.8 5.5h4.4"/><circle cx="12" cy="9.5" r="1.1" fill="currentColor" stroke="none"/><circle cx="12" cy="13" r="1.1" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-cave" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M3 20h18M4 20v-5.5c0-3.6 2.2-6 4.5-7.2M8 20v-4a2.5 2.5 0 0 1 5 0v4M13 20v-5c2.8-1 5-3.6 5-7 0-2-.8-3.5-1.8-4.5"/></symbol>
+</svg>
+
+<nav class="topnav">
+  <a href="#hero">Trip</a>
+  <a href="#docs">Documents</a>
+  <a href="#itinerary">Itinerary</a>
+  <a href="#pack">Weather &amp; Packing</a>
+  <a href="#costs">Costs</a>
+</nav>
+
+<header class="hero" id="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow">Ponnapally family &middot; 8&ndash;22 October 2026</div>
+    <h1>Rome, Milan<br>&amp; the <em>Swiss Alps</em></h1>
+    <p class="lede">Thirteen nights across two countries — arenas, sea caves, cathedrals, cogwheel trains and alpine air. Tap any document for the ticket, tap the pin to open it in Google Maps.</p>
+    <div class="hero-meta">
+      <span class="chip"><svg><use href="#i-plane"/></svg> HYD &rarr; FCO &rarr; ZRH &rarr; HYD</span>
+      <span class="chip"><svg><use href="#i-pin"/></svg> Rome &middot; Polignano a Mare &middot; Milan &middot; Jungfrau &middot; Cham</span>
+      <span class="chip"><svg><use href="#i-house"/></svg> Allekhya &middot; Abhijith &middot; Riyaan</span>
+    </div>
+    <div class="google-bar" id="googleBar">
+      <span class="google-status" id="googleStatus">Not signed in — sign in to add plans &amp; attachments</span>
+      <div class="google-actions">
+        <button type="button" class="google-btn" id="googleSignInBtn"><svg><use href="#i-user"/></svg> Sign in with Google</button>
+        <button type="button" class="google-btn" id="googleFolderBtn" hidden><svg><use href="#i-folder"/></svg> <span id="googleFolderBtnText">Choose Drive folder</span></button>
+        <button type="button" class="google-btn ghost" id="googleSignOutBtn" hidden>Sign out</button>
+      </div>
+    </div>
+    <svg class="skyline" viewBox="0 0 920 150" preserveAspectRatio="none" aria-hidden="true" role="img" aria-label="Illustration of the Colosseum in Rome, the Duomo di Milano, and the Swiss Alps connected by a dashed route">
+      <!-- ambient rooftops -->
+      <path d="M0 150 L0 120 6 120 6 110 12 110 12 120 18 120 18 105 24 105 24 120 30 120 30 100 36 100 36 120 240 120 240 106 248 106 248 120 470 120 470 100 476 92 484 100 484 120 700 120 700 108 708 108 708 120 900 120 900 96 908 88 916 96 916 120 920 120 920 150 Z" fill="rgba(242,239,227,0.06)"/>
+
+      <!-- Colosseum, Rome -->
+      <g fill="none" stroke="#f2efe3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.92">
+        <path d="M40 132 Q40 76 130 68 Q220 76 220 132Z" fill="rgba(242,239,227,0.14)" stroke="none"/>
+        <path d="M40 132 Q40 76 130 68 Q220 76 220 132"/>
+        <path d="M55 132V92M72 132V86M89 132V82M106 132V79M123 132V78M140 132V79M157 132V82M174 132V86M191 132V92M208 132V100" stroke-width="1.1" opacity="0.85"/>
+      </g>
+      <text x="130" y="146" text-anchor="middle" class="leg-tag">ROMA</text>
+
+      <!-- Duomo, Milan -->
+      <g fill="none" stroke="#f2efe3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.92">
+        <path d="M392 132V96L406 66 420 96V132Z" fill="rgba(242,239,227,0.16)" stroke="none"/>
+        <path d="M392 132V96L406 66 420 96V132"/>
+        <circle cx="406" cy="61" r="2.6" fill="#f2efe3" stroke="none"/>
+        <path d="M362 132V104L374 84 386 104V132Z" fill="rgba(242,239,227,0.13)" stroke="none"/>
+        <path d="M362 132V104L374 84 386 104V132"/>
+        <circle cx="374" cy="80" r="2.2" fill="#f2efe3" stroke="none"/>
+        <path d="M420 132V108L431 90 442 108V132Z" fill="rgba(242,239,227,0.13)" stroke="none"/>
+        <path d="M420 132V108L431 90 442 108V132"/>
+        <circle cx="431" cy="86" r="2.2" fill="#f2efe3" stroke="none"/>
+      </g>
+      <text x="402" y="146" text-anchor="middle" class="leg-tag">MILANO</text>
+
+      <!-- Alps -->
+      <g fill="none" stroke="#f2efe3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.92">
+        <path d="M640 132 700 78 726 104 770 52 812 106 848 80 900 132Z" fill="rgba(242,239,227,0.14)" stroke="none"/>
+        <path d="M640 132 700 78 726 104 770 52 812 106 848 80 900 132"/>
+        <path d="M757 68 770 52 783 68 774 68 774 76 766 76 766 68Z" fill="#f2efe3" stroke="none" opacity="0.88"/>
+      </g>
+      <text x="770" y="146" text-anchor="middle" class="leg-tag">SVIZZERA</text>
+
+      <!-- route -->
+      <path class="route" d="M160 116 C230 88 320 92 380 106 C430 118 470 120 500 108 C560 84 620 96 660 110" fill="none" stroke="#d9ac5f" stroke-width="1.3" opacity="0.85"/>
+      <g style="color:#d9ac5f" fill="none" stroke="currentColor" stroke-width="1.6">
+        <circle cx="500" cy="108" r="9" fill="#1d323a" stroke="#d9ac5f"/>
+        <use href="#i-plane" x="492" y="100" width="16" height="16"/>
+      </g>
+    </svg>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section id="docs">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">Bookings</div>
+      <h2>Your documents</h2>
+    </div>
+    <p class="section-sub">Tap a ticket for the full booking. Everything here is pulled from your confirmations.</p>
+  </div>
+  <div class="doc-row">
+
+    <button class="doc-card" style="--accent:var(--gold); --accent-soft:var(--gold-soft)" onclick="dlgFlight.showModal()">
+      <span class="tag confirmed">Confirmed</span>
+      <span class="ico"><svg><use href="#i-plane"/></svg></span>
+      <h3>Flights — Etihad Airways</h3>
+      <span class="sub">HYD &rarr; Rome (8&ndash;9 Oct) &middot; Zurich &rarr; HYD (21&ndash;22 Oct) &middot; PNR 8B5YLO</span>
+      <span class="tap"><svg><use href="#i-ticket"/></svg> View full itinerary</span>
+    </button>
+
+    <button class="doc-card" style="--accent:var(--italy); --accent-soft:var(--italy-soft)" onclick="dlgRomeStay.showModal()">
+      <img class="cover" src="photos/rome.jpg" alt="Stanza con bagno privato, Rome" loading="lazy">
+      <span class="tag confirmed on-cover">Confirmed</span>
+      <span class="ico"><svg><use href="#i-house"/></svg></span>
+      <h3>Airbnb &mdash; Rome</h3>
+      <span class="sub">Friday 9 &ndash; Sunday 11 October</span>
+      <span class="tap"><svg><use href="#i-ticket"/></svg> View stay &amp; map</span>
+    </button>
+
+    <button class="doc-card" style="--accent:var(--italy); --accent-soft:var(--italy-soft)" onclick="dlgColosseum.showModal()">
+      <img class="cover" src="photos/colosseum.jpg" alt="The Colosseum, Rome" loading="lazy">
+      <span class="tag confirmed on-cover">Confirmed</span>
+      <span class="ico"><svg><use href="#i-colosseum"/></svg></span>
+      <h3>Colosseum &middot; Forum &middot; Palatine</h3>
+      <span class="sub">Saturday 10 October &middot; 08:30 entry</span>
+      <span class="tap"><svg><use href="#i-ticket"/></svg> View tickets &amp; map</span>
+    </button>
+
+    <button class="doc-card" style="--accent:var(--text-soft); --accent-soft:var(--surface-2)" onclick="dlgTrain.showModal()">
+      <span class="tag pending">Confirm details</span>
+      <span class="ico"><svg><use href="#i-train"/></svg></span>
+      <h3>Rome &rarr; Bari train</h3>
+      <span class="sub">Trenitalia account is set up — ticket not yet in hand</span>
+      <span class="tap"><svg><use href="#i-ticket"/></svg> What we have so far</span>
+    </button>
+
+    <button class="doc-card" style="--accent:var(--text-soft); --accent-soft:var(--surface-2)" onclick="dlgRentalCar.showModal()">
+      <span class="tag pending">Confirm details</span>
+      <span class="ico"><svg><use href="#i-transfer"/></svg></span>
+      <h3>Bari rental car</h3>
+      <span class="sub">Not booked yet — pickup &amp; drop-off both in Bari</span>
+      <span class="tap"><svg><use href="#i-ticket"/></svg> What we have so far</span>
+    </button>
+
+    <button class="doc-card" style="--accent:var(--text-soft); --accent-soft:var(--surface-2)" onclick="dlgIDP.showModal()">
+      <span class="tag pending">To arrange</span>
+      <span class="ico"><svg><use href="#i-doc"/></svg></span>
+      <h3>International Driving Permit</h3>
+      <span class="sub">Required alongside your Indian licence to drive in Italy</span>
+      <span class="tap"><svg><use href="#i-ticket"/></svg> What you need</span>
+    </button>
+
+    <button class="doc-card" style="--accent:var(--italy); --accent-soft:var(--italy-soft)" onclick="dlgPolignano.showModal()">
+      <img class="cover" src="photos/polignano.jpg" alt="La Casa Di Vittoria Sea View balcony, Polignano a Mare" loading="lazy">
+      <span class="tag confirmed on-cover">Confirmed</span>
+      <span class="ico"><svg><use href="#i-wave"/></svg></span>
+      <h3>Airbnb &mdash; Polignano a Mare</h3>
+      <span class="sub">Sunday 11 &ndash; Wednesday 14 October</span>
+      <span class="tap"><svg><use href="#i-ticket"/></svg> View stay &amp; map</span>
+    </button>
+
+    <button class="doc-card" style="--accent:var(--italy); --accent-soft:var(--italy-soft)" onclick="dlgMilanStay.showModal()">
+      <img class="cover" src="photos/milan.jpg" alt="Bazzini 14 living room, Milan" loading="lazy">
+      <span class="tag confirmed on-cover">Confirmed</span>
+      <span class="ico"><svg><use href="#i-house"/></svg></span>
+      <h3>Airbnb &mdash; Milan</h3>
+      <span class="sub">Wednesday 14 &ndash; Friday 16 October</span>
+      <span class="tap"><svg><use href="#i-ticket"/></svg> View stay &amp; map</span>
+    </button>
+
+    <button class="doc-card" style="--accent:var(--italy); --accent-soft:var(--italy-soft)" onclick="dlgDuomo.showModal()">
+      <img class="cover" src="photos/duomo.jpg" alt="Duomo di Milano" loading="lazy">
+      <span class="tag confirmed on-cover">Confirmed</span>
+      <span class="ico"><svg><use href="#i-duomo"/></svg></span>
+      <h3>Duomo di Milano + Terraces</h3>
+      <span class="sub">Thursday 15 October &middot; 16:30 entry</span>
+      <span class="tap"><svg><use href="#i-ticket"/></svg> View tickets &amp; map</span>
+    </button>
+
+    <button class="doc-card" style="--accent:var(--swiss); --accent-soft:var(--swiss-soft)" onclick="dlgAlpsStay.showModal()">
+      <img class="cover" src="photos/alps.jpg" alt="Schmocker's Apartment Alpenrose bedroom, Wilderswil" loading="lazy">
+      <span class="tag confirmed on-cover">Confirmed</span>
+      <span class="ico"><svg><use href="#i-mountain"/></svg></span>
+      <h3>Airbnb &mdash; Wilderswil, Switzerland</h3>
+      <span class="sub">Friday 16 &ndash; Monday 19 October</span>
+      <span class="tap"><svg><use href="#i-ticket"/></svg> View stay &amp; map</span>
+    </button>
+
+    <button class="doc-card" style="--accent:var(--swiss); --accent-soft:var(--swiss-soft)" onclick="dlgAirbnb.showModal()">
+      <img class="cover" src="photos/cham.jpg" alt="A Home Away From Home bedroom, Cham" loading="lazy">
+      <span class="tag confirmed on-cover">Confirmed</span>
+      <span class="ico"><svg><use href="#i-house"/></svg></span>
+      <h3>Airbnb — Cham, Switzerland</h3>
+      <span class="sub">Monday 19 &ndash; Wednesday 21 October</span>
+      <span class="tap"><svg><use href="#i-ticket"/></svg> View stay &amp; map</span>
+    </button>
+
+    <button class="doc-card" style="--accent:var(--gold); --accent-soft:var(--gold-soft)" onclick="dlgBariFlight.showModal()">
+      <span class="tag confirmed">Confirmed</span>
+      <span class="ico"><svg><use href="#i-plane"/></svg></span>
+      <h3>Ryanair — Bari &rarr; Milan</h3>
+      <span class="sub">Wednesday 14 October &middot; FR4668, 12:20&ndash;13:50</span>
+      <span class="tap"><svg><use href="#i-ticket"/></svg> View flight details</span>
+    </button>
+
+    <button class="doc-card" style="--accent:var(--text-soft); --accent-soft:var(--surface-2)" onclick="dlgTransfer.showModal()">
+      <span class="tag pending">Confirm details</span>
+      <span class="ico"><svg><use href="#i-transfer"/></svg></span>
+      <h3>Milan &rarr; Switzerland transfer</h3>
+      <span class="sub">Still no booking found for this leg</span>
+      <span class="tap"><svg><use href="#i-ticket"/></svg> What we have so far</span>
+    </button>
+
+    <button class="doc-card" style="--accent:var(--gold); --accent-soft:var(--gold-soft)" onclick="dlgCurrency.showModal()">
+      <span class="tag confirmed">Reference</span>
+      <span class="ico"><svg><use href="#i-coin"/></svg></span>
+      <h3>Currency &amp; Cash</h3>
+      <span class="sub">EUR for Italy, CHF for Switzerland — quick conversions</span>
+      <span class="tap"><svg><use href="#i-ticket"/></svg> View conversion guide</span>
+    </button>
+
+  </div>
+</section>
+
+<!-- ===== dialogs ===== -->
+
+<dialog id="dlgFlight">
+  <div class="dlg-head" style="--accent:var(--gold);--accent-soft:var(--gold-soft)">
+    <span class="ico"><svg><use href="#i-plane"/></svg></span>
+    <h3>Etihad Airways &middot; PNR 8B5YLO</h3>
+    <button class="dlg-close" onclick="dlgFlight.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body">
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Outbound &middot; Thu 8 &ndash; Fri 9 Oct</div>
+      <div class="dlg-row"><span class="k">Hyderabad (HYD) &rarr; Abu Dhabi</span><span class="v mono">EY 359 &middot; 21:20</span></div>
+      <div class="dlg-row"><span class="k">Abu Dhabi &rarr; Rome Fiumicino (FCO)</span><span class="v mono">EY 85 &middot; 02:15&ndash;06:25</span></div>
+      <div class="dlg-row"><span class="k">Layover</span><span class="v">2h 40m in Abu Dhabi</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Return &middot; Wed 21 &ndash; Thu 22 Oct</div>
+      <div class="dlg-row"><span class="k">Zurich (ZRH) &rarr; Abu Dhabi</span><span class="v mono">EY 144 &middot; 11:10&ndash;19:35</span></div>
+      <div class="dlg-row"><span class="k">Abu Dhabi &rarr; Hyderabad</span><span class="v mono">EY 352 &middot; 21:25&ndash;02:45</span></div>
+      <div class="dlg-row"><span class="k">Layover</span><span class="v">1h 50m in Abu Dhabi</span></div>
+    </div>
+    <div class="dlg-travelers">
+      <div class="traveler-line"><span>Allekhya Varanasi</span><b class="mono">Adult</b></div>
+      <div class="traveler-line"><span>Abhijith Ponnapally</span><b class="mono">Adult</b></div>
+      <div class="traveler-line"><span>Riyaan Ponnapally</span><b class="mono">Child</b></div>
+    </div>
+    <div class="dlg-note">Economy Value &middot; 7kg cabin + 30kg check-in per person. Booking ID NN7AMHM592127661872, booked 20 Jul 2026 via MakeMyTrip. Total paid &#8377;2,01,653.00 (ICICI Bank card, after a &#8377;7,500 coupon discount).</div>
+    <a class="maplink" style="--accent:var(--gold)" href="https://www.google.com/maps/search/?api=1&query=Rome+Fiumicino+Airport" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg> Fiumicino Airport on Maps</a>
+  </div>
+</dialog>
+
+<dialog id="dlgColosseum">
+  <img class="dlg-hero" src="photos/colosseum.jpg" alt="The Colosseum, Rome">
+  <div class="dlg-head" style="--accent:var(--italy);--accent-soft:var(--italy-soft)">
+    <span class="ico"><svg><use href="#i-colosseum"/></svg></span>
+    <h3>Colosseo &middot; Foro Romano &middot; Palatino</h3>
+    <button class="dlg-close" onclick="dlgColosseum.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body">
+    <div class="dlg-row"><span class="k">Entry date &amp; time</span><span class="v">Sat 10 Oct 2026, 08:30</span></div>
+    <div class="dlg-row"><span class="k">Reservation</span><span class="v mono">OCO4747673</span></div>
+    <div class="dlg-row"><span class="k">Valid for</span><span class="v">24h &middot; single entry each site</span></div>
+    <div class="dlg-travelers">
+      <div class="traveler-line"><span>Abhijith Ponnapally</span><b class="mono">&euro;18.00</b></div>
+      <div class="traveler-line"><span>Allekhya Varanasi</span><b class="mono">&euro;18.00</b></div>
+      <div class="traveler-line"><span>Riyaan Ponnapally</span><b class="mono">Free &middot; under 18</b></div>
+    </div>
+    <div class="dlg-note">Arrive 15 minutes early with photo ID. Visit runs one-way, ~75 minutes inside the Colosseum. Comfortable shoes recommended for the Forum &amp; Palatine Hill.</div>
+    <a class="maplink" style="--accent:var(--italy)" href="https://www.google.com/maps/search/?api=1&query=Colosseum,+Piazza+del+Colosseo,+Rome,+Italy" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg> Open Colosseum in Maps</a>
+  </div>
+</dialog>
+
+<dialog id="dlgDuomo">
+  <img class="dlg-hero" src="photos/duomo.jpg" alt="Duomo di Milano">
+  <div class="dlg-head" style="--accent:var(--italy);--accent-soft:var(--italy-soft)">
+    <span class="ico"><svg><use href="#i-duomo"/></svg></span>
+    <h3>Duomo di Milano &amp; Terraces</h3>
+    <button class="dlg-close" onclick="dlgDuomo.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body">
+    <div class="dlg-row"><span class="k">Entry date &amp; time</span><span class="v">Thu 15 Oct 2026, 16:30</span></div>
+    <div class="dlg-row"><span class="k">Reservation</span><span class="v mono">OFD4228052</span></div>
+    <div class="dlg-row"><span class="k">Gate</span><span class="v">Gate 2 &middot; Light Blu</span></div>
+    <div class="dlg-travelers">
+      <div class="traveler-line"><span>Terraces ticket &middot; adult</span><b class="mono">&euro;26.00</b></div>
+      <div class="traveler-line"><span>Terraces ticket &middot; adult</span><b class="mono">&euro;26.00</b></div>
+      <div class="traveler-line"><span>Terraces ticket &middot; Bambino 0&ndash;5</span><b class="mono">Free</b></div>
+    </div>
+    <div class="dlg-note">Access by lift via stairs down. Dress code enforced — no shorts or tank tops inside the cathedral. Last entry 18:00.</div>
+    <a class="maplink" style="--accent:var(--italy)" href="https://www.google.com/maps/search/?api=1&query=Duomo+di+Milano,+Piazza+del+Duomo,+Milan,+Italy" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg> Open Duomo in Maps</a>
+  </div>
+</dialog>
+
+<dialog id="dlgRomeStay">
+  <img class="dlg-hero" src="photos/rome.jpg" alt="Stanza con bagno privato, Rome">
+  <div class="dlg-head" style="--accent:var(--italy);--accent-soft:var(--italy-soft)">
+    <span class="ico"><svg><use href="#i-house"/></svg></span>
+    <h3>Stanza con bagno privato</h3>
+    <button class="dlg-close" onclick="dlgRomeStay.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body">
+    <div class="dlg-row"><span class="k">Check-in</span><span class="v">Fri 9 Oct, after 3:00 PM</span></div>
+    <div class="dlg-row"><span class="k">Check-out</span><span class="v">Sun 11 Oct, by 11:00 AM</span></div>
+    <div class="dlg-row"><span class="k">Address</span><span class="v">Via Enrico Cialdini, Rome — 100m from Termini</span></div>
+    <div class="dlg-row"><span class="k">Host</span><span class="v">Francesco</span></div>
+    <div class="dlg-row"><span class="k">Confirmation</span><span class="v mono">HMF3FRF43B</span></div>
+    <div class="dlg-row"><span class="k">Total paid</span><span class="v mono">&#8377;42,567.19</span></div>
+    <div class="dlg-note">Booked 17 Aug 2026, after an earlier Rome booking (Al Iram Napoleone III, &#8377;28,070.34) was cancelled and fully refunded the same morning. Self check-in available from 8pm.</div>
+    <a class="maplink" style="--accent:var(--italy)" href="https://www.google.com/maps/search/?api=1&query=Via+Enrico+Cialdini,+Rome,+Italy" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg> Open in Maps</a>
+  </div>
+</dialog>
+
+<dialog id="dlgPolignano">
+  <img class="dlg-hero" src="photos/polignano.jpg" alt="La Casa Di Vittoria Sea View balcony, Polignano a Mare">
+  <div class="dlg-head" style="--accent:var(--italy);--accent-soft:var(--italy-soft)">
+    <span class="ico"><svg><use href="#i-wave"/></svg></span>
+    <h3>La Casa Di Vittoria Sea View</h3>
+    <button class="dlg-close" onclick="dlgPolignano.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body">
+    <div class="dlg-row"><span class="k">Check-in</span><span class="v">Sun 11 Oct, after 3:00 PM</span></div>
+    <div class="dlg-row"><span class="k">Check-out</span><span class="v">Wed 14 Oct, by 10:00 AM</span></div>
+    <div class="dlg-row"><span class="k">Address</span><span class="v">Via da Bormida 13, Polignano a Mare BA</span></div>
+    <div class="dlg-row"><span class="k">Host</span><span class="v">Vito</span></div>
+    <div class="dlg-row"><span class="k">Confirmation</span><span class="v mono">HMEMRDMSYY</span></div>
+    <div class="dlg-row"><span class="k">Total paid</span><span class="v mono">&#8377;42,857.05</span></div>
+    <div class="dlg-note">Entire home/apt, 3 nights on the Puglia coast &mdash; a side trip from Rome before heading north to Milan. Booked 16 Aug 2026.</div>
+    <a class="maplink" style="--accent:var(--italy)" href="https://www.google.com/maps/search/?api=1&query=Via+da+Bormida+13,+Polignano+a+Mare,+Italy" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg> Open in Maps</a>
+  </div>
+</dialog>
+
+<dialog id="dlgMilanStay">
+  <img class="dlg-hero" src="photos/milan.jpg" alt="Bazzini 14 living room, Milan">
+  <div class="dlg-head" style="--accent:var(--italy);--accent-soft:var(--italy-soft)">
+    <span class="ico"><svg><use href="#i-house"/></svg></span>
+    <h3>Bazzini 14</h3>
+    <button class="dlg-close" onclick="dlgMilanStay.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body">
+    <div class="dlg-row"><span class="k">Check-in</span><span class="v">Wed 14 Oct, after 2:00 PM</span></div>
+    <div class="dlg-row"><span class="k">Check-out</span><span class="v">Fri 16 Oct, by 10:00 AM</span></div>
+    <div class="dlg-row"><span class="k">Address</span><span class="v">Via Antonio Bazzini 14A, Milano</span></div>
+    <div class="dlg-row"><span class="k">Host</span><span class="v">Giuseppe</span></div>
+    <div class="dlg-row"><span class="k">Confirmation</span><span class="v mono">HMPWC8S4YZ</span></div>
+    <div class="dlg-row"><span class="k">Total paid</span><span class="v mono">&#8377;29,353.83</span></div>
+    <div class="dlg-note">Entire home/apt. Booked 9 Aug 2026 &mdash; the earliest of the trip's Airbnb bookings.</div>
+    <a class="maplink" style="--accent:var(--italy)" href="https://www.google.com/maps/search/?api=1&query=Via+Antonio+Bazzini+14,+Milan,+Italy" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg> Open in Maps</a>
+  </div>
+</dialog>
+
+<dialog id="dlgAlpsStay">
+  <img class="dlg-hero" src="photos/alps.jpg" alt="Schmocker's Apartment Alpenrose bedroom, Wilderswil">
+  <div class="dlg-head" style="--accent:var(--swiss);--accent-soft:var(--swiss-soft)">
+    <span class="ico"><svg><use href="#i-mountain"/></svg></span>
+    <h3>Schmocker's Apartment Alpenrose</h3>
+    <button class="dlg-close" onclick="dlgAlpsStay.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body">
+    <div class="dlg-row"><span class="k">Check-in</span><span class="v">Fri 16 Oct, 4:00 PM</span></div>
+    <div class="dlg-row"><span class="k">Check-out</span><span class="v">Mon 19 Oct, 10:00 AM</span></div>
+    <div class="dlg-row"><span class="k">Location</span><span class="v">Wilderswil, Switzerland (exact address not in inbox)</span></div>
+    <div class="dlg-row"><span class="k">Host</span><span class="v">Gabriela &amp; Urs</span></div>
+    <div class="dlg-row"><span class="k">Total paid</span><span class="v mono">&#8377;57,787.17</span></div>
+    <div class="dlg-note">Booked 27 Jul 2026, after an earlier Brienz booking (Green Apartment Brienz, &#8377;50,626.41) was cancelled and refunded minutes after booking it. Corrected: your own &ldquo;Swiss itinerary&rdquo; email checks in and out of Wilderswil, not Brienz &mdash; that was my earlier assumption, carried over from the cancelled booking. No formal Airbnb receipt email was found for this one &mdash; the amount above is from the matching card charge. Confirm the exact address and confirmation code from the Airbnb app before you go.</div>
+    <a class="maplink" style="--accent:var(--swiss)" href="https://www.google.com/maps/search/?api=1&query=Wilderswil,+Switzerland" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg> Open Wilderswil in Maps</a>
+  </div>
+</dialog>
+
+<dialog id="dlgAirbnb">
+  <img class="dlg-hero" src="photos/cham.jpg" alt="A Home Away From Home bedroom, Cham">
+  <div class="dlg-head" style="--accent:var(--swiss);--accent-soft:var(--swiss-soft)">
+    <span class="ico"><svg><use href="#i-house"/></svg></span>
+    <h3>A Home Away From Home</h3>
+    <button class="dlg-close" onclick="dlgAirbnb.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body">
+    <div class="dlg-row"><span class="k">Check-in</span><span class="v">Mon 19 Oct, after 1:00 PM</span></div>
+    <div class="dlg-row"><span class="k">Check-out</span><span class="v">Wed 21 Oct, by 11:00 AM</span></div>
+    <div class="dlg-row"><span class="k">Address</span><span class="v">Nelkenweg 6, 6330 Cham</span></div>
+    <div class="dlg-row"><span class="k">Host</span><span class="v">Jo</span></div>
+    <div class="dlg-row"><span class="k">Confirmation</span><span class="v mono">HM2KSM9F4R</span></div>
+    <div class="dlg-row"><span class="k">Total paid</span><span class="v mono">&#8377;28,614.09</span></div>
+    <div class="dlg-note">A train stop sits a few minutes' walk from the home, with frequent connections toward Zug, Lucerne and Zurich — handy for day trips and for reaching Zurich Airport on departure morning.</div>
+    <a class="maplink" style="--accent:var(--swiss)" href="https://www.google.com/maps/search/?api=1&query=Nelkenweg+6,+Cham,+Switzerland" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg> Open Cham in Maps</a>
+  </div>
+</dialog>
+
+<dialog id="dlgTrain">
+  <div class="dlg-head" style="--accent:var(--text-soft);--accent-soft:var(--surface-2)">
+    <span class="ico"><svg><use href="#i-train"/></svg></span>
+    <h3>Rome &rarr; Bari train</h3>
+    <button class="dlg-close" onclick="dlgTrain.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body">
+    <div class="dlg-row"><span class="k">Trenitalia account</span><span class="v mono">abhijith.ponnapally</span></div>
+    <div class="dlg-row"><span class="k">Registered</span><span class="v">19 Jul 2026</span></div>
+    <div class="dlg-row"><span class="k">Planned date</span><span class="v">Sun 11 Oct, ~4h journey</span></div>
+    <div class="dlg-note">Only the account signup came through — no e-ticket (train number, departure time, seats) for the Rome&rarr;Bari leg was found. A ~12:00 departure keeps the Polignano arrival realistic; book it and send the confirmation and I'll drop it in here.</div>
+  </div>
+</dialog>
+
+<dialog id="dlgBariFlight">
+  <div class="dlg-head" style="--accent:var(--gold);--accent-soft:var(--gold-soft)">
+    <span class="ico"><svg><use href="#i-plane"/></svg></span>
+    <h3>Ryanair FR4668 &middot; NBMUFB</h3>
+    <button class="dlg-close" onclick="dlgBariFlight.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body">
+    <div class="dlg-row"><span class="k">Bari (BRI) &rarr; Milan Bergamo (BGY)</span><span class="v mono">Wed 14 Oct &middot; 12:20&ndash;13:50</span></div>
+    <div class="dlg-travelers">
+      <div class="traveler-line"><span>Abhijith Ponnapally</span><b class="mono">Checked bag 20kg, Priority + 2 cabin</b></div>
+      <div class="traveler-line"><span>Allekhya Varanasi</span><b class="mono">Checked bag 23kg</b></div>
+      <div class="traveler-line"><span>Riyaan Ponnapally</span><b class="mono">Checked bag 23kg &middot; Child</b></div>
+    </div>
+    <div class="dlg-row"><span class="k">Total paid</span><span class="v mono">&euro;206.65 (&#8377;24,150.07)</span></div>
+    <div class="dlg-note">Booked 7 Sep 2026. This lands at Bergamo (BGY), not central Milan — budget ~50 min&ndash;1h for the shuttle bus or train into the city on top of the flight, which pushes a same-day Bazzini 14 check-in later than 13:50 might suggest. Boarding pass is digital-only via the Ryanair app.</div>
+    <a class="maplink" style="--accent:var(--gold)" href="https://www.google.com/maps/search/?api=1&query=Milan+Bergamo+Airport" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg> Bergamo Airport on Maps</a>
+  </div>
+</dialog>
+
+<dialog id="dlgRentalCar">
+  <div class="dlg-head" style="--accent:var(--text-soft);--accent-soft:var(--surface-2)">
+    <span class="ico"><svg><use href="#i-transfer"/></svg></span>
+    <h3>Bari rental car</h3>
+    <button class="dlg-close" onclick="dlgRentalCar.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body">
+    <div class="dlg-row"><span class="k">Pick up</span><span class="v">Bari, Sun 11 Oct</span></div>
+    <div class="dlg-row"><span class="k">Drop off</span><span class="v">Bari, Wed 14 Oct</span></div>
+    <div class="dlg-note">Nothing booked yet — no rental confirmation (agency, car class, pickup counter) has been found. This is what the Alberobello &amp; Matera and Ostuni day plans assume you'll have; send over the booking once it's confirmed and I'll drop it in here.</div>
+  </div>
+</dialog>
+
+<dialog id="dlgIDP">
+  <div class="dlg-head" style="--accent:var(--text-soft);--accent-soft:var(--surface-2)">
+    <span class="ico"><svg><use href="#i-doc"/></svg></span>
+    <h3>International Driving Permit</h3>
+    <button class="dlg-close" onclick="dlgIDP.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body">
+    <div class="dlg-row"><span class="k">Needed for</span><span class="v">Driving the Bari &rarr; Polignano &rarr; Alberobello &rarr; Matera &rarr; Ostuni &rarr; Lecce &rarr; Bari route</span></div>
+    <div class="dlg-row"><span class="k">Who</span><span class="v">Whoever will be driving (Abhijith)</span></div>
+    <div class="dlg-row"><span class="k">Where to get it</span><span class="v">Any RTO, or via India Post/Parivahan Sewa online</span></div>
+    <div class="dlg-row"><span class="k">Lead time</span><span class="v">Usually a few working days — apply well before 11 Oct</span></div>
+    <div class="dlg-note">Italy expects non-EU visitors to carry an International Driving Permit alongside their Indian licence when driving or renting a car — an Indian licence alone often isn't accepted by rental counters or by police at a routine stop. It's cheap and quick to get but needs your passport, licence, and photos, so it's worth doing early rather than the week before. Not tracked in your inbox — nothing booked or applied for that I can see.</div>
+  </div>
+</dialog>
+
+<dialog id="dlgTransfer">
+  <div class="dlg-head" style="--accent:var(--text-soft);--accent-soft:var(--surface-2)">
+    <span class="ico"><svg><use href="#i-transfer"/></svg></span>
+    <h3>Milan &rarr; Switzerland transfer</h3>
+    <button class="dlg-close" onclick="dlgTransfer.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body">
+    <div class="dlg-note">The Ryanair booking in the inbox turned out to be the Bari&rarr;Milan flight, not this leg — that's now filed under its own card. No booking for the actual Milan&rarr;Switzerland transfer has turned up yet. Forward or paste the confirmation once you have it and I'll fill this card in with real times and a boarding-pass layout.</div>
+  </div>
+</dialog>
+
+<dialog id="dlgCurrency">
+  <div class="dlg-head" style="--accent:var(--gold);--accent-soft:var(--gold-soft)">
+    <span class="ico"><svg><use href="#i-coin"/></svg></span>
+    <h3>Currency &amp; Cash</h3>
+    <button class="dlg-close" onclick="dlgCurrency.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body">
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Euro (Italy) &mdash; Rome, Polignano, Alberobello, Matera, Ostuni, Milan</div>
+      <div class="dlg-row"><span class="k">&euro;10</span><span class="v mono">&#8776; &#8377;1,169</span></div>
+      <div class="dlg-row"><span class="k">&euro;20</span><span class="v mono">&#8776; &#8377;2,337</span></div>
+      <div class="dlg-row"><span class="k">&euro;50</span><span class="v mono">&#8776; &#8377;5,843</span></div>
+      <div class="dlg-row"><span class="k">&euro;100</span><span class="v mono">&#8776; &#8377;11,686</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Swiss Franc (Switzerland) &mdash; Wilderswil, Cham &amp; day trips</div>
+      <div class="dlg-row"><span class="k">CHF 10</span><span class="v mono">&#8776; &#8377;950</span></div>
+      <div class="dlg-row"><span class="k">CHF 20</span><span class="v mono">&#8776; &#8377;1,900</span></div>
+      <div class="dlg-row"><span class="k">CHF 50</span><span class="v mono">&#8776; &#8377;4,750</span></div>
+      <div class="dlg-row"><span class="k">CHF 100</span><span class="v mono">&#8776; &#8377;9,500</span></div>
+    </div>
+    <div class="dlg-note">The EUR rate (&#8377;116.86/&euro;1) is the actual rate from your Ryanair charge. The CHF rate (&#8377;95/CHF, roughly) is a market estimate, not from a transaction on file &mdash; treat it as a rough guide, not exact. Cards are widely accepted across both countries, including most restaurants and Swiss trains, but keep some small cash for market stalls, gelaterias, tips, and the odd Puglia trattoria that's cash-only. Worth telling your bank/card issuer about the trip dates and countries beforehand, and carrying a backup card.</div>
+  </div>
+</dialog>
+
+<dialog id="dlgVaticanDay">
+  <img class="dlg-hero" src="photos/vatican.jpg" alt="St Peter's Square, Vatican City">
+  <div class="dlg-head" style="--accent:var(--italy);--accent-soft:var(--italy-soft)">
+    <span class="ico"><svg><use href="#i-pin"/></svg></span>
+    <h3>Touch Down &amp; Vatican</h3>
+    <button class="dlg-close" onclick="dlgVaticanDay.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body">
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Morning</div>
+      <div class="dlg-row"><span class="k">Land at Fiumicino</span><span class="v">06:25 &middot; EY 85</span></div>
+      <div class="dlg-row"><span class="k">Immigration</span><span class="v">First Schengen entry &mdash; EES biometric registration applies</span></div>
+      <div class="dlg-row"><span class="k">Breakfast</span><span class="v">Pasticceria La Deliziosa &middot; 4.8&#9733;</span></div>
+      <div class="dlg-row"><span class="k">Vatican</span><span class="v">St Peter's Square, then call it on the Basilica</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Midday</div>
+      <div class="dlg-row"><span class="k">Gelato</span><span class="v">Neve di Latte, Prati &mdash; on the walk out of the Vatican</span></div>
+      <div class="dlg-row"><span class="k">Lunch</span><span class="v">Mister Burrata &middot; 4.9&#9733;</span></div>
+      <div class="dish-note"><img src="photos/burrata.jpg" alt="Burrata"><span>Try: <b>burrata pugliese</b>, stracciatella crostone</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Afternoon</div>
+      <div class="dlg-row"><span class="k">Check-in</span><span class="v">Rome Airbnb, after 3:00 PM</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Evening</div>
+      <div class="dlg-row"><span class="k">Aperitivo</span><span class="v">A spritz on Via della Pelliccia before dinner</span></div>
+      <div class="dlg-row"><span class="k">Dinner</span><span class="v">Via della Pelliccia, Trastevere</span></div>
+      <div class="dlg-row"><span class="k">Dessert (optional)</span><span class="v">Two Sizes or Pompi, if there's room &mdash; both a short detour from Trastevere</span></div>
+    </div>
+    <div class="dlg-note">Vatican queues run long in peak season &mdash; the Basilica is free, so it's worth eyeing the line at St Peter's Square before committing. Also from your saved list, close by: Mercato Centrale (food hall right at Termini), Sant'Eustachio Caff&egrave;, ER PANINARO ER PI&Uacute;. Two Sizes is from your saved list; Pompi isn't, but it's Rome's most famous tiramisu-to-go, near Piazza Barberini. Both need a small detour from Trastevere &mdash; if you'd rather not, Mr 100 Tiramis&ugrave; is easier to hit on Day 10 instead, right by the Pantheon lunch stop. <br><br><b>EES note:</b> the EU's new Entry/Exit System means non-EU arrivals get fingerprinted and photographed at their first Schengen border crossing instead of a passport stamp &mdash; that's Fiumicino for you. There's no form to fill in beforehand, but budget extra time at immigration on this first landing; re-entering Switzerland or leaving from Zurich later should be quicker since you're already registered.</div>
+    <a class="maplink" style="--accent:var(--italy)" href="https://www.google.com/maps/search/?api=1&query=Vatican+City" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg> Open Vatican in Maps</a>
+  </div>
+</dialog>
+
+<dialog id="dlgTreviDay">
+  <img class="dlg-hero" src="photos/trevi.jpg" alt="Trevi Fountain, Rome">
+  <div class="dlg-head" style="--accent:var(--italy);--accent-soft:var(--italy-soft)">
+    <span class="ico"><svg><use href="#i-pin"/></svg></span>
+    <h3>Colosseum &amp; Trevi</h3>
+    <button class="dlg-close" onclick="dlgTreviDay.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body">
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Morning</div>
+      <div class="dlg-row"><span class="k">Breakfast</span><span class="v">Forno Monteforte, Via del Pellegrino</span></div>
+      <div class="dlg-row"><span class="k">Colosseum entry</span><span class="v">08:30</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Midday</div>
+      <div class="dlg-row"><span class="k">Snack</span><span class="v">Il Maritozzaro &middot; 4.5&#9733; &mdash; on the way from the Colosseum</span></div>
+      <div class="dish-note"><img src="photos/maritozzo.jpg" alt="Maritozzo"><span>Try: <b>maritozzo con la panna</b>, the classic Roman cream bun</span></div>
+      <div class="dlg-row"><span class="k">Lunch</span><span class="v">Osteria da Fortunata, Pantheon &middot; 4.8&#9733;</span></div>
+      <div class="dish-note"><img src="photos/cacio-e-pepe.jpg" alt="Cacio e pepe"><span>Try: <b>tonnarelli cacio e pepe</b>, made tableside</span></div>
+      <div class="dlg-row"><span class="k">Dessert</span><span class="v">Mr 100 Tiramis&ugrave;, Via dei Sediari &mdash; 100 flavors, 2 min from the Pantheon</span></div>
+      <div class="dish-note"><img src="photos/tiramisu.jpg" alt="Tiramisu"><span>Try: <b>a flavor you can't get at home</b> &mdash; pistachio, limoncello, whatever's unusual</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Afternoon</div>
+      <div class="dlg-row"><span class="k">Coffee</span><span class="v">Caff&egrave; Teichner, near Piazza di Spagna &mdash; known for its caff&egrave; alla crema &middot; 4.2&#9733;</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Evening</div>
+      <div class="dlg-row"><span class="k">Trevi Fountain</span><span class="v">Prettiest after dark</span></div>
+      <div class="dlg-row"><span class="k">Gelato</span><span class="v">Giolitti &mdash; your &ldquo;Rome gelato&rdquo; pick</span></div>
+      <div class="dish-note"><img src="photos/pistachio-gelato.jpg" alt="Pistachio gelato"><span>Try: <b>pistacchio</b> &amp; stracciatella, half and half</span></div>
+      <div class="dlg-row"><span class="k">Snack stop</span><span class="v">L'Antico Forno Di Fontana Di Trevi</span></div>
+      <div class="dlg-row"><span class="k">Aperitivo</span><span class="v">A spritz near Campo de' Fiori, on the way to Trastevere</span></div>
+      <div class="dlg-row"><span class="k">Dinner</span><span class="v">Trattoria Da Enzo &middot; 4.3&#9733;</span></div>
+      <div class="dish-note"><img src="photos/cacio-e-pepe.jpg" alt="Cacio e pepe"><span>Try: <b>cacio e pepe</b>, carciofi alla giudia if in season</span></div>
+    </div>
+    <div class="dlg-note">Forno Monteforte swapped in for Regoli &mdash; it's well-reviewed, on Via del Pellegrino near Campo de' Fiori. That's a bit out of the way for a straight run from Termini to the Colosseum, but it's the same corner you'll pass through for the evening aperitivo anyway, so it bookends the day rather than being a true detour; grab pastries to go if you want to keep moving toward the 08:30 entry. Mr 100 Tiramis&ugrave; isn't on your saved list, but it's a well-known Rome chain (100 flavors) right off Piazza Navona &mdash; an easy add straight after lunch. Also from your saved list, near the Pantheon/Trevi loop: Sant'Eustachio Caff&egrave;, Frigidarium, Gelateria del Teatro, Ciacco.</div>
+    <a class="maplink" style="--accent:var(--italy)" href="https://www.google.com/maps/search/?api=1&query=Trevi+Fountain,+Rome,+Italy" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg> Open Trevi in Maps</a>
+  </div>
+</dialog>
+
+<dialog id="dlgPolignanoDay1">
+  <img class="dlg-hero" src="photos/polignano-town.jpg" alt="Polignano a Mare">
+  <div class="dlg-head" style="--accent:var(--italy);--accent-soft:var(--italy-soft)">
+    <span class="ico"><svg><use href="#i-wave"/></svg></span>
+    <h3>Arrive in Polignano</h3>
+    <button class="dlg-close" onclick="dlgPolignanoDay1.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body">
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Morning</div>
+      <div class="dlg-row"><span class="k">Checkout</span><span class="v">Rome, by 11:00 AM</span></div>
+      <div class="dlg-row"><span class="k">Train</span><span class="v">Rome &rarr; Bari, ~4h &mdash; realistically a ~12:00 departure</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Afternoon</div>
+      <div class="dlg-row"><span class="k">Rental car</span><span class="v">Pick up in Bari, ~30 min for paperwork</span></div>
+      <div class="dlg-row"><span class="k">Drive</span><span class="v">Bari &rarr; Polignano, ~35 min</span></div>
+      <div class="dlg-row"><span class="k">Check-in</span><span class="v">La Casa Di Vittoria, after 3:00 PM</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Evening</div>
+      <div class="dlg-row"><span class="k">Settle in</span><span class="v">An easy walk to the cliffs, no big plans</span></div>
+      <div class="dlg-row"><span class="k">Dinner</span><span class="v">Pescaria &mdash; casual, no reservation needed &middot; 4.3&#9733;</span></div>
+      <div class="dish-note"><img src="photos/octopus.jpg" alt="Grilled octopus"><span>Try: <b>polpo alla griglia</b> (grilled octopus), tagliere di mare to share</span></div>
+    </div>
+    <div class="dlg-note">Route check: a ~12:00 train realistically lands you in Bari around 16:00, so with the car and drive you're not in Polignano before ~17:30&ndash;18:00. That leaves no real midday window, so this day is arrival and settling in, nothing more &mdash; the full Polignano &amp; Monopoli day is tomorrow, when you're not fighting the clock. This is a plan sketch, not a booking &mdash; tweak it or swap in your own with the Add plan button below.</div>
+    <a class="maplink" style="--accent:var(--italy)" href="https://www.google.com/maps/search/?api=1&query=Polignano+a+Mare,+Italy" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg> Open Polignano in Maps</a>
+  </div>
+</dialog>
+
+<dialog id="dlgPolignanoLocalDay">
+  <img class="dlg-hero" src="photos/ostuni.jpg" alt="Ostuni, the Citt&#224; Bianca">
+  <div class="dlg-head" style="--accent:var(--italy);--accent-soft:var(--italy-soft)">
+    <span class="ico"><svg><use href="#i-wave"/></svg></span>
+    <h3>Cliffs &amp; the Lido</h3>
+    <button class="dlg-close" onclick="dlgPolignanoLocalDay.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body">
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Morning</div>
+      <div class="dlg-row"><span class="k">Breakfast</span><span class="v">Caff&egrave; Letterario, Monopoli (~10 min away) &middot; 4.6&#9733;</span></div>
+      <div class="dlg-row"><span class="k">Wander</span><span class="v">Monopoli's old town &amp; harbor</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Midday &mdash; pick on the day</div>
+      <div class="dlg-row"><span class="k">Option A: Ostuni</span><span class="v">Drive ~35 min, lunch in the Citt&agrave; Bianca old town</span></div>
+      <div class="dish-note"><img src="photos/orecchiette.jpg" alt="Orecchiette with turnip greens"><span>Try: <b>orecchiette</b> with turnip greens, local burrata</span></div>
+      <div class="dlg-row"><span class="k">Option B: Lido</span><span class="v">Stay coastal, lunch at Lido Bamb&ugrave; &middot; 4.0&#9733;</span></div>
+      <div class="dish-note"><img src="photos/octopus.jpg" alt="Grilled seafood"><span>Try: <b>fresh catch</b>, grilled and simply dressed</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Afternoon</div>
+      <div class="dlg-row"><span class="k">Drive back</span><span class="v">If you went to Ostuni: ~55 min to Polignano</span></div>
+      <div class="dlg-row"><span class="k">Wander</span><span class="v">Old town lanes &amp; Lama Monachile beach</span></div>
+      <div class="dlg-row"><span class="k">Cliff walk</span><span class="v">Past Grotta Palazzese for the view</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Evening</div>
+      <div class="dlg-row"><span class="k">Aperitivo</span><span class="v">A cliffside bar in the old town, sunset</span></div>
+      <div class="dlg-row"><span class="k">Dinner</span><span class="v">Venezia 40 &mdash; clifftop, book ahead &middot; 4.5&#9733;</span></div>
+      <div class="dish-note"><img src="photos/orecchiette.jpg" alt="Orecchiette"><span>Try: <b>crudo di mare</b>, orecchiette alle cozze (mussels)</span></div>
+    </div>
+    <div class="dlg-note">Two ways to spend midday: Ostuni adds about 1h40 of driving total but gets you a third town; the Lido keeps the day almost entirely car-free (just the 10-minute Monopoli hop) with more beach time instead. Worth deciding that morning based on energy and weather. This is a plan sketch, not a booking &mdash; tweak it or swap in your own with the Add plan button below.</div>
+    <a class="maplink" style="--accent:var(--italy)" href="https://www.google.com/maps/search/?api=1&query=Ostuni,+Italy" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg> Open Ostuni in Maps</a>
+  </div>
+</dialog>
+
+<dialog id="dlgPolignanoDay2">
+  <img class="dlg-hero" src="photos/alberobello.jpg" alt="The trulli of Alberobello">
+  <div class="dlg-head" style="--accent:var(--italy);--accent-soft:var(--italy-soft)">
+    <span class="ico"><svg><use href="#i-trullo"/></svg></span>
+    <h3>Alberobello &amp; Matera</h3>
+    <button class="dlg-close" onclick="dlgPolignanoDay2.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body">
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Morning</div>
+      <div class="dlg-row"><span class="k">Drive</span><span class="v">Polignano &rarr; Alberobello, ~50 min</span></div>
+      <div class="dlg-row"><span class="k">Breakfast</span><span class="v">Coffee in Piazza del Popolo, Alberobello</span></div>
+      <div class="dlg-row"><span class="k">Trulli</span><span class="v">Wander Rione Monti &amp; Aia Piccola</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Midday</div>
+      <div class="dlg-row"><span class="k">Lunch</span><span class="v">A trullo trattoria in Alberobello</span></div>
+      <div class="dlg-row"><span class="k">Drive</span><span class="v">Alberobello &rarr; Matera, ~50 min</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Afternoon</div>
+      <div class="dlg-row"><span class="k">Matera</span><span class="v">The Sassi cave districts &amp; Belvedere viewpoint</span></div>
+      <div class="dish-note"><img src="photos/matera.jpg" alt="Sassi di Matera"><span>Cave dwellings carved into the ravine, thousands of years old</span></div>
+      <div class="dlg-row"><span class="k">Aperitivo</span><span class="v">A terrace bar over the Sassi, golden hour</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Evening</div>
+      <div class="dlg-row"><span class="k">Drive back</span><span class="v">Matera &rarr; Polignano, ~1h20</span></div>
+      <div class="dlg-row"><span class="k">Dinner</span><span class="v">Something easy back in town &mdash; you'll have earned an early night</span></div>
+    </div>
+    <div class="dlg-note">A full day with about 2h40 of driving total &mdash; Alberobello and Matera are a well-worn combo and sit right on the way to each other, so it's an easy loop back to Polignano. This is your last full Puglia day before the drive to Bari, so keep dinner low-key. This is a plan sketch, not a booking &mdash; tweak it or swap in your own with the Add plan button below.</div>
+    <a class="maplink" style="--accent:var(--italy)" href="https://www.google.com/maps/search/?api=1&query=Matera,+Italy" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg> Open Matera in Maps</a>
+  </div>
+</dialog>
+
+<dialog id="dlgBariDay">
+  <div class="dlg-head" style="--accent:var(--italy);--accent-soft:var(--italy-soft)">
+    <span class="ico"><svg><use href="#i-plane"/></svg></span>
+    <h3>Fly to Milan</h3>
+    <button class="dlg-close" onclick="dlgBariDay.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body">
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Morning</div>
+      <div class="dlg-row"><span class="k">Checkout</span><span class="v">La Casa Di Vittoria, ~9:00 AM &mdash; earlier than the 10am deadline</span></div>
+      <div class="dlg-row"><span class="k">Drive</span><span class="v">Polignano &rarr; Bari Airport, ~35 min</span></div>
+      <div class="dlg-row"><span class="k">Rental car</span><span class="v">Return at the airport</span></div>
+      <div class="dlg-row"><span class="k">Breakfast</span><span class="v">Coffee at the airport &mdash; no time for old-town Bari</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Midday</div>
+      <div class="dlg-row"><span class="k">Flight</span><span class="v">Ryanair FR4668, Bari &rarr; Milan Bergamo, 12:20&ndash;13:50</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Afternoon</div>
+      <div class="dlg-row"><span class="k">Transfer</span><span class="v">Bergamo &rarr; central Milan, ~50 min by shuttle bus or train</span></div>
+      <div class="dlg-row"><span class="k">Check-in</span><span class="v">Bazzini 14, Milan, likely ~15:00&ndash;15:30</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Evening</div>
+      <div class="dlg-row"><span class="k">Navigli</span><span class="v">An easy canal-side wander &mdash; Milan's aperitivo district</span></div>
+      <div class="dish-note"><img src="photos/navigli.jpg" alt="Naviglio Grande at dusk"><span>Canalside cafes and bars, prettiest right around sunset</span></div>
+      <div class="dlg-row"><span class="k">Aperitivo</span><span class="v">A spritz at a bar along the Naviglio Grande</span></div>
+      <div class="dlg-row"><span class="k">Dinner</span><span class="v">Pane e Salame, or stay in Navigli if there's energy left</span></div>
+    </div>
+    <div class="dlg-note">The flight is booked (see the Ryanair card), but a 12:20 departure means the morning is tighter than it looks — checking out right at the 10am deadline wouldn't leave enough buffer for the car return and a 2-hour airport arrival, so plan to leave closer to 9am. Bergamo also isn't central Milan, so budget the extra transfer before you're actually at Bazzini 14.</div>
+    <a class="maplink" style="--accent:var(--italy)" href="https://www.google.com/maps/search/?api=1&query=Bari,+Italy" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg> Open Bari in Maps</a>
+  </div>
+</dialog>
+
+<dialog id="dlgMilanDay">
+  <img class="dlg-hero" src="photos/duomo.jpg" alt="Duomo di Milano">
+  <div class="dlg-head" style="--accent:var(--italy);--accent-soft:var(--italy-soft)">
+    <span class="ico"><svg><use href="#i-duomo"/></svg></span>
+    <h3>Milan Day</h3>
+    <button class="dlg-close" onclick="dlgMilanDay.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body">
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Morning</div>
+      <div class="dlg-row"><span class="k">Breakfast</span><span class="v">Leonardo &mdash; your &ldquo;Milano breakfast&rdquo; pick &middot; 4.4&#9733;</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Midday</div>
+      <div class="dlg-row"><span class="k">Lunch</span><span class="v">Cantina e Cucina</span></div>
+      <div class="dish-note"><img src="photos/risotto.jpg" alt="Risotto alla milanese"><span>Try: <b>risotto alla milanese</b>, cotoletta</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Afternoon</div>
+      <div class="dlg-row"><span class="k">Brera</span><span class="v">Wander the art district &mdash; Via Brera, the Pinacoteca, boutique streets</span></div>
+      <div class="dish-note"><img src="photos/brera.jpg" alt="Via Brera"><span>Cobblestones, galleries, and Milan's most walkable shopping street</span></div>
+      <div class="dlg-row"><span class="k">Coffee</span><span class="v">Caff&egrave; Duomo, right by the cathedral, on the walk down &middot; 3.9&#9733;</span></div>
+      <div class="dlg-row"><span class="k">Duomo &amp; Terraces</span><span class="v">16:30 entry, Gate 2</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Evening</div>
+      <div class="dlg-row"><span class="k">Aperitivo</span><span class="v">A spritz by the Galleria Vittorio Emanuele II, steps from the Duomo</span></div>
+      <div class="dlg-row"><span class="k">Dinner</span><span class="v">Crazy Pizza Milan &middot; 4.2&#9733;</span></div>
+      <div class="dish-note"><img src="photos/margherita.jpg" alt="Pizza Margherita"><span>Try: <b>Margherita</b> or the black truffle pizza</span></div>
+      <div class="dlg-row"><span class="k">Gelato</span><span class="v">Gelateria Umberto 1934 Milano, a nightcap</span></div>
+      <div class="dish-note"><img src="photos/hazelnut-gelato.jpg" alt="Hazelnut gelato"><span>Try: <b>gianduia</b> (hazelnut-chocolate)</span></div>
+    </div>
+    <div class="dlg-note">Brera and the Duomo are a 10-minute walk apart, so it slots in cleanly between lunch and the 16:30 entry. Navigli got its own evening on your arrival day instead, since stacking both districts plus the Duomo into one day was too much. Caff&egrave; Teichner turned out to be a Rome spot (near Piazza di Spagna, famous for its caff&egrave; alla crema) &mdash; moved it to your Trevi day instead. Cantina e Cucina and Gelateria Umberto are still from your saved list but I couldn't pin their exact address, so double-check they're still open before you commit. Also on your list, unused so far: The Super Mago del Gelo Mario Campanella, Debbie's, Ai Tre Morsi, Pastasciutta &mdash; any work as swaps. Marchesi 1824 is saved for your last Milan morning instead.</div>
+    <a class="maplink" style="--accent:var(--italy)" href="https://www.google.com/maps/search/?api=1&query=Duomo+di+Milano,+Milan,+Italy" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg> Open Duomo in Maps</a>
+  </div>
+</dialog>
+
+<dialog id="dlgInterlakenDay">
+  <img class="dlg-hero" src="photos/interlaken.jpg" alt="Interlaken, between Lake Thun and Lake Brienz">
+  <div class="dlg-head" style="--accent:var(--swiss);--accent-soft:var(--swiss-soft)">
+    <span class="ico"><svg><use href="#i-mountain"/></svg></span>
+    <h3>Top of Interlaken</h3>
+    <button class="dlg-close" onclick="dlgInterlakenDay.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body">
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Morning</div>
+      <div class="dlg-row"><span class="k">Farewell coffee</span><span class="v">Marchesi 1824, Milan</span></div>
+      <div class="dlg-row"><span class="k">Train</span><span class="v">Milan &rarr; Interlaken Ost &mdash; not booked yet</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Afternoon</div>
+      <div class="dlg-row"><span class="k">2:00 PM</span><span class="v">Arrive Interlaken Ost &mdash; lock heavy bags in the station lockers</span></div>
+      <div class="dlg-row"><span class="k">2:15 PM</span><span class="v">Harderbahn funicular, up the 45&deg; slope</span></div>
+      <div class="dlg-row"><span class="k">2:30&ndash;4:00 PM</span><span class="v">Two Lakes Bridge &mdash; Thun &amp; Brienz both, Jungfrau ahead; playground &amp; a warm pretzel</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Evening</div>
+      <div class="dlg-row"><span class="k">4:15 PM</span><span class="v">Collect bags, 5-min train to Wilderswil</span></div>
+      <div class="dlg-row"><span class="k">Check-in</span><span class="v">Wilderswil accommodation</span></div>
+    </div>
+    <div class="dlg-note">From Allekhya's &ldquo;Swiss itinerary&rdquo; email &mdash; this is the refined version of Day 1, using the station lockers so you're not hauling bags up the funicular. The original plan (a flat walk to Staubbach Falls in Lauterbrunnen) is a fine lower-key alternative if the funicular queue is long or the 3-year-old's had enough travel for one day.</div>
+    <a class="maplink" style="--accent:var(--swiss)" href="https://www.google.com/maps/search/?api=1&query=Interlaken+Ost,+Switzerland" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg> Open Interlaken in Maps</a>
+  </div>
+</dialog>
+
+<dialog id="dlgWengenBikeDay">
+  <img class="dlg-hero" src="photos/wengen.jpg" alt="Wengen, car-free alpine village">
+  <div class="dlg-head" style="--accent:var(--swiss);--accent-soft:var(--swiss-soft)">
+    <span class="ico"><svg><use href="#i-mountain"/></svg></span>
+    <h3>Wengen &amp; the Golden Window</h3>
+    <button class="dlg-close" onclick="dlgWengenBikeDay.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body">
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Morning</div>
+      <div class="dlg-row"><span class="k">9:00 AM</span><span class="v">Cogwheel train, Lauterbrunnen &rarr; Wengen</span></div>
+      <div class="dlg-row"><span class="k">Wengen</span><span class="v">Car-free village; playground right by the station, Jungfrau massif behind it</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Midday</div>
+      <div class="dlg-row"><span class="k">12:00 PM</span><span class="v">Lunch in Wengen, or back down to Lauterbrunnen</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Afternoon</div>
+      <div class="dlg-row"><span class="k">1:30&ndash;4:00 PM</span><span class="v">Bike ride from Imboden Bike &mdash; toddler seat or trailer &mdash; the valley floor's sunniest window</span></div>
+      <div class="dlg-row"><span class="k">Late afternoon</span><span class="v">Return bikes, train back to Wilderswil</span></div>
+    </div>
+    <div class="dlg-note">From your Swiss itinerary &mdash; this replaced an earlier M&uuml;rren-or-Jungfraujoch plan for this day. Jungfraujoch is still worth keeping in your back pocket for a perfectly clear-sky morning, using the Half Fare Card discount.</div>
+    <a class="maplink" style="--accent:var(--swiss)" href="https://www.google.com/maps/search/?api=1&query=Wengen,+Switzerland" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg> Open Wengen in Maps</a>
+  </div>
+</dialog>
+
+<dialog id="dlgGrindelwaldDay">
+  <img class="dlg-hero" src="photos/grindelwald.jpg" alt="Grindelwald below the Eiger">
+  <div class="dlg-head" style="--accent:var(--swiss);--accent-soft:var(--swiss-soft)">
+    <span class="ico"><svg><use href="#i-mountain"/></svg></span>
+    <h3>Grindelwald First &amp; M&uuml;rren</h3>
+    <button class="dlg-close" onclick="dlgGrindelwaldDay.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body">
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Morning</div>
+      <div class="dlg-row"><span class="k">Train + gondola</span><span class="v">Wilderswil &rarr; Grindelwald &rarr; Grindelwald First</span></div>
+      <div class="dlg-row"><span class="k">Bort Middle Station</span><span class="v">Mini-trampolines, slides, sandboxes &mdash; a hit for a 3-year-old</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Afternoon</div>
+      <div class="dlg-row"><span class="k">Cable car</span><span class="v">Across to car-free M&uuml;rren</span></div>
+      <div class="dlg-row"><span class="k">M&uuml;rren</span><span class="v">Walk the car-free paths, late-afternoon snack with the peaks in view</span></div>
+      <div class="dish-note"><img src="photos/murren.jpg" alt="M&uuml;rren"><span>Car-free, cliffside, views straight across to the Eiger and J&uuml;ngfrau</span></div>
+    </div>
+    <div class="dlg-note">This replaced the original plan's Lake Brienz cruise + Brienz Rothorn steam train, on the theory that M&uuml;rren is the better mountain experience &mdash; per Allekhya's revision. The steam train is still a fun alternative if a slower, more scenic afternoon appeals more than a second cable car.</div>
+    <a class="maplink" style="--accent:var(--swiss)" href="https://www.google.com/maps/search/?api=1&query=M%C3%BCrren,+Switzerland" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg> Open M&uuml;rren in Maps</a>
+  </div>
+</dialog>
+
+<dialog id="dlgLucerneRigiDay">
+  <img class="dlg-hero" src="photos/lucerne.jpg" alt="Chapel Bridge, Lucerne">
+  <div class="dlg-head" style="--accent:var(--swiss);--accent-soft:var(--swiss-soft)">
+    <span class="ico"><svg><use href="#i-house"/></svg></span>
+    <h3>Lake Thun, Lucerne &amp; Rigi</h3>
+    <button class="dlg-close" onclick="dlgLucerneRigiDay.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body">
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Morning</div>
+      <div class="dlg-row"><span class="k">Lake Thun</span><span class="v">A short boat cruise past the medieval castles</span></div>
+      <div class="dlg-row"><span class="k">Checkout</span><span class="v">Wilderswil</span></div>
+      <div class="dlg-row"><span class="k">Train</span><span class="v">Wilderswil &rarr; Cham, ~2h via the Br&uuml;nig Pass</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Afternoon</div>
+      <div class="dlg-row"><span class="k">Check-in</span><span class="v">A Home Away From Home, Cham, after 1:00 PM</span></div>
+      <div class="dlg-row"><span class="k">Lucerne</span><span class="v">25-min train, Chapel Bridge</span></div>
+      <div class="dlg-row"><span class="k">Mount Rigi</span><span class="v">Boat + cogwheel &mdash; free on the Swiss Travel Pass, otherwise 50% off with Half Fare</span></div>
+    </div>
+    <div class="dlg-note">Chosen over Mt. Titlis on this day &mdash; Rigi is forested, gentler underfoot, and has a playground at Rigi Kaltbad. A genuinely full day; if it's too much after the Br&uuml;nig Pass train, Lucerne alone (dropping Rigi) still gets you the Chapel Bridge.</div>
+    <a class="maplink" style="--accent:var(--swiss)" href="https://www.google.com/maps/search/?api=1&query=Lucerne,+Switzerland" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg> Open Lucerne in Maps</a>
+  </div>
+</dialog>
+
+<dialog id="dlgLindtZurichDay">
+  <img class="dlg-hero" src="photos/lindt.jpg" alt="Lindt Home of Chocolate, Kilchberg">
+  <div class="dlg-head" style="--accent:var(--swiss);--accent-soft:var(--swiss-soft)">
+    <span class="ico"><svg><use href="#i-transfer"/></svg></span>
+    <h3>Lindt Chocolate &amp; Zurich</h3>
+    <button class="dlg-close" onclick="dlgLindtZurichDay.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body">
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Morning</div>
+      <div class="dlg-row"><span class="k">Train</span><span class="v">Cham &rarr; Kilchberg</span></div>
+      <div class="dlg-row"><span class="k">Lindt Home of Chocolate</span><span class="v">The 9-metre chocolate fountain &mdash; pre-book tickets online</span></div>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:8px;">Afternoon</div>
+      <div class="dlg-row"><span class="k">Zurich Old Town</span><span class="v">A flat, pedestrian stroll, or a boat on the Limmat</span></div>
+      <div class="dish-note"><img src="photos/zurich.jpg" alt="Zurich Old Town"><span>Cobblestone lanes along the Limmat, Grossm&uuml;nster in view</span></div>
+    </div>
+    <div class="dlg-note">Book Lindt entry ahead &mdash; October is a busy month and it's flagged as crucial in your own notes. This is your last full day before the Oct 21 flight home; keep it relaxed.</div>
+    <a class="maplink" style="--accent:var(--swiss)" href="https://www.google.com/maps/search/?api=1&query=Lindt+Home+of+Chocolate,+Kilchberg,+Switzerland" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg> Open Lindt Home of Chocolate in Maps</a>
+  </div>
+</dialog>
+
+<section id="itinerary">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">Day by day</div>
+      <h2>The route</h2>
+    </div>
+    <p class="section-sub">Tap a day below — the map flies you there and shows how you got there.</p>
+  </div>
+
+  <div class="mapshell">
+    <div class="map-backdrop" id="mapBackdrop" hidden></div>
+    <div class="mapstage" id="mapStage">
+      <svg id="tripmap" viewBox="0 0 620 560" role="img" aria-label="Map of the trip route across Italy and Switzerland">
+        <g id="mapLayer"></g>
+      </svg>
+      <div class="map-controls">
+        <button type="button" class="map-btn" id="mapPlay" title="Play the whole trip" aria-label="Play the whole trip"><svg><use href="#i-play"/></svg></button>
+        <button type="button" class="map-btn" id="mapReset" title="Reset view" aria-label="Reset map view"><svg><use href="#i-compass"/></svg></button>
+        <button type="button" class="map-btn" id="mapExpand" title="Expand map" aria-label="Expand map"><svg><use href="#i-expand"/></svg></button>
+      </div>
+      <div class="mode-badge" id="modeBadge"><span class="mb-ico"><svg><use href="#i-plane"/></svg></span><span id="modeBadgeText">Flying to Rome</span></div>
+    </div>
+    <div class="daypanel" id="daypanel"></div>
+  </div>
+
+  <div class="dayrail-wrap">
+    <div class="dayrail" id="dayrail"></div>
+  </div>
+</section>
+
+<section id="pack">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">Get ready</div>
+      <h2>Weather &amp; what to pack</h2>
+    </div>
+    <p class="section-sub">Typical conditions and rain chance for the region and week, from October climate averages — not a forecast. Check the real forecast closer to departure.</p>
+  </div>
+
+  <div class="weather-grid">
+    <div class="wx-card">
+      <div class="place">Rome</div>
+      <div class="dates">9&ndash;11 Oct</div>
+      <div class="wx-temp"><span class="ico"><svg><use href="#i-sun"/></svg></span><span class="nums">22&deg; <span class="lo">/ 12&deg;C</span></span></div>
+      <div class="wx-precip"><svg><use href="#i-drop"/></svg>~25% chance of rain <span class="precip-lo">&middot; ~3 wet days/mo typical</span></div>
+      <div class="note">Mild and mostly sunny. Pack a light layer for evenings and a compact umbrella just in case.</div>
+    </div>
+    <div class="wx-card">
+      <div class="place">Polignano a Mare</div>
+      <div class="dates">11&ndash;14 Oct</div>
+      <div class="wx-temp"><span class="ico"><svg><use href="#i-sun"/></svg></span><span class="nums">24&deg; <span class="lo">/ 16&deg;C</span></span></div>
+      <div class="wx-precip"><svg><use href="#i-drop"/></svg>~20% chance of rain <span class="precip-lo">&middot; driest leg of the trip</span></div>
+      <div class="note">Warmer coastal air on the Puglia cliffs — still swim-weather most years. Pack sunscreen and one warmer layer for the evening passeggiata.</div>
+    </div>
+    <div class="wx-card">
+      <div class="place">Milan</div>
+      <div class="dates">14&ndash;16 Oct</div>
+      <div class="wx-temp"><span class="ico"><svg><use href="#i-cloud"/></svg></span><span class="nums">18&deg; <span class="lo">/ 10&deg;C</span></span></div>
+      <div class="wx-precip"><svg><use href="#i-drop"/></svg>~35% chance of rain <span class="precip-lo">&middot; Po Valley autumn haze</span></div>
+      <div class="note">Can turn damp and hazy in autumn. A light rain jacket earns its space in the bag.</div>
+    </div>
+    <div class="wx-card">
+      <div class="place">Jungfrau region</div>
+      <div class="dates">16&ndash;18 Oct</div>
+      <div class="wx-temp"><span class="ico"><svg><use href="#i-snow"/></svg></span><span class="nums">8&deg; <span class="lo">/ 1&deg;C</span></span></div>
+      <div class="wx-precip"><svg><use href="#i-drop"/></svg>~40% chance of precipitation <span class="precip-lo">&middot; rain in the valley, snow up high</span></div>
+      <div class="note">Alpine and crisp — snow is possible at altitude (Wengen, Jungfraujoch). Real layers needed here.</div>
+    </div>
+    <div class="wx-card">
+      <div class="place">Cham &amp; lowland CH</div>
+      <div class="dates">19&ndash;21 Oct</div>
+      <div class="wx-temp"><span class="ico"><svg><use href="#i-cloud"/></svg></span><span class="nums">13&deg; <span class="lo">/ 5&deg;C</span></span></div>
+      <div class="wx-precip"><svg><use href="#i-drop"/></svg>~30% chance of rain <span class="precip-lo">&middot; morning fog over Lake Zug is common</span></div>
+      <div class="note">Cool lakeside autumn air. Mornings and evenings will want a proper jacket.</div>
+    </div>
+  </div>
+
+  <div class="pack-grid" id="packGrid"></div>
+</section>
+
+<section id="costs">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">Reconciled from Gmail</div>
+      <h2>Trip cost sheet</h2>
+    </div>
+    <p class="section-sub">A few of these dates got booked and cancelled more than once — this tracks what's actually paid, what came back as a refund, and the tickets on top of lodging.</p>
+  </div>
+
+  <div class="cost-stats">
+    <div class="cost-stat" style="--accent:var(--swiss)">
+      <div class="label"><svg><use href="#i-coin"/></svg>Paid &middot; active stays</div>
+      <div class="amount">&#8377;2,01,179.33</div>
+      <div class="sub">5 confirmed stays, Rome through Cham</div>
+    </div>
+    <div class="cost-stat" style="--accent:var(--italy)">
+      <div class="label"><svg><use href="#i-coin"/></svg>Paid &middot; tickets &amp; transport</div>
+      <div class="amount">&#8377;2,60,217.16</div>
+      <div class="sub">Etihad, Ryanair, Colosseum, Duomo &amp; Swiss trains</div>
+    </div>
+    <div class="cost-stat">
+      <div class="label"><svg><use href="#i-coin"/></svg>Refunded &middot; cancelled</div>
+      <div class="amount refund">&#8377;78,696.75</div>
+      <div class="sub">2 Airbnb bookings cancelled same-day</div>
+    </div>
+    <div class="cost-stat" style="--accent:var(--gold)">
+      <div class="label"><svg><use href="#i-coin"/></svg>Grand total paid so far</div>
+      <div class="amount">&#8377;4,61,396.49</div>
+      <div class="sub">Active stays + tickets &amp; transport</div>
+    </div>
+  </div>
+
+  <div class="cost-table-wrap">
+    <table class="cost-table">
+      <thead><tr><th>Stay</th><th>City</th><th>Dates</th><th>Host</th><th>Status</th><th class="amount">Amount (INR)</th></tr></thead>
+      <tbody>
+        <tr><td><span class="stay-name">Stanza con bagno privato</span></td><td>Rome</td><td>9&ndash;11 Oct</td><td>Francesco</td><td><span class="status-pill confirmed">Active</span></td><td class="amount">42,567.19</td></tr>
+        <tr class="cancelled"><td><span class="stay-name">Al Iram Napoleone III</span></td><td>Rome</td><td>9&ndash;11 Oct</td><td>Md Mozammal Haque</td><td><span class="status-pill refunded">Refunded</span></td><td class="amount">28,070.34</td></tr>
+        <tr><td><span class="stay-name">La Casa Di Vittoria Sea View</span></td><td>Polignano a Mare</td><td>11&ndash;14 Oct</td><td>Vito</td><td><span class="status-pill confirmed">Active</span></td><td class="amount">42,857.05</td></tr>
+        <tr><td><span class="stay-name">Bazzini 14</span></td><td>Milan</td><td>14&ndash;16 Oct</td><td>Giuseppe</td><td><span class="status-pill confirmed">Active</span></td><td class="amount">29,353.83</td></tr>
+        <tr class="cancelled"><td><span class="stay-name">Green Apartment Brienz</span></td><td>Brienz</td><td>16&ndash;19 Oct</td><td>Simon</td><td><span class="status-pill refunded">Refunded</span></td><td class="amount">50,626.41</td></tr>
+        <tr><td><span class="stay-name">Schmocker&rsquo;s Apartment Alpenrose</span></td><td>Wilderswil</td><td>16&ndash;19 Oct</td><td>Gabriela &amp; Urs</td><td><span class="status-pill confirmed">Active</span></td><td class="amount">57,787.17</td></tr>
+        <tr><td><span class="stay-name">A Home Away From Home</span></td><td>Cham</td><td>19&ndash;21 Oct</td><td>Jo</td><td><span class="status-pill confirmed">Active</span></td><td class="amount">28,614.09</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td colspan="5">Net Airbnb spend (active stays only)</td><td class="amount">&#8377;2,01,179.33</td></tr>
+      </tfoot>
+    </table>
+  </div>
+  <p class="section-sub" style="margin-top:14px;">Lodging only. Schmocker&rsquo;s Apartment Alpenrose has no confirmation email on file; its total comes from the matching card charge, so double-check the address and confirmation code in the Airbnb app.</p>
+
+  <div class="cost-table-wrap" style="margin-top:22px;">
+    <table class="cost-table">
+      <thead><tr><th>Ticket / transport</th><th>City</th><th>Date</th><th>Status</th><th class="amount">Amount</th></tr></thead>
+      <tbody>
+        <tr><td><span class="stay-name">Etihad HYD&ndash;FCO / ZRH&ndash;HYD (3 travelers)</span></td><td>&mdash;</td><td>8 &amp; 21 Oct</td><td><span class="status-pill confirmed">Confirmed</span></td><td class="amount">&#8377;2,01,653.00</td></tr>
+        <tr><td><span class="stay-name">Colosseum, Forum &amp; Palatine (2 adults)</span></td><td>Rome</td><td>10 Oct</td><td><span class="status-pill confirmed">Confirmed</span></td><td class="amount">&euro;36.00 (&#8377;4,207.13)</td></tr>
+        <tr><td><span class="stay-name">Duomo di Milano + Terraces (2 adults)</span></td><td>Milan</td><td>15 Oct</td><td><span class="status-pill confirmed">Confirmed</span></td><td class="amount">&euro;52.00 (&#8377;6,076.96)</td></tr>
+        <tr><td><span class="stay-name">Ryanair FR4668, Bari &rarr; Milan Bergamo</span></td><td>Bari</td><td>14 Oct</td><td><span class="status-pill confirmed">Confirmed</span></td><td class="amount">&euro;206.65 (&#8377;24,150.07)</td></tr>
+        <tr><td><span class="stay-name">Swiss local trains &amp; excursions, Half Fare Card rate</span></td><td>Jungfrau &amp; Cham</td><td>16&ndash;20 Oct</td><td><span class="status-pill todo">Estimated</span></td><td class="amount">CHF 254.00 (~&#8377;24,130)</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td colspan="4">Tickets &amp; transport total</td><td class="amount">&#8377;2,60,217.16</td></tr>
+      </tfoot>
+    </table>
+  </div>
+  <p class="section-sub" style="margin-top:14px;">The Etihad and Ryanair amounts are actual charges. Colosseum and Duomo are converted from EUR using the FX rate on the Ryanair charge (&#8377;116.86/&euro;1) since that's the only real conversion rate on file — treat those two as approximate. The Swiss transport row is your own itinerary email's Half Fare Card estimate (not yet purchased), converted at a rough market rate (~&#8377;95/CHF, not from a transaction) — and it doesn't include the Half Fare Card itself, CHF 120 per adult (~CHF 240 for two) if you don't already hold one. The Milan&rarr;Switzerland transfer is still not booked and isn't in this total.</p>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span><b>PNR</b> 8B5YLO</span>
+    <span><b>Colosseum res.</b> OCO4747673</span>
+    <span><b>Duomo res.</b> OFD4228052</span>
+    <span><b>Travelers</b> Allekhya &middot; Abhijith &middot; Riyaan</span>
+    <span><b>Trip</b> 8&ndash;22 Oct 2026</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var ICON_DAY = {
+    plane:'i-plane', colosseum:'i-colosseum', duomo:'i-duomo', house:'i-house',
+    train:'i-train', mountain:'i-mountain', transfer:'i-transfer', wave:'i-wave',
+    trullo:'i-trullo', cave:'i-cave', car:'i-car', coin:'i-coin', blank:'i-pin'
+  };
+  var MODE_LABEL = {plane:'Flight', train:'Train', car:'Car'};
+  var MODE_PREFIX = {plane:'Flying to ', train:'By train to ', car:'Driving to '};
+  var SVGNS = 'http://www.w3.org/2000/svg';
+
+  var days = [
+    {n:8, mon:'OCT', city:'Departure', accent:'gold', icon:'plane', status:'confirmed',
+      title:'Leave Hyderabad', desc:'EY 359 departs HYD 21:20 for Abu Dhabi, connecting onward to Rome overnight.',
+      map:'Rajiv Gandhi International Airport, Hyderabad', geo:[17.2403,78.4294,3],
+      loc:'ABROAD', route:null},
+    {n:9, mon:'OCT', city:'Rome', accent:'italy', icon:'plane', status:'confirmed',
+      title:'Touch down &amp; Vatican', desc:'Land at Fiumicino 06:25 (EY 85), breakfast, then St Peter’s Square — go inside the Basilica only if the queue looks reasonable. Check into the Airbnb after 3pm, dinner in Trastevere.', map:'Vatican City', plan:'dlgVaticanDay', geo:[41.9029,12.4534,1.5],
+      loc:'ROME', route:['ABROAD','ROME'], modes:['plane']},
+    {n:10, mon:'OCT', city:'Rome', accent:'italy', icon:'colosseum', status:'confirmed',
+      title:'Colosseum &amp; Trevi', desc:'08:30 entry — arrive 15 minutes early with ID. One-way route, about 75 minutes inside the arena level. Evening: Trevi Fountain after dark, then dinner.', map:'Colosseum, Rome, Italy', plan:'dlgTreviDay', geo:[41.8902,12.4922,1.5],
+      loc:'ROME', route:null},
+    {n:11, mon:'OCT', city:'Rome &rarr; Polignano a Mare', accent:'italy', icon:'wave', status:'confirmed',
+      title:'Arrive in Polignano', desc:'Checkout, train to Bari (~4h), rental car pickup, then ~35 min to Polignano — realistically not before early evening. Check in after 3pm, easy dinner at Pescaria.', map:'Polignano a Mare, Italy', plan:'dlgPolignanoDay1', geo:[40.9958,17.2196,3],
+      loc:'POLIGNANO', route:['ROME','BARI','POLIGNANO'], modes:['train','car']},
+    {n:12, mon:'OCT', city:'Polignano &amp; Monopoli', accent:'italy', icon:'wave', status:'todo',
+      title:'Cliffs &amp; the Lido — or Ostuni', desc:'Breakfast in Monopoli, then choose on the day: Ostuni’s whitewashed old town for lunch, or stay coastal at the Lido — either way, back to Polignano for the cliff walk, aperitivo and dinner at Venezia 40.', map:'Polignano a Mare, Italy', plan:'dlgPolignanoLocalDay', geo:[40.9958,17.2196,3],
+      loc:'POLIGNANO', route:null},
+    {n:13, mon:'OCT', city:'Alberobello &amp; Matera', accent:'italy', icon:'trullo', status:'todo',
+      title:'Alberobello &amp; Matera', desc:'A loop day: trulli in Alberobello, the cave city of Matera, back to Polignano for an easy dinner. About 2h40 of driving in total.', map:'Matera, Italy', plan:'dlgPolignanoDay2', geo:[40.6664,16.6043,3],
+      loc:'POLIGNANO', route:['POLIGNANO','ALBEROBELLO','MATERA','POLIGNANO'], modes:['car','car','car']},
+    {n:14, mon:'OCT', city:'Polignano &rarr; Bari &rarr; Milan', accent:'italy', icon:'plane', status:'todo',
+      title:'Fly to Milan', desc:'Checkout ~9am, drive to Bari, return the rental car, coffee at the airport — Ryanair FR4668 departs 12:20 for Milan Bergamo. Transfer into the city, check into Bazzini 14, evening wander &amp; aperitivo in Navigli.', map:'Bari, Italy', plan:'dlgBariDay', geo:[41.1171,16.8719,5],
+      loc:'MILAN', route:['POLIGNANO','BARI','BERGAMO','MILAN'], modes:['car','plane','train']},
+    {n:15, mon:'OCT', city:'Milan', accent:'italy', icon:'duomo', status:'confirmed',
+      title:'Brera &amp; the Duomo', desc:'Breakfast at Leonardo, lunch at Cantina e Cucina, then Brera’s art district before the 16:30 Duomo &amp; Terraces entry (Gate 2, Light Blu — no shorts or tank tops). Aperitivo and dinner at Crazy Pizza Milan.', map:'Duomo di Milano, Milan, Italy', plan:'dlgMilanDay', geo:[45.4641,9.1922,1.5],
+      loc:'MILAN', route:null},
+    {n:16, mon:'OCT', city:'Milan &rarr; Wilderswil', accent:'swiss', icon:'transfer', status:'partial',
+      title:'Cross into Switzerland', desc:'A last coffee and pastry at Marchesi 1824, then the train to Interlaken Ost (route &amp; ticket still to confirm) — the Harderbahn funicular for a first alpine view, then check into Wilderswil.', map:'Interlaken, Switzerland', plan:'dlgInterlakenDay', geo:[46.6863,7.8632,3],
+      loc:'WILDERSWIL', route:['MILAN','WILDERSWIL'], modes:['train']},
+    {n:17, mon:'OCT', city:'Jungfrau region', accent:'swiss', icon:'mountain', status:'todo',
+      title:'Wengen &amp; the Golden Window', desc:'Cogwheel train up to Wengen for the playground and views, then the best bike ride window in Lauterbrunnen valley, 1:30&ndash;4pm.', map:'Wengen, Switzerland', plan:'dlgWengenBikeDay', geo:[46.6058,7.9219,3],
+      loc:'WENGEN', route:['WILDERSWIL','WENGEN'], modes:['train']},
+    {n:18, mon:'OCT', city:'Jungfrau region', accent:'swiss', icon:'mountain', status:'todo',
+      title:'Grindelwald First &amp; M&uuml;rren', desc:'Morning at the Bort playground above Grindelwald, afternoon across the cable car to car-free M&uuml;rren.', map:'Grindelwald, Switzerland', plan:'dlgGrindelwaldDay', geo:[46.6244,8.0356,4],
+      loc:'GRINDELWALD', route:['WENGEN','GRINDELWALD'], modes:['train']},
+    {n:19, mon:'OCT', city:'Wilderswil &rarr; Cham', accent:'swiss', icon:'house', status:'confirmed',
+      title:'Lake Thun, Lucerne &amp; Mount Rigi', desc:'A morning boat on Lake Thun, then checkout and the train to Cham (~2h via the Br&uuml;nig Pass). Afternoon: Lucerne’s Chapel Bridge and Mount Rigi.', map:'Cham, Switzerland', plan:'dlgLucerneRigiDay', geo:[47.1804,8.4614,3],
+      loc:'CHAM', route:['GRINDELWALD','WILDERSWIL','LUCERNE','CHAM'], modes:['train','train','train']},
+    {n:20, mon:'OCT', city:'Cham', accent:'swiss', icon:'transfer', status:'todo',
+      title:'Lindt Chocolate &amp; Zurich', desc:'Train to Kilchberg for the Lindt Home of Chocolate (pre-book tickets), then an afternoon stroll through Zurich’s Old Town.', map:'Lindt Home of Chocolate, Kilchberg, Switzerland', plan:'dlgLindtZurichDay', geo:[47.3283,8.5468,1.5],
+      loc:'ZURICH', route:['CHAM','KILCHBERG','ZURICH'], modes:['train','train']},
+    {n:21, mon:'OCT', city:'Departure', accent:'gold', icon:'plane', status:'confirmed',
+      title:'Fly home from Zurich', desc:'EY 144 departs Zurich 11:10 via Abu Dhabi, landing in Hyderabad 02:45 on the 22nd.', map:'Zurich Airport', geo:[47.4647,8.5492,4],
+      loc:'ABROAD', route:['ZURICH','ABROAD'], modes:['plane']}
+  ];
+
+  var LOCATIONS = {
+    ABROAD:      {x:590, y:60, label:'Hyderabad', icon:'plane', accent:'gold', big:false, offmap:true, zoom:1.05},
+    ROME:        {lat:41.9028, lon:12.4964, label:'Rome',            icon:'colosseum', accent:'italy', big:true,  zoom:3.0},
+    BARI:        {lat:41.1171, lon:16.8719, label:'Bari',            icon:'transfer',  accent:'italy', big:false, zoom:3.2},
+    POLIGNANO:   {lat:40.9958, lon:17.2196, label:'Polignano a Mare',icon:'wave',      accent:'italy', big:true,  zoom:3.4},
+    ALBEROBELLO: {lat:40.7827, lon:17.2380, label:'Alberobello',     icon:'trullo',    accent:'italy', big:false, zoom:3.6},
+    MATERA:      {lat:40.6664, lon:16.6043, label:'Matera',          icon:'cave',      accent:'italy', big:false, zoom:3.6},
+    MILAN:       {lat:45.4642, lon:9.1900,  label:'Milan',           icon:'duomo',     accent:'italy', big:true,  zoom:3.0},
+    BERGAMO:     {lat:45.6739, lon:9.7016,  label:'Bergamo',         icon:'plane',     accent:'italy', big:false, zoom:3.4},
+    WILDERSWIL:  {lat:46.6802, lon:7.8663,  label:'Wilderswil',      icon:'mountain',  accent:'swiss', big:true,  zoom:3.2},
+    WENGEN:      {lat:46.6058, lon:7.9219,  label:'Wengen',          icon:'mountain',  accent:'swiss', big:false, zoom:3.6},
+    GRINDELWALD: {lat:46.6244, lon:8.0356,  label:'Grindelwald',     icon:'mountain',  accent:'swiss', big:false, zoom:3.6},
+    LUCERNE:     {lat:47.0502, lon:8.3093,  label:'Lucerne',         icon:'house',     accent:'swiss', big:false, zoom:3.4},
+    CHAM:        {lat:47.1804, lon:8.4614,  label:'Cham',            icon:'house',     accent:'swiss', big:true,  zoom:3.2},
+    ZURICH:      {lat:47.3769, lon:8.5417,  label:'Zurich',          icon:'plane',     accent:'swiss', big:false, zoom:3.2},
+    KILCHBERG:   {lat:47.3298, lon:8.5464,  label:'Kilchberg',       icon:'coin',      accent:'swiss', big:false, zoom:3.6}
+  };
+
+  function project(lat, lon){
+    var lonMin = 7.0, latMax = 47.6, cosRef = Math.cos(44 * Math.PI / 180), K = 60, padX = 90, padY = 60;
+    return {x: (lon - lonMin) * cosRef * K + padX, y: (latMax - lat) * K + padY};
+  }
+  function locPoint(key){
+    var loc = LOCATIONS[key];
+    if(!loc) return {x:0,y:0};
+    return loc.offmap ? {x:loc.x, y:loc.y} : project(loc.lat, loc.lon);
+  }
+
+  var statusLabel = {confirmed:'Confirmed', partial:'Partial', todo:'Add plan'};
+  var accentVar = {gold:'var(--gold)', italy:'var(--italy)', swiss:'var(--swiss)'};
+  var accentSoftVar = {gold:'var(--gold-soft)', italy:'var(--italy-soft)', swiss:'var(--swiss-soft)'};
+
+  var daysByN = {};
+  days.forEach(function(d){ daysByN[d.n] = d; });
+  var dayPlans = {};
+
+  function osmEmbedSrc(lat, lon, spanKm){
+    var dLat = spanKm / 111;
+    var dLon = spanKm / (111 * Math.cos(lat * Math.PI / 180));
+    var bbox = (lon - dLon).toFixed(4) + '%2C' + (lat - dLat).toFixed(4) + '%2C' + (lon + dLon).toFixed(4) + '%2C' + (lat + dLat).toFixed(4);
+    return 'https://www.openstreetmap.org/export/embed.html?bbox=' + bbox + '&layer=mapnik&marker=' + lat.toFixed(4) + '%2C' + lon.toFixed(4);
+  }
+
+  function pointsToPath(pts){
+    return pts.map(function(p, i){ return (i === 0 ? 'M' : 'L') + p.x.toFixed(1) + ',' + p.y.toFixed(1); }).join(' ');
+  }
+
+  function buildGrandRoute(){
+    var seq = [];
+    days.forEach(function(day){
+      var keys = (day.route && day.route.length) ? day.route : [day.loc];
+      keys.forEach(function(k){ if(seq[seq.length - 1] !== k) seq.push(k); });
+    });
+    return seq;
+  }
+
+  function landmassPath(points){
+    var el = document.createElementNS(SVGNS, 'path');
+    el.setAttribute('class', 'map-landmass');
+    el.setAttribute('d', pointsToPath(points.map(function(p){ return project(p[1], p[0]); })) + ' Z');
+    return el;
+  }
+
+  function pinEl(key){
+    var loc = LOCATIONS[key];
+    var p = locPoint(key);
+    var r = loc.big ? 8 : 5.5;
+    var g = document.createElementNS(SVGNS, 'g');
+    g.setAttribute('class', 'map-pin');
+    g.setAttribute('id', 'pin-' + key);
+    g.setAttribute('transform', 'translate(' + p.x.toFixed(1) + ',' + p.y.toFixed(1) + ')');
+    g.style.color = accentVar[loc.accent];
+    g.innerHTML =
+      '<circle class="pin-halo" r="' + (r + 5) + '"></circle>' +
+      '<circle class="pin-dot" r="' + r + '"></circle>' +
+      '<use class="pin-ic" href="#' + ICON_DAY[loc.icon] + '" x="' + (-r * 0.62).toFixed(1) + '" y="' + (-r * 0.62).toFixed(1) + '" width="' + (r * 1.24).toFixed(1) + '" height="' + (r * 1.24).toFixed(1) + '"></use>' +
+      '<text class="pin-label" text-anchor="middle" y="' + (r + 13) + '">' + loc.label + '</text>';
+    g.addEventListener('click', function(){
+      stopAutoplay();
+      for(var i = 0; i < days.length; i++){
+        if(days[i].loc === key){ selectDay(days[i].n); return; }
+      }
+    });
+    return g;
+  }
+
+  function buildMap(){
+    var layer = document.getElementById('mapLayer');
+    var ITALY = [[7.6,45.05],[6.9,44.0],[8.9,44.4],[10.0,44.05],[10.4,43.7],[11.2,42.7],[12.5,41.7],[13.9,40.8],[15.9,38.2],[16.5,38.15],[17.0,39.0],[17.3,40.1],[17.95,40.4],[18.35,40.55],[17.2,41.15],[16.0,41.6],[16.9,42.0],[14.5,42.45],[13.5,43.6],[12.3,44.4],[12.35,45.44],[13.7,45.65],[13.0,46.5],[11.3,46.5],[9.8,46.5],[8.9,46.0],[7.6,45.9]];
+    var SWISS = [[6.1,46.25],[7.0,46.4],[6.85,47.0],[7.35,47.5],[8.6,47.65],[9.5,47.5],[9.6,47.05],[9.9,46.5],[9.0,45.95],[8.0,46.0],[7.0,45.85],[6.8,46.0]];
+    layer.appendChild(landmassPath(ITALY));
+    layer.appendChild(landmassPath(SWISS));
+
+    var grand = document.createElementNS(SVGNS, 'path');
+    grand.setAttribute('class', 'map-route');
+    grand.setAttribute('d', pointsToPath(buildGrandRoute().map(locPoint)));
+    layer.appendChild(grand);
+
+    var active = document.createElementNS(SVGNS, 'path');
+    active.setAttribute('class', 'map-route');
+    active.setAttribute('id', 'activeRoute');
+    active.setAttribute('d', 'M0,0');
+    layer.appendChild(active);
+
+    Object.keys(LOCATIONS).forEach(function(key){ layer.appendChild(pinEl(key)); });
+
+    var ti = document.createElementNS(SVGNS, 'g');
+    ti.setAttribute('id', 'travelIcon');
+    ti.setAttribute('class', 'travel-icon');
+    ti.innerHTML = '<circle class="ti-halo" r="11"></circle><use class="ti-use" href="#i-plane" x="-8" y="-8" width="16" height="16"></use>';
+    layer.appendChild(ti);
+  }
+
+  function fitBounds(keys){
+    var minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+    keys.forEach(function(k){
+      var p = locPoint(k);
+      minX = Math.min(minX, p.x); maxX = Math.max(maxX, p.x);
+      minY = Math.min(minY, p.y); maxY = Math.max(maxY, p.y);
+    });
+    var pad = 55;
+    minX -= pad; maxX += pad; minY -= pad; maxY += pad;
+    var w = maxX - minX, h = maxY - minY;
+    var scale = Math.max(1, Math.min(Math.min(620 / w, 560 / h), 2.6));
+    var cx = (minX + maxX) / 2, cy = (minY + maxY) / 2;
+    return {tx: 310 - cx * scale, ty: 280 - cy * scale, s: scale};
+  }
+  function focusTransform(key){
+    var p = locPoint(key), loc = LOCATIONS[key];
+    var s = (loc && loc.zoom) ? loc.zoom : 2.6;
+    return {tx: 310 - p.x * s, ty: 280 - p.y * s, s: s};
+  }
+  function overviewTransform(){ return {tx: 0, ty: 0, s: 1}; }
+  function applyTransform(t){
+    mapLayer.style.transform = 'translate(' + t.tx.toFixed(1) + 'px,' + t.ty.toFixed(1) + 'px) scale(' + t.s.toFixed(3) + ')';
+  }
+
+  function showModeBadge(mode, destKey){
+    modeBadgeIconUse.setAttribute('href', '#' + ICON_DAY[mode]);
+    modeBadgeText.textContent = MODE_PREFIX[mode] + (LOCATIONS[destKey] ? LOCATIONS[destKey].label : '');
+    modeBadgeEl.classList.add('on');
+  }
+  function hideModeBadge(){ modeBadgeEl.classList.remove('on'); }
+
+  function flyIcon(day, onDone){
+    var routeKeys = day.route, modesArr = day.modes;
+    var pts = routeKeys.map(locPoint);
+    activeRouteEl.setAttribute('d', pointsToPath(pts));
+    activeRouteEl.classList.add('leg-active');
+    activeRouteEl.style.stroke = accentVar[day.accent];
+    var segLens = [], total = 0;
+    for(var i = 0; i < pts.length - 1; i++){
+      var dx = pts[i + 1].x - pts[i].x, dy = pts[i + 1].y - pts[i].y;
+      var L = Math.sqrt(dx * dx + dy * dy);
+      segLens.push(L); total += L;
+    }
+    var totalLen = activeRouteEl.getTotalLength();
+    activeRouteEl.style.strokeDasharray = totalLen;
+    activeRouteEl.style.strokeDashoffset = totalLen;
+    travelIconEl.classList.add('on');
+    var lastSeg = -1;
+    var dur = Math.max(1100, Math.min(2300, total * 3.5));
+    var myRun = runId;
+    var start = null;
+    function frame(ts){
+      if(myRun !== runId) return;
+      if(!start) start = ts;
+      var t = Math.min(1, (ts - start) / dur);
+      var e = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+      activeRouteEl.style.strokeDashoffset = totalLen * (1 - e);
+      var target = e * total, acc = 0, segIdx = segLens.length - 1;
+      for(var k = 0; k < segLens.length; k++){
+        if(acc + segLens[k] >= target){ segIdx = k; break; }
+        acc += segLens[k];
+      }
+      var segT = segLens[segIdx] > 0 ? (target - acc) / segLens[segIdx] : 1;
+      var p0 = pts[segIdx], p1 = pts[segIdx + 1];
+      var cx = p0.x + (p1.x - p0.x) * segT, cy = p0.y + (p1.y - p0.y) * segT;
+      travelIconEl.setAttribute('transform', 'translate(' + cx.toFixed(1) + ',' + cy.toFixed(1) + ')');
+      if(segIdx !== lastSeg){
+        lastSeg = segIdx;
+        var mode = modesArr[Math.min(segIdx, modesArr.length - 1)];
+        travelIconUse.setAttribute('href', '#' + ICON_DAY[mode]);
+        showModeBadge(mode, routeKeys[segIdx + 1]);
+      }
+      if(t < 1){ requestAnimationFrame(frame); }
+      else {
+        window.setTimeout(function(){
+          if(myRun !== runId) return;
+          travelIconEl.classList.remove('on');
+          hideModeBadge();
+          onDone();
+        }, 260);
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+
+  function updatePinStates(day){
+    var visited = {};
+    (day.route || [day.loc]).forEach(function(k){ visited[k] = true; });
+    visited[day.loc] = true;
+    Object.keys(LOCATIONS).forEach(function(key){
+      var pin = document.getElementById('pin-' + key);
+      if(!pin) return;
+      pin.classList.toggle('current', key === day.loc);
+      pin.classList.toggle('visited', !!visited[key]);
+    });
+  }
+
+  function statusDotClass(day){
+    var planText = dayPlans[day.n] && dayPlans[day.n].text;
+    return planText ? 'partial' : day.status;
+  }
+  function updateRailChip(n){
+    var day = daysByN[n], chip = document.getElementById('chip-' + n);
+    if(!chip || !day) return;
+    var dot = chip.querySelector('.dc-dot');
+    if(dot) dot.className = 'dc-dot ' + statusDotClass(day);
+  }
+  function updateRailActive(n){
+    days.forEach(function(day){
+      var chip = document.getElementById('chip-' + day.n);
+      if(chip) chip.classList.toggle('active', day.n === n);
+    });
+    var active = document.getElementById('chip-' + n);
+    if(active && active.scrollIntoView) active.scrollIntoView({behavior: reduceMotion ? 'auto' : 'smooth', inline: 'center', block: 'nearest'});
+  }
+
+  function buildDayRail(){
+    var rail = document.getElementById('dayrail');
+    days.forEach(function(day){
+      var chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'day-chip';
+      chip.id = 'chip-' + day.n;
+      chip.style.setProperty('--accent', accentVar[day.accent]);
+      chip.style.setProperty('--accent-soft', accentSoftVar[day.accent]);
+      chip.innerHTML = '<span class="dc-n">' + day.n + '</span><span class="dc-m">' + day.mon + '</span><span class="dc-dot ' + statusDotClass(day) + '"></span>';
+      chip.addEventListener('click', function(){ stopAutoplay(); selectDay(day.n); });
+      rail.appendChild(chip);
+    });
+  }
+
+  function renderDayPanel(day){
+    var panel = document.getElementById('daypanel');
+    var mapBtn = day.map ? '<a class="maplink" style="--accent:'+accentVar[day.accent]+'" href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(day.map)+'" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg> Open in Maps</a>' : '';
+    var planText = dayPlans[day.n] && dayPlans[day.n].text;
+    var editBtn = day.status === 'todo' ? '<button type="button" class="maplink plan-edit-trigger" style="--accent:'+accentVar[day.accent]+'"><svg><use href="#i-edit"/></svg> <span class="plan-btn-label">'+(planText ? 'Edit plan' : 'Add plan')+'</span></button>' : '';
+    var planBtn = day.plan ? '<button type="button" class="maplink" style="--accent:'+accentVar[day.accent]+'" onclick="'+day.plan+'.showModal()"><svg><use href="#i-ticket"/></svg> View full day plan</button>' : '';
+    var modesHtml = '';
+    if(day.modes && day.modes.length){
+      var seen = {};
+      modesHtml = '<div class="dp-modes">' + day.modes.filter(function(m){ if(seen[m]) return false; seen[m] = true; return true; }).map(function(m){
+        return '<span class="dp-mode-chip"><svg><use href="#'+ICON_DAY[m]+'"/></svg>'+MODE_LABEL[m]+'</span>';
+      }).join('') + '</div>';
+    }
+    var desc = planText || day.desc.replace(/&rarr;/g,'→').replace(/&ldquo;/g,'“').replace(/&rdquo;/g,'”').replace(/&amp;/g,'&');
+    var status = planText ? 'partial' : day.status;
+    var statusText = planText ? 'Planned' : statusLabel[day.status];
+    var gmapHtml = !day.geo ?
+      '<div class="gmap-embed"><div class="gmap-empty">In transit — no fixed location for this leg</div></div>' :
+      (navigator.onLine === false ?
+        '<div class="gmap-embed"><div class="gmap-empty">Map preview needs a connection — tap &ldquo;Open in Maps&rdquo; below, or use your Maps app offline.</div></div>' :
+        '<div class="gmap-embed"><iframe src="'+osmEmbedSrc(day.geo[0], day.geo[1], day.geo[2])+'" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of '+(day.map || day.city).replace(/"/g,'').replace(/&rarr;/g,'to')+'"></iframe></div>');
+    panel.className = 'daypanel' + (day.status === 'todo' && !planText ? ' todo' : '');
+    panel.innerHTML =
+      '<div class="dp-top">'+
+        '<div class="dp-badge" style="--accent:'+accentVar[day.accent]+'; border-color:'+accentVar[day.accent]+'"><span class="num">'+day.n+'</span><span class="mon">'+day.mon+'</span></div>'+
+        '<div class="dp-headrow">'+
+          '<div><div class="dp-city" style="--accent:'+accentVar[day.accent]+'"><svg><use href="#i-pin"/></svg>'+day.city+'</div><h3>'+day.title+'</h3></div>'+
+          '<span class="status-pill '+status+'">'+statusText+'</span>'+
+        '</div>'+
+      '</div>'+
+      modesHtml+
+      '<p class="dp-desc">'+desc+'</p>'+
+      gmapHtml+
+      (mapBtn || planBtn || editBtn ? '<div class="dp-actions">'+mapBtn+planBtn+editBtn+'</div>' : '')+
+      (day.status === 'todo' ?
+        '<div class="plan-edit" hidden>'+
+          '<textarea class="plan-textarea" rows="3" placeholder="What is the plan for this day?"></textarea>'+
+          '<div class="plan-edit-actions">'+
+            '<button type="button" class="plan-save" style="--accent:'+accentVar[day.accent]+'">Save</button>'+
+            '<button type="button" class="plan-cancel">Cancel</button>'+
+          '</div>'+
+        '</div>' : '');
+    if(day.status === 'todo') wireDayEditor(panel, day);
+  }
+
+  var runId = 0, currentN = null;
+  function selectDay(n){
+    var day = daysByN[n];
+    if(!day) return;
+    currentN = n;
+    runId++;
+    var myRun = runId;
+    renderDayPanel(day);
+    updateRailActive(n);
+    updatePinStates(day);
+    if(reduceMotion){
+      hideModeBadge();
+      travelIconEl.classList.remove('on');
+      applyTransform(day.loc === 'ABROAD' ? overviewTransform() : focusTransform(day.loc));
+      return;
+    }
+    if(day.route && day.route.length > 1){
+      applyTransform(fitBounds(day.route));
+      window.setTimeout(function(){
+        if(myRun !== runId) return;
+        flyIcon(day, function(){
+          if(myRun !== runId) return;
+          applyTransform(focusTransform(day.loc));
+        });
+      }, 460);
+    } else {
+      hideModeBadge();
+      travelIconEl.classList.remove('on');
+      applyTransform(day.loc === 'ABROAD' ? overviewTransform() : focusTransform(day.loc));
+    }
+  }
+
+  var autoplayTimer = null, autoplayOn = false;
+  function stopAutoplay(){
+    if(autoplayTimer){ window.clearTimeout(autoplayTimer); autoplayTimer = null; }
+    autoplayOn = false;
+    var btn = document.getElementById('mapPlay');
+    if(btn){
+      btn.querySelector('use').setAttribute('href', '#i-play');
+      btn.title = 'Play the whole trip';
+      btn.setAttribute('aria-label', 'Play the whole trip');
+    }
+  }
+  function stepAutoplay(idx){
+    if(!autoplayOn) return;
+    if(idx >= days.length){ stopAutoplay(); return; }
+    var day = days[idx];
+    selectDay(day.n);
+    var delay = reduceMotion ? 1100 : ((day.route && day.route.length > 1) ? 2700 : 1500);
+    autoplayTimer = window.setTimeout(function(){ stepAutoplay(idx + 1); }, delay);
+  }
+  function startAutoplay(){
+    autoplayOn = true;
+    var btn = document.getElementById('mapPlay');
+    if(btn){
+      btn.querySelector('use').setAttribute('href', '#i-pause');
+      btn.title = 'Pause';
+      btn.setAttribute('aria-label', 'Pause playback');
+    }
+    var idx = days.findIndex(function(d){ return d.n === currentN; });
+    if(idx === -1 || idx === days.length - 1) idx = -1;
+    stepAutoplay(idx + 1);
+  }
+
+  var reduceMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  buildMap();
+  var mapLayer = document.getElementById('mapLayer');
+  var travelIconEl = document.getElementById('travelIcon');
+  var travelIconUse = travelIconEl.querySelector('.ti-use');
+  var activeRouteEl = document.getElementById('activeRoute');
+  var modeBadgeEl = document.getElementById('modeBadge');
+  var modeBadgeText = document.getElementById('modeBadgeText');
+  var modeBadgeIconUse = modeBadgeEl.querySelector('.mb-ico svg use');
+  var mapResetBtn = document.getElementById('mapReset');
+  if(mapResetBtn) mapResetBtn.addEventListener('click', function(){ stopAutoplay(); applyTransform(overviewTransform()); });
+  var mapPlayBtn = document.getElementById('mapPlay');
+  if(mapPlayBtn) mapPlayBtn.addEventListener('click', function(){ if(autoplayOn){ stopAutoplay(); } else { startAutoplay(); } });
+  var mapExpandBtn = document.getElementById('mapExpand');
+  var mapStageEl = document.getElementById('mapStage');
+  var mapBackdropEl = document.getElementById('mapBackdrop');
+  function toggleExpand(){
+    var expanded = mapStageEl.classList.toggle('expanded');
+    mapBackdropEl.hidden = !expanded;
+    document.body.style.overflow = expanded ? 'hidden' : '';
+    if(mapExpandBtn){
+      mapExpandBtn.querySelector('use').setAttribute('href', expanded ? '#i-collapse' : '#i-expand');
+      mapExpandBtn.title = expanded ? 'Collapse map' : 'Expand map';
+      mapExpandBtn.setAttribute('aria-label', mapExpandBtn.title);
+    }
+  }
+  if(mapExpandBtn) mapExpandBtn.addEventListener('click', toggleExpand);
+  if(mapBackdropEl) mapBackdropEl.addEventListener('click', toggleExpand);
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && mapStageEl.classList.contains('expanded')) toggleExpand();
+  });
+  buildDayRail();
+  selectDay(days[0].n);
+
+  function wireDayEditor(el, d){
+    var trigger = el.querySelector('.plan-edit-trigger');
+    var editRow = el.querySelector('.plan-edit');
+    var textarea = el.querySelector('.plan-textarea');
+    var saveBtn = el.querySelector('.plan-save');
+    var cancelBtn = el.querySelector('.plan-cancel');
+
+    trigger.addEventListener('click', function(){
+      textarea.value = (dayPlans[d.n] && dayPlans[d.n].text) || '';
+      editRow.hidden = false;
+      trigger.hidden = true;
+      textarea.focus();
+    });
+    cancelBtn.addEventListener('click', function(){
+      editRow.hidden = true;
+      trigger.hidden = false;
+    });
+    saveBtn.addEventListener('click', function(){
+      var text = textarea.value.trim();
+      saveBtn.disabled = true;
+      var op = text ? window.tripPlanSet(d.n, text) : window.tripPlanDelete(d.n);
+      op.then(function(){
+        saveBtn.disabled = false;
+        editRow.hidden = true;
+        trigger.hidden = false;
+      }).catch(function(){
+        saveBtn.disabled = false;
+        alert('Could not save — check that firebase-config.js has your Firebase project’s settings filled in, and that you’re online.');
+      });
+    });
+  }
+
+  function applyPlanToDay(n, text){
+    updateRailChip(n);
+    if(n === currentN && daysByN[n]) renderDayPanel(daysByN[n]);
+  }
+
+  function subscribePlans(){
+    window.tripPlansSubscribe(function(all){
+      var seen = {};
+      Object.keys(all).forEach(function(id){
+        var m = /^day-(\d+)$/.exec(id);
+        if(!m) return;
+        var n = parseInt(m[1], 10);
+        seen[n] = true;
+        var data = all[id] || {};
+        dayPlans[n] = {text: typeof data.text === 'string' ? data.text : ''};
+        applyPlanToDay(n, dayPlans[n].text);
+      });
+      Object.keys(dayPlans).forEach(function(key){
+        var n = parseInt(key, 10);
+        if(!seen[n] && dayPlans[n].text){
+          dayPlans[n] = {text:''};
+          applyPlanToDay(n, '');
+        }
+      });
+    });
+  }
+
+  (function initDb(){
+    window.__tripFirebaseReady.then(function(){
+      subscribePlans();
+    });
+  })();
+
+  var ATTACH_DIALOGS = ['dlgFlight','dlgRomeStay','dlgColosseum','dlgTrain','dlgRentalCar','dlgIDP','dlgPolignano','dlgMilanStay','dlgDuomo','dlgAlpsStay','dlgAirbnb','dlgBariFlight','dlgTransfer'];
+
+  function initAttachments(){
+    ATTACH_DIALOGS.forEach(function(id){
+      var dlg = document.getElementById(id);
+      var body = dlg && dlg.querySelector('.dlg-body');
+      if(!body) return;
+      var section = document.createElement('div');
+      section.className = 'attach-section';
+      section.innerHTML =
+        '<div class="attach-head"><span class="eyebrow">Attachments</span>'+
+          '<label class="attach-add"><input type="file" accept="image/*,application/pdf" hidden><svg><use href="#i-bag"/></svg> Add file</label>'+
+        '</div>'+
+        '<div class="attach-list" id="attach-list-'+id+'"><div class="attach-empty">Loading…</div></div>'+
+        '<div class="attach-hint" id="attach-hint-'+id+'"></div>';
+      body.appendChild(section);
+      var input = section.querySelector('input[type=file]');
+      input.addEventListener('change', function(){
+        var file = input.files && input.files[0];
+        if(file) uploadAttachment(id, file);
+        input.value = '';
+      });
+      if(dlg){
+        dlg.addEventListener('toggle', function(){ if(dlg.open) refreshAttachList(id); });
+      }
+    });
+  }
+
+  function refreshAttachList(id){
+    var list = document.getElementById('attach-list-' + id);
+    if(!list) return;
+    if(!window.tripGoogleSignedIn || !window.tripGoogleSignedIn()){
+      list.innerHTML = '<div class="attach-empty">Sign in with Google (top of page) to see and add files.</div>';
+      return;
+    }
+    if(!window.tripDriveReady || !window.tripDriveReady()){
+      list.innerHTML = '<div class="attach-empty">Choose a Drive folder (top of page) to see and add files.</div>';
+      return;
+    }
+    list.innerHTML = '<div class="attach-empty">Loading…</div>';
+    window.tripAttachList(id).then(function(files){
+      renderAttachList(id, files || []);
+    }).catch(function(){
+      list.innerHTML = '<div class="attach-empty">Could not load files — check your connection.</div>';
+    });
+  }
+
+  function renderAttachList(id, files){
+    var list = document.getElementById('attach-list-' + id);
+    if(!list) return;
+    if(!files.length){ list.innerHTML = '<div class="attach-empty">No files attached yet.</div>'; return; }
+    list.innerHTML = files.map(function(f){
+      var isImg = /^image\//.test(f.mimeType || '');
+      return '<a class="attach-item" href="' + f.webViewLink + '" target="_blank" rel="noopener" data-thumb="' + (isImg && f.thumbnailLink ? f.thumbnailLink : '') + '">' +
+        '<span class="attach-file-ico"><svg><use href="#i-doc"/></svg></span>' +
+        '<span class="attach-name">' + (f.name || 'File') + '</span>' +
+        '<button type="button" class="attach-remove" data-id="' + f.id + '" data-dlg="' + id + '" aria-label="Remove file">&times;</button>' +
+      '</a>';
+    }).join('');
+    list.querySelectorAll('.attach-remove').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.preventDefault(); e.stopPropagation();
+        removeAttachment(btn.getAttribute('data-dlg'), btn.getAttribute('data-id'));
+      });
+    });
+    if(window.tripAttachThumbnail){
+      list.querySelectorAll('.attach-item[data-thumb]').forEach(function(a){
+        var thumbUrl = a.getAttribute('data-thumb');
+        if(!thumbUrl) return;
+        window.tripAttachThumbnail(thumbUrl).then(function(blobUrl){
+          if(!blobUrl) return;
+          var ico = a.querySelector('.attach-file-ico');
+          if(ico) ico.outerHTML = '<img src="' + blobUrl + '" alt="">';
+        }).catch(function(){});
+      });
+    }
+  }
+
+  function uploadAttachment(dlgId, file){
+    var hint = document.getElementById('attach-hint-' + dlgId);
+    if(hint) hint.textContent = 'Uploading…';
+    window.tripAttachUpload(dlgId, file).then(function(){
+      if(hint) hint.textContent = '';
+      refreshAttachList(dlgId);
+    }).catch(function(err){
+      var msg = (err && err.message === 'too-large') ? 'That file is over the 15MB limit.' :
+        (err && err.message === 'not-signed-in') ? 'Sign in with Google (top of page) first.' :
+        (err && err.message === 'no-folder') ? 'Choose a Drive folder (top of page) first.' :
+        'Could not upload — check your connection and try again.';
+      if(hint) hint.textContent = msg;
+    });
+  }
+
+  function removeAttachment(dlgId, fileId){
+    window.tripAttachRemove(dlgId, fileId).then(function(){
+      refreshAttachList(dlgId);
+    }).catch(function(){});
+  }
+
+  initAttachments();
+
+  var packing = [
+    {title:'Clothing', icon:'i-shirt', accent:'italy', items:[
+      'Breathable tees & a couple of collared shirts (Rome & Milan)',
+      'Warm fleece or wool sweater',
+      'Insulated waterproof jacket (Jungfrau leg)',
+      'Thermal base layers for alpine mornings',
+      'Jeans / comfortable trousers',
+      'One smart-casual outfit for dinners',
+      'Riyaan: extra warm layers + spare outfit'
+    ]},
+    {title:'Footwear', icon:'i-shoe', accent:'swiss', items:[
+      'Comfortable walking shoes (Rome & Milan cobblestones)',
+      'Waterproof hiking shoes or boots (Lauterbrunnen/Wengen)',
+      'Warm socks for the mountains',
+      'One pair smart shoes for evenings'
+    ]},
+    {title:'Accessories', icon:'i-mountain', accent:'gold', items:[
+      'Scarf, beanie & gloves for the Alps',
+      'Sunglasses',
+      'Compact umbrella / packable rain shell',
+      'Day backpack for sightseeing',
+      'EU type-C/F power adapter + power bank',
+      'Reusable water bottle'
+    ]},
+    {title:'Essentials & documents', icon:'i-bag', accent:'italy', items:[
+      'Passports + printed visa/travel docs',
+      'International Driving Permit (for the Bari rental car)',
+      'All e-tickets: flights, Colosseum, Duomo (saved offline too)',
+      'Airbnb confirmation & host contact (Cham)',
+      'Travel insurance details',
+      'Some EUR &amp; CHF cash for small vendors and tips',
+      'Any regular medicines',
+      'SIM/eSIM for Italy &amp; Switzerland'
+    ]}
+  ];
+
+  var grid = document.getElementById('packGrid');
+  packing.forEach(function(group, gi){
+    var card = document.createElement('div');
+    card.className = 'pack-card';
+    var accent = accentVar[group.accent], soft = accentSoftVar[group.accent];
+    var items = group.items.map(function(item, ii){
+      var id = 'pk-'+gi+'-'+ii;
+      return '<li><label for="'+id+'"><input type="checkbox" id="'+id+'" data-key="'+id+'"><span>'+item+'</span></label></li>';
+    }).join('');
+    card.innerHTML =
+      '<div class="head"><span class="icon-badge" style="--accent:'+accent+';--accent-soft:'+soft+'"><svg><use href="#'+group.icon+'"/></svg></span><h4>'+group.title+'</h4></div>'+
+      '<ul class="pack-list">'+items+'</ul>';
+    grid.appendChild(card);
+  });
+
+  try{
+    document.querySelectorAll('.pack-list input[type="checkbox"]').forEach(function(box){
+      var key = 'trip-pack-'+box.dataset.key;
+      var saved = localStorage.getItem(key);
+      if(saved === '1') box.checked = true;
+      box.addEventListener('change', function(){
+        try{ localStorage.setItem(key, box.checked ? '1' : '0'); }catch(e){}
+      });
+    });
+  }catch(e){}
+
+  document.querySelectorAll('.topnav a').forEach(function(a){
+    a.addEventListener('click', function(ev){
+      ev.preventDefault();
+      var target = document.querySelector(a.getAttribute('href'));
+      if(target) target.scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'start'});
+    });
+  });
+
+  window.dlgFlight = document.getElementById('dlgFlight');
+  window.dlgColosseum = document.getElementById('dlgColosseum');
+  window.dlgDuomo = document.getElementById('dlgDuomo');
+  window.dlgAirbnb = document.getElementById('dlgAirbnb');
+  window.dlgRomeStay = document.getElementById('dlgRomeStay');
+  window.dlgPolignano = document.getElementById('dlgPolignano');
+  window.dlgMilanStay = document.getElementById('dlgMilanStay');
+  window.dlgAlpsStay = document.getElementById('dlgAlpsStay');
+  window.dlgInterlakenDay = document.getElementById('dlgInterlakenDay');
+  window.dlgWengenBikeDay = document.getElementById('dlgWengenBikeDay');
+  window.dlgGrindelwaldDay = document.getElementById('dlgGrindelwaldDay');
+  window.dlgLucerneRigiDay = document.getElementById('dlgLucerneRigiDay');
+  window.dlgLindtZurichDay = document.getElementById('dlgLindtZurichDay');
+  window.dlgTrain = document.getElementById('dlgTrain');
+  window.dlgBariFlight = document.getElementById('dlgBariFlight');
+  window.dlgRentalCar = document.getElementById('dlgRentalCar');
+  window.dlgIDP = document.getElementById('dlgIDP');
+  window.dlgTransfer = document.getElementById('dlgTransfer');
+  window.dlgCurrency = document.getElementById('dlgCurrency');
+  window.dlgVaticanDay = document.getElementById('dlgVaticanDay');
+  window.dlgTreviDay = document.getElementById('dlgTreviDay');
+  window.dlgPolignanoDay1 = document.getElementById('dlgPolignanoDay1');
+  window.dlgPolignanoLocalDay = document.getElementById('dlgPolignanoLocalDay');
+  window.dlgPolignanoDay2 = document.getElementById('dlgPolignanoDay2');
+  window.dlgBariDay = document.getElementById('dlgBariDay');
+  window.dlgMilanDay = document.getElementById('dlgMilanDay');
+  document.querySelectorAll('dialog').forEach(function(dlg){
+    dlg.addEventListener('click', function(e){ if(e.target === dlg) dlg.close(); });
+  });
+})();
+</script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+  import { initializeFirestore, persistentLocalCache, persistentMultipleTabManager, doc, setDoc, deleteDoc, getDoc, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
+  import { firebaseConfig } from "./firebase-config.js";
+  import { googleConfig } from "./google-config.js";
+
+  var db = null;
+  try {
+    var app = initializeApp(firebaseConfig);
+    // Persistent local cache = plans/attachment metadata are readable offline,
+    // and edits made offline queue up and sync automatically once back online.
+    db = initializeFirestore(app, {
+      localCache: persistentLocalCache({ tabManager: persistentMultipleTabManager() })
+    });
+  } catch (e) {
+    console.error('Firebase init failed — fill in firebase-config.js with your project settings.', e);
+  }
+
+  window.tripPlansSubscribe = function(onChange){
+    if(!db) return;
+    onSnapshot(collection(db, 'plans'), function(snap){
+      var out = {};
+      snap.forEach(function(d){ out[d.id] = d.data(); });
+      onChange(out);
+    }, function(err){ console.error('plans subscription error', err); });
+  };
+  window.tripPlanSet = function(n, text){
+    if(!db) return Promise.reject(new Error('no-db'));
+    return setDoc(doc(db, 'plans', 'day-' + n), {text: text, updatedAt: Date.now()});
+  };
+  window.tripPlanDelete = function(n){
+    if(!db) return Promise.reject(new Error('no-db'));
+    return deleteDoc(doc(db, 'plans', 'day-' + n));
+  };
+
+  if(window.__resolveTripFirebase) window.__resolveTripFirebase();
+
+  // ---------------------------------------------------------------------
+  // Google sign-in (per person) + Drive folder picker + Drive attachments.
+  // Each person authenticates with their own Google account; the shared
+  // Drive folder's id/name is stored in Firestore (config/driveFolder) so
+  // whoever sets it up first doesn't need the other person to repeat that
+  // step — they just need to grant the app access to that same folder via
+  // the picker once (Drive's per-file "drive.file" scope requires that).
+  // ---------------------------------------------------------------------
+  var MAX_ATTACHMENT_BYTES = 15 * 1024 * 1024;
+  var accessToken = null;
+  var tokenClient = null;
+  var currentUserEmail = null;
+  var driveFolder = null; // {id, name}
+
+  function updateGoogleUI(){
+    var statusEl = document.getElementById('googleStatus');
+    var signInBtn = document.getElementById('googleSignInBtn');
+    var folderBtn = document.getElementById('googleFolderBtn');
+    var folderBtnText = document.getElementById('googleFolderBtnText');
+    var signOutBtn = document.getElementById('googleSignOutBtn');
+    if(!statusEl) return;
+    if(accessToken){
+      statusEl.textContent = 'Signed in' + (currentUserEmail ? ' as ' + currentUserEmail : '') +
+        (driveFolder ? ' — folder: ' + driveFolder.name : ' — no Drive folder chosen yet');
+      signInBtn.hidden = true;
+      folderBtn.hidden = false;
+      if(folderBtnText) folderBtnText.textContent = driveFolder ? 'Change folder' : 'Choose Drive folder';
+      signOutBtn.hidden = false;
+    } else {
+      statusEl.textContent = 'Not signed in — sign in to add plans & attachments';
+      signInBtn.hidden = false;
+      folderBtn.hidden = true;
+      signOutBtn.hidden = true;
+    }
+  }
+
+  window.tripGoogleSignedIn = function(){ return !!accessToken; };
+  window.tripDriveReady = function(){ return !!(accessToken && driveFolder); };
+
+  function fetchUserInfo(){
+    return fetch('https://www.googleapis.com/oauth2/v3/userinfo', {headers: {Authorization: 'Bearer ' + accessToken}})
+      .then(function(r){ return r.ok ? r.json() : {}; })
+      .then(function(info){ currentUserEmail = info.email || null; });
+  }
+
+  function loadDriveFolderConfig(){
+    if(!db) return Promise.resolve();
+    return getDoc(doc(db, 'config', 'driveFolder')).then(function(snap){
+      if(snap.exists()){
+        var data = snap.data();
+        if(data.folderId) driveFolder = {id: data.folderId, name: data.folderName || 'Trip attachments'};
+      }
+    }).catch(function(){});
+  }
+
+  function saveDriveFolderConfig(folder){
+    driveFolder = folder;
+    if(db){
+      setDoc(doc(db, 'config', 'driveFolder'), {
+        folderId: folder.id, folderName: folder.name, updatedAt: Date.now(), updatedBy: currentUserEmail || null
+      }).catch(function(){});
+    }
+  }
+
+  function ensurePickerLib(){
+    return new Promise(function(resolve){
+      (function poll(){
+        if(window.google && google.picker){ resolve(); return; }
+        if(window.gapi && gapi.load){ gapi.load('picker', function(){ resolve(); }); return; }
+        window.setTimeout(poll, 250);
+      })();
+    });
+  }
+
+  function openDrivePicker(){
+    if(!accessToken){ tokenClient.requestAccessToken({prompt: 'consent'}); return; }
+    ensurePickerLib().then(function(){
+      var view = new google.picker.DocsView(google.picker.ViewId.FOLDERS)
+        .setSelectFolderEnabled(true)
+        .setIncludeFolders(true)
+        .setMode(google.picker.DocsViewMode.LIST);
+      var picker = new google.picker.PickerBuilder()
+        .addView(view)
+        .setOAuthToken(accessToken)
+        .setDeveloperKey(googleConfig.apiKey)
+        .setTitle(driveFolder ? 'Select "' + driveFolder.name + '" to confirm access, or pick a new folder' : 'Pick a Drive folder for trip attachments')
+        .setCallback(function(data){
+          if(data.action === google.picker.Action.PICKED && data.docs && data.docs[0]){
+            var picked = data.docs[0];
+            saveDriveFolderConfig({id: picked.id, name: picked.name});
+            updateGoogleUI();
+          }
+        })
+        .build();
+      picker.setVisible(true);
+    });
+  }
+
+  function initGoogleSignIn(){
+    if(!window.google || !google.accounts || !google.accounts.oauth2){
+      window.setTimeout(initGoogleSignIn, 250);
+      return;
+    }
+    tokenClient = google.accounts.oauth2.initTokenClient({
+      client_id: googleConfig.clientId,
+      scope: googleConfig.driveScope + ' email profile',
+      callback: function(resp){
+        if(resp && resp.access_token){
+          accessToken = resp.access_token;
+          fetchUserInfo().then(loadDriveFolderConfig).then(updateGoogleUI);
+        }
+      }
+    });
+    var signInBtn = document.getElementById('googleSignInBtn');
+    if(signInBtn) signInBtn.addEventListener('click', function(){
+      tokenClient.requestAccessToken({prompt: accessToken ? '' : 'consent'});
+    });
+    var signOutBtn = document.getElementById('googleSignOutBtn');
+    if(signOutBtn) signOutBtn.addEventListener('click', function(){
+      if(accessToken && google.accounts.oauth2.revoke) google.accounts.oauth2.revoke(accessToken, function(){});
+      accessToken = null; currentUserEmail = null; driveFolder = null;
+      updateGoogleUI();
+    });
+    var folderBtn = document.getElementById('googleFolderBtn');
+    if(folderBtn) folderBtn.addEventListener('click', openDrivePicker);
+    updateGoogleUI();
+  }
+  initGoogleSignIn();
+
+  function driveFetch(url, opts){
+    opts = opts || {};
+    opts.headers = Object.assign({Authorization: 'Bearer ' + accessToken}, opts.headers || {});
+    return fetch(url, opts).then(function(r){
+      if(r.status === 401){ accessToken = null; updateGoogleUI(); throw new Error('signed-out'); }
+      return r;
+    });
+  }
+
+  function arrayBufferToBase64(buf){
+    var bytes = new Uint8Array(buf), binary = '', chunk = 0x8000;
+    for(var i = 0; i < bytes.length; i += chunk){
+      binary += String.fromCharCode.apply(null, bytes.subarray(i, i + chunk));
+    }
+    return btoa(binary);
+  }
+
+  window.tripAttachList = function(dlgId){
+    if(!accessToken || !driveFolder) return Promise.resolve([]);
+    var q = "'" + driveFolder.id + "' in parents and trashed = false and appProperties has { key='dlgId' and value='" + dlgId + "' }";
+    var url = 'https://www.googleapis.com/drive/v3/files?q=' + encodeURIComponent(q) +
+      '&fields=' + encodeURIComponent('files(id,name,mimeType,webViewLink,thumbnailLink)') + '&pageSize=50';
+    return driveFetch(url).then(function(r){ return r.json(); }).then(function(j){ return j.files || []; });
+  };
+
+  window.tripAttachUpload = function(dlgId, file){
+    if(!accessToken) return Promise.reject(new Error('not-signed-in'));
+    if(!driveFolder) return Promise.reject(new Error('no-folder'));
+    if(file.size > MAX_ATTACHMENT_BYTES) return Promise.reject(new Error('too-large'));
+    var metadata = {name: file.name, parents: [driveFolder.id], appProperties: {dlgId: dlgId}};
+    var boundary = 'trip_boundary_' + Date.now();
+    return file.arrayBuffer().then(function(buf){
+      var body =
+        '--' + boundary + '\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n' + JSON.stringify(metadata) + '\r\n' +
+        '--' + boundary + '\r\nContent-Type: ' + (file.type || 'application/octet-stream') + '\r\nContent-Transfer-Encoding: base64\r\n\r\n' +
+        arrayBufferToBase64(buf) + '\r\n--' + boundary + '--';
+      return driveFetch('https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id,name,mimeType,webViewLink,thumbnailLink', {
+        method: 'POST',
+        headers: {'Content-Type': 'multipart/related; boundary=' + boundary},
+        body: body
+      });
+    }).then(function(r){ return r.json(); });
+  };
+
+  window.tripAttachRemove = function(dlgId, fileId){
+    if(!accessToken) return Promise.reject(new Error('not-signed-in'));
+    return driveFetch('https://www.googleapis.com/drive/v3/files/' + fileId, {
+      method: 'PATCH',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({trashed: true})
+    });
+  };
+
+  window.tripAttachThumbnail = function(thumbnailLink){
+    return driveFetch(thumbnailLink).then(function(r){ return r.ok ? r.blob() : null; })
+      .then(function(blob){ return blob ? URL.createObjectURL(blob) : null; })
+      .catch(function(){ return null; });
+  };
+</script>
+
+<script>
+  if('serviceWorker' in navigator){
+    window.addEventListener('load', function(){
+      navigator.serviceWorker.register('sw.js').catch(function(err){
+        console.error('Service worker registration failed', err);
+      });
+    });
+  }
+</script>
+
+</body></html>
