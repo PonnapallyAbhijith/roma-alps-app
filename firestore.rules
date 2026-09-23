@@ -1,14 +1,21 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+    function isAllowed() {
+      return request.auth != null &&
+        request.auth.token.email in [
+          'abhi14346@gmail.com',
+          'REPLACE_WITH_WIFES_EMAIL'
+        ];
+    }
+
     // Day-plan edits (the "Add plan / Edit plan" buttons).
     match /plans/{planId} {
-      allow read, write: if true;
+      allow read, write: if isAllowed();
     }
-    // Metadata (name, url, contentType) for attached files.
-    // The files themselves live in Storage, see storage.rules.
-    match /attachments/{attachmentId} {
-      allow read, write: if true;
+    // Which Drive folder is shared storage for attachments (id + name).
+    match /config/{doc} {
+      allow read, write: if isAllowed();
     }
   }
 }

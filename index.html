@@ -11,7 +11,6 @@
 <link rel="icon" href="icons/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<script src="https://accounts.google.com/gsi/client" async defer></script>
 <script src="https://apis.google.com/js/api.js" async defer></script>
 <style>
   :root{
@@ -2069,7 +2068,7 @@
       return;
     }
     if(!window.tripDriveReady || !window.tripDriveReady()){
-      list.innerHTML = '<div class="attach-empty">Choose a Drive folder (top of page) to see and add files.</div>';
+      list.innerHTML = '<div class="attach-empty">Tap "Connect Drive access" / "Choose Drive folder" (top of page) to see and add files.</div>';
       return;
     }
     list.innerHTML = '<div class="attach-empty">Loading…</div>';
@@ -2239,10 +2238,11 @@
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
   import { initializeFirestore, persistentLocalCache, persistentMultipleTabManager, doc, setDoc, deleteDoc, getDoc, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
+  import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
   import { firebaseConfig } from "./firebase-config.js";
   import { googleConfig } from "./google-config.js";
 
-  var db = null;
+  var db = null, auth = null;
   try {
     var app = initializeApp(firebaseConfig);
     // Persistent local cache = plans/attachment metadata are readable offline,
@@ -2250,6 +2250,7 @@
     db = initializeFirestore(app, {
       localCache: persistentLocalCache({ tabManager: persistentMultipleTabManager() })
     });
+    auth = getAuth(app);
   } catch (e) {
     console.error('Firebase init failed — fill in firebase-config.js with your project settings.', e);
   }
@@ -2283,9 +2284,11 @@
   // ---------------------------------------------------------------------
   var MAX_ATTACHMENT_BYTES = 15 * 1024 * 1024;
   var accessToken = null;
-  var tokenClient = null;
   var currentUserEmail = null;
   var driveFolder = null; // {id, name}
+  var googleProvider = new GoogleAuthProvider();
+  googleProvider.addScope('https://www.googleapis.com/auth/drive.file');
+  googleProvider.setCustomParameters({prompt: 'select_account'});
 
   function updateGoogleUI(){
     var statusEl = document.getElementById('googleStatus');
@@ -2294,12 +2297,15 @@
     var folderBtnText = document.getElementById('googleFolderBtnText');
     var signOutBtn = document.getElementById('googleSignOutBtn');
     if(!statusEl) return;
-    if(accessToken){
-      statusEl.textContent = 'Signed in' + (currentUserEmail ? ' as ' + currentUserEmail : '') +
+    // Firebase Auth's own sign-in persists across reloads (currentUserEmail);
+    // the Google OAuth access token used for Drive calls does not, so a
+    // returning session may be "signed in" but still need a fresh token.
+    if(currentUserEmail){
+      statusEl.textContent = 'Signed in as ' + currentUserEmail +
         (driveFolder ? ' — folder: ' + driveFolder.name : ' — no Drive folder chosen yet');
       signInBtn.hidden = true;
       folderBtn.hidden = false;
-      if(folderBtnText) folderBtnText.textContent = driveFolder ? 'Change folder' : 'Choose Drive folder';
+      if(folderBtnText) folderBtnText.textContent = !accessToken ? 'Connect Drive access' : (driveFolder ? 'Change folder' : 'Choose Drive folder');
       signOutBtn.hidden = false;
     } else {
       statusEl.textContent = 'Not signed in — sign in to add plans & attachments';
@@ -2309,14 +2315,8 @@
     }
   }
 
-  window.tripGoogleSignedIn = function(){ return !!accessToken; };
+  window.tripGoogleSignedIn = function(){ return !!currentUserEmail; };
   window.tripDriveReady = function(){ return !!(accessToken && driveFolder); };
-
-  function fetchUserInfo(){
-    return fetch('https://www.googleapis.com/oauth2/v3/userinfo', {headers: {Authorization: 'Bearer ' + accessToken}})
-      .then(function(r){ return r.ok ? r.json() : {}; })
-      .then(function(info){ currentUserEmail = info.email || null; });
-  }
 
   function loadDriveFolderConfig(){
     if(!db) return Promise.resolve();
@@ -2348,7 +2348,7 @@
   }
 
   function openDrivePicker(){
-    if(!accessToken){ tokenClient.requestAccessToken({prompt: 'consent'}); return; }
+    if(!accessToken){ signInWithRedirect(auth, googleProvider); return; }
     ensurePickerLib().then(function(){
       var view = new google.picker.DocsView(google.picker.ViewId.FOLDERS)
         .setSelectFolderEnabled(true)
@@ -2371,36 +2371,40 @@
     });
   }
 
-  function initGoogleSignIn(){
-    if(!window.google || !google.accounts || !google.accounts.oauth2){
-      window.setTimeout(initGoogleSignIn, 250);
-      return;
-    }
-    tokenClient = google.accounts.oauth2.initTokenClient({
-      client_id: googleConfig.clientId,
-      scope: googleConfig.driveScope + ' email profile',
-      callback: function(resp){
-        if(resp && resp.access_token){
-          accessToken = resp.access_token;
-          fetchUserInfo().then(loadDriveFolderConfig).then(updateGoogleUI);
-        }
-      }
-    });
+  function initGoogleAuth(){
     var signInBtn = document.getElementById('googleSignInBtn');
     if(signInBtn) signInBtn.addEventListener('click', function(){
-      tokenClient.requestAccessToken({prompt: accessToken ? '' : 'consent'});
+      signInWithRedirect(auth, googleProvider);
     });
     var signOutBtn = document.getElementById('googleSignOutBtn');
     if(signOutBtn) signOutBtn.addEventListener('click', function(){
-      if(accessToken && google.accounts.oauth2.revoke) google.accounts.oauth2.revoke(accessToken, function(){});
-      accessToken = null; currentUserEmail = null; driveFolder = null;
+      accessToken = null; driveFolder = null;
+      signOut(auth).catch(function(){});
       updateGoogleUI();
     });
     var folderBtn = document.getElementById('googleFolderBtn');
     if(folderBtn) folderBtn.addEventListener('click', openDrivePicker);
     updateGoogleUI();
+
+    if(!auth) return;
+    // Catches the credential after Google redirects back to this page.
+    getRedirectResult(auth).then(function(result){
+      if(!result) return;
+      var credential = GoogleAuthProvider.credentialFromResult(result);
+      if(credential) accessToken = credential.accessToken;
+    }).catch(function(err){
+      console.error('Google sign-in redirect failed', err);
+    }).finally(function(){
+      // Persisted sign-in state (survives reloads); the Drive access token
+      // above is only set right after a fresh redirect, not persisted.
+      onAuthStateChanged(auth, function(user){
+        currentUserEmail = user ? user.email : null;
+        if(!user){ accessToken = null; driveFolder = null; updateGoogleUI(); return; }
+        loadDriveFolderConfig().then(updateGoogleUI);
+      });
+    });
   }
-  initGoogleSignIn();
+  initGoogleAuth();
 
   function driveFetch(url, opts){
     opts = opts || {};
