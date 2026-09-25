@@ -2238,7 +2238,7 @@
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
   import { initializeFirestore, persistentLocalCache, persistentMultipleTabManager, doc, setDoc, deleteDoc, getDoc, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
-  import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
+  import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect, getRedirectResult, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
   import { firebaseConfig } from "./firebase-config.js";
   import { googleConfig } from "./google-config.js";
 
@@ -2348,7 +2348,7 @@
   }
 
   function openDrivePicker(){
-    if(!accessToken){ signInWithRedirect(auth, googleProvider); return; }
+    if(!accessToken){ doGoogleSignIn(); return; }
     ensurePickerLib().then(function(){
       var view = new google.picker.DocsView(google.picker.ViewId.FOLDERS)
         .setSelectFolderEnabled(true)
@@ -2371,11 +2371,40 @@
     });
   }
 
+  function showGoogleError(msg){
+    var statusEl = document.getElementById('googleStatus');
+    if(statusEl) statusEl.textContent = msg;
+  }
+
+  function doGoogleSignIn(){
+    if(!auth) return;
+    // Popup keeps the app page alive throughout — on an installed iOS
+    // "Add to Home Screen" app, a full-page redirect to Google and back can
+    // land in a different storage context than the one that started it, so
+    // the sign-in silently never completes. Popup avoids that entirely.
+    signInWithPopup(auth, googleProvider).then(function(result){
+      var credential = GoogleAuthProvider.credentialFromResult(result);
+      if(credential) accessToken = credential.accessToken;
+      currentUserEmail = result.user ? result.user.email : null;
+      return loadDriveFolderConfig();
+    }).then(function(){
+      updateGoogleUI();
+    }).catch(function(err){
+      console.error('Google sign-in failed', err);
+      var code = err && err.code;
+      if(code === 'auth/popup-blocked' || code === 'auth/cancelled-popup-request' || code === 'auth/operation-not-supported-in-this-environment'){
+        // Some browsers block the popup outright — fall back to a full redirect.
+        signInWithRedirect(auth, googleProvider);
+        return;
+      }
+      if(code === 'auth/popup-closed-by-user') return; // user backed out, not an error
+      showGoogleError('Sign-in failed (' + (code || 'unknown error') + ') — tap Sign in to try again.');
+    });
+  }
+
   function initGoogleAuth(){
     var signInBtn = document.getElementById('googleSignInBtn');
-    if(signInBtn) signInBtn.addEventListener('click', function(){
-      signInWithRedirect(auth, googleProvider);
-    });
+    if(signInBtn) signInBtn.addEventListener('click', doGoogleSignIn);
     var signOutBtn = document.getElementById('googleSignOutBtn');
     if(signOutBtn) signOutBtn.addEventListener('click', function(){
       accessToken = null; driveFolder = null;
@@ -2387,16 +2416,18 @@
     updateGoogleUI();
 
     if(!auth) return;
-    // Catches the credential after Google redirects back to this page.
+    // Catches the credential on the rare fallback path where we had to use
+    // a full redirect instead of a popup (see doGoogleSignIn above).
     getRedirectResult(auth).then(function(result){
       if(!result) return;
       var credential = GoogleAuthProvider.credentialFromResult(result);
       if(credential) accessToken = credential.accessToken;
     }).catch(function(err){
       console.error('Google sign-in redirect failed', err);
+      showGoogleError('Sign-in failed (' + (err && err.code ? err.code : 'unknown error') + ') — tap Sign in to try again.');
     }).finally(function(){
-      // Persisted sign-in state (survives reloads); the Drive access token
-      // above is only set right after a fresh redirect, not persisted.
+      // Firebase Auth's own sign-in state persists across reloads; the Drive
+      // access token above is only ever set right after a fresh sign-in.
       onAuthStateChanged(auth, function(user){
         currentUserEmail = user ? user.email : null;
         if(!user){ accessToken = null; driveFolder = null; updateGoogleUI(); return; }
