@@ -2159,11 +2159,25 @@
     });
   }
 
+  var dataSubscribed = false;
+  function ensureDataSubscriptions(){
+    // Firestore's rules require an authenticated, allow-listed user for
+    // plans/checklists/expenses. If onSnapshot() is called before sign-in
+    // completes, it fails permission-denied and — critically — that dead
+    // listener does NOT auto-retry once you do sign in; a fresh onSnapshot
+    // call is required. So this only fires once sign-in is confirmed, and
+    // re-fires on every auth change (guarded so it only subscribes once
+    // per signed-in session, not on every render).
+    if(dataSubscribed) return;
+    if(!(window.tripGoogleSignedIn && window.tripGoogleSignedIn())) return;
+    dataSubscribed = true;
+    subscribePlans();
+    subscribeChecklists();
+    subscribeExpenses();
+  }
   (function initDb(){
     window.__tripFirebaseReady.then(function(){
-      subscribePlans();
-      subscribeChecklists();
-      subscribeExpenses();
+      ensureDataSubscriptions();
     });
   })();
 
@@ -2642,7 +2656,11 @@
     });
   })();
 
-  window.tripOnAuthChange = function(){ renderChecklists(); renderExpenses(); };
+  window.tripOnAuthChange = function(){
+    ensureDataSubscriptions();
+    renderChecklists();
+    renderExpenses();
+  };
 
   document.querySelectorAll('.topnav a').forEach(function(a){
     a.addEventListener('click', function(ev){
