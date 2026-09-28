@@ -17,5 +17,13 @@ service cloud.firestore {
     match /config/{doc} {
       allow read, write: if isAllowed();
     }
+    // Shared, editable checklists (packing, and any custom ones).
+    match /checklists/{listId} {
+      allow read, write: if isAllowed();
+    }
+    // Shared, multi-currency trip expenses.
+    match /expenses/{expenseId} {
+      allow read, write: if isAllowed();
+    }
   }
 }

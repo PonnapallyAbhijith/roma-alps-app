@@ -334,6 +334,74 @@
   .pack-list label{display:flex; align-items:center; gap:9px; font-size:13px; padding:7px 2px; cursor:pointer;}
   .pack-list input{width:15px;height:15px;accent-color:var(--gold);flex:none;}
   .pack-list input:checked + span{color:var(--text-soft); text-decoration:line-through;}
+  .pack-card .head{justify-content:space-between;}
+  .pack-card .head-left{display:flex; align-items:center; gap:9px;}
+  .pack-card .list-del{background:none; border:none; color:var(--text-soft); font-size:16px; line-height:1; cursor:pointer; padding:4px;}
+  .pack-card .list-del:hover{color:var(--italy);}
+  .pack-list li{display:flex; align-items:center; gap:4px;}
+  .pack-list li label{flex:1; min-width:0;}
+  .pack-list li label span{overflow-wrap:anywhere;}
+  .item-del{background:none; border:none; color:var(--text-soft); font-size:15px; line-height:1; cursor:pointer; padding:4px; flex:none;}
+  .item-del:hover{color:var(--italy);}
+  .add-item-row{display:flex; gap:6px; margin-top:10px;}
+  .add-item-row input{
+    flex:1; min-width:0; font:13px/1.4 "IBM Plex Sans"; padding:8px 10px; border-radius:9px;
+    border:1px solid var(--line); background:var(--surface-2); color:var(--text);
+  }
+  .add-item-row button{
+    flex:none; font:600 12px/1 "IBM Plex Sans"; padding:0 12px; border-radius:9px; border:1px solid var(--line);
+    background:var(--surface-2); color:var(--text); cursor:pointer;
+  }
+  .pack-card.new-list{
+    display:flex; flex-direction:column; align-items:stretch; justify-content:center; gap:10px;
+    border-style:dashed; background:var(--todo-bg);
+  }
+  .pack-card.new-list input{
+    font:13px/1.4 "IBM Plex Sans"; padding:9px 11px; border-radius:9px; border:1px solid var(--line);
+    background:var(--surface); color:var(--text);
+  }
+  .pack-card.new-list button{
+    font:600 12.5px/1 "IBM Plex Sans"; padding:9px 12px; border-radius:9px; border:none;
+    background:var(--gold); color:#241f17; cursor:pointer;
+  }
+
+  /* ---------- expenses ---------- */
+  .expense-form{
+    background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:16px;
+    box-shadow:var(--shadow); display:flex; flex-direction:column; gap:10px; margin-bottom:18px;
+  }
+  .expense-form-row{display:flex; gap:8px; flex-wrap:wrap;}
+  .expense-input, .expense-select{
+    font:13px/1.4 "IBM Plex Sans"; padding:9px 11px; border-radius:9px; border:1px solid var(--line);
+    background:var(--surface-2); color:var(--text); flex:1; min-width:90px;
+  }
+  #expAmount{max-width:120px;}
+  #expDate{max-width:150px;}
+  .expense-totals{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin-bottom:16px;}
+  .expense-total-card{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:12px 14px; box-shadow:var(--shadow);}
+  .expense-total-card .et-label{font:600 10.5px/1 "IBM Plex Sans"; letter-spacing:.06em; text-transform:uppercase; color:var(--text-soft); margin-bottom:6px;}
+  .expense-total-card .et-amount{font:700 19px/1 "IBM Plex Mono"; font-variant-numeric:tabular-nums;}
+  .expense-total-card.grand{background:var(--gold-soft); border-color:var(--gold);}
+  .expense-total-card.grand .et-amount{color:var(--gold);}
+  .expense-rate-note{grid-column:1/-1; font-size:11px; color:var(--text-soft);}
+  .expense-list{display:flex; flex-direction:column; gap:8px;}
+  .expense-row{
+    display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--line);
+    border-radius:12px; padding:11px 14px; box-shadow:var(--shadow);
+  }
+  .expense-row .ex-cat{
+    flex:none; width:34px; height:34px; border-radius:9px; display:grid; place-items:center;
+    background:var(--gold-soft); color:var(--gold);
+  }
+  .expense-row .ex-cat svg{width:16px;height:16px;}
+  .expense-row .ex-main{flex:1; min-width:0;}
+  .expense-row .ex-note{font:600 13.5px "IBM Plex Sans"; overflow-wrap:anywhere;}
+  .expense-row .ex-meta{font-size:11.5px; color:var(--text-soft); margin-top:2px;}
+  .expense-row .ex-amount{flex:none; font:700 14.5px "IBM Plex Mono"; font-variant-numeric:tabular-nums; text-align:right;}
+  .expense-row .ex-amount .ex-inr{display:block; font:500 11px "IBM Plex Mono"; color:var(--text-soft); font-weight:500;}
+  .expense-row .ex-del{flex:none; background:none; border:none; color:var(--text-soft); font-size:17px; line-height:1; cursor:pointer; padding:4px;}
+  .expense-row .ex-del:hover{color:var(--italy);}
+  .expense-empty{font-size:13px; color:var(--text-soft); padding:12px 2px;}
 
   /* ---------- cost sheet ---------- */
   .cost-stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:14px; margin-bottom:22px;}
@@ -521,6 +589,7 @@
   <a href="#itinerary">Itinerary</a>
   <a href="#pack">Weather &amp; Packing</a>
   <a href="#costs">Costs</a>
+  <a href="#expenses">Expenses</a>
 </nav>
 
 <header class="hero" id="hero">
@@ -1439,6 +1508,13 @@
     </div>
   </div>
 
+  <div class="section-head" style="margin-top:36px;">
+    <div>
+      <div class="eyebrow">Shared &amp; editable</div>
+      <h2>Checklists</h2>
+    </div>
+    <p class="section-sub" id="checklistHint">Sign in above to check items off, add your own, or start a new list.</p>
+  </div>
   <div class="pack-grid" id="packGrid"></div>
 </section>
 
@@ -1509,6 +1585,44 @@
     </table>
   </div>
   <p class="section-sub" style="margin-top:14px;">The Etihad and Ryanair amounts are actual charges. Colosseum and Duomo are converted from EUR using the FX rate on the Ryanair charge (&#8377;116.86/&euro;1) since that's the only real conversion rate on file — treat those two as approximate. The Swiss transport row is your own itinerary email's Half Fare Card estimate (not yet purchased), converted at a rough market rate (~&#8377;95/CHF, not from a transaction) — and it doesn't include the Half Fare Card itself, CHF 120 per adult (~CHF 240 for two) if you don't already hold one. The Milan&rarr;Switzerland transfer is still not booked and isn't in this total.</p>
+</section>
+
+<section id="expenses">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">Live &amp; shared</div>
+      <h2>Trip expenses</h2>
+    </div>
+    <p class="section-sub" id="expenseHint">Sign in above to log spending on the go, in whichever currency you paid in.</p>
+  </div>
+
+  <div class="expense-form" id="expenseForm" hidden>
+    <div class="expense-form-row">
+      <input type="number" id="expAmount" class="expense-input" placeholder="Amount" step="0.01" min="0" inputmode="decimal">
+      <select id="expCurrency" class="expense-select">
+        <option value="EUR">EUR &euro;</option>
+        <option value="CHF">CHF</option>
+        <option value="USD">USD $</option>
+        <option value="INR">INR &#8377;</option>
+      </select>
+      <select id="expCategory" class="expense-select">
+        <option value="Food">Food</option>
+        <option value="Transport">Transport</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Activities">Activities</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div class="expense-form-row">
+      <input type="text" id="expNote" class="expense-input" placeholder="What was it? (e.g. gelato, taxi)" style="flex:2;">
+      <input type="date" id="expDate" class="expense-input">
+      <button type="button" class="google-btn" id="expAddBtn" style="background:var(--gold); color:#241f17;">Add</button>
+    </div>
+    <div class="attach-hint" id="expHint"></div>
+  </div>
+
+  <div class="expense-totals" id="expenseTotals"></div>
+  <div class="expense-list" id="expenseList"></div>
 </section>
 
 </main>
@@ -2029,6 +2143,8 @@
   (function initDb(){
     window.__tripFirebaseReady.then(function(){
       subscribePlans();
+      subscribeChecklists();
+      subscribeExpenses();
     });
   })();
 
@@ -2133,8 +2249,20 @@
 
   initAttachments();
 
-  var packing = [
-    {title:'Clothing', icon:'i-shirt', accent:'italy', items:[
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+  function fmtAmount(n){
+    return Number(n || 0).toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2});
+  }
+
+  // ---------------------------------------------------------------------
+  // Checklists — shared, editable (packing by default; add your own).
+  // ---------------------------------------------------------------------
+  var DEFAULT_CHECKLISTS = [
+    {id:'clothing', title:'Clothing', icon:'i-shirt', accent:'italy', items:[
       'Breathable tees & a couple of collared shirts (Rome & Milan)',
       'Warm fleece or wool sweater',
       'Insulated waterproof jacket (Jungfrau leg)',
@@ -2143,13 +2271,13 @@
       'One smart-casual outfit for dinners',
       'Riyaan: extra warm layers + spare outfit'
     ]},
-    {title:'Footwear', icon:'i-shoe', accent:'swiss', items:[
+    {id:'footwear', title:'Footwear', icon:'i-shoe', accent:'swiss', items:[
       'Comfortable walking shoes (Rome & Milan cobblestones)',
       'Waterproof hiking shoes or boots (Lauterbrunnen/Wengen)',
       'Warm socks for the mountains',
       'One pair smart shoes for evenings'
     ]},
-    {title:'Accessories', icon:'i-mountain', accent:'gold', items:[
+    {id:'accessories', title:'Accessories', icon:'i-mountain', accent:'gold', items:[
       'Scarf, beanie & gloves for the Alps',
       'Sunglasses',
       'Compact umbrella / packable rain shell',
@@ -2157,7 +2285,7 @@
       'EU type-C/F power adapter + power bank',
       'Reusable water bottle'
     ]},
-    {title:'Essentials & documents', icon:'i-bag', accent:'italy', items:[
+    {id:'essentials', title:'Essentials & documents', icon:'i-bag', accent:'italy', items:[
       'Passports + printed visa/travel docs',
       'International Driving Permit (for the Bari rental car)',
       'All e-tickets: flights, Colosseum, Duomo (saved offline too)',
@@ -2169,31 +2297,241 @@
     ]}
   ];
 
-  var grid = document.getElementById('packGrid');
-  packing.forEach(function(group, gi){
+  var checklistsData = {};
+
+  function defaultListSnapshot(id){
+    var def = DEFAULT_CHECKLISTS.filter(function(d){ return d.id === id; })[0];
+    if(!def) return null;
+    return {title:def.title, icon:def.icon, accent:def.accent, items:def.items.map(function(t, i){ return {id:def.id+'-'+i, text:t, checked:false}; })};
+  }
+  function currentLists(){
+    var ids = Object.keys(checklistsData);
+    if(!ids.length){
+      return DEFAULT_CHECKLISTS.map(function(d, i){ return Object.assign({id:d.id, order:i}, defaultListSnapshot(d.id)); });
+    }
+    return ids.map(function(id){ return Object.assign({id:id}, checklistsData[id]); }).sort(function(a,b){ return (a.order||0) - (b.order||0); });
+  }
+  function getListSnapshot(listId){
+    if(checklistsData[listId]) return checklistsData[listId];
+    return defaultListSnapshot(listId);
+  }
+  function saveListItems(listId, items){
+    var list = getListSnapshot(listId);
+    if(!list) return;
+    window.tripChecklistSave(listId, Object.assign({}, list, {items: items})).catch(function(){});
+  }
+  function toggleChecklistItem(listId, itemId, checked){
+    var list = getListSnapshot(listId); if(!list) return;
+    saveListItems(listId, list.items.map(function(it){ return it.id === itemId ? Object.assign({}, it, {checked: checked}) : it; }));
+  }
+  function removeChecklistItem(listId, itemId){
+    var list = getListSnapshot(listId); if(!list) return;
+    saveListItems(listId, list.items.filter(function(it){ return it.id !== itemId; }));
+  }
+  function addChecklistItem(listId, text){
+    var list = getListSnapshot(listId); if(!list) return;
+    saveListItems(listId, list.items.concat([{id: 'i' + Date.now(), text: text, checked: false}]));
+  }
+
+  function checklistCardEl(list, signedIn){
     var card = document.createElement('div');
     card.className = 'pack-card';
-    var accent = accentVar[group.accent], soft = accentSoftVar[group.accent];
-    var items = group.items.map(function(item, ii){
-      var id = 'pk-'+gi+'-'+ii;
-      return '<li><label for="'+id+'"><input type="checkbox" id="'+id+'" data-key="'+id+'"><span>'+item+'</span></label></li>';
-    }).join('');
+    var accent = accentVar[list.accent] || accentVar.gold, soft = accentSoftVar[list.accent] || accentSoftVar.gold;
+    var items = (list.items || []).map(function(item){
+      return '<li><label><input type="checkbox" data-list="'+list.id+'" data-item="'+item.id+'"'+(item.checked ? ' checked' : '')+(signedIn ? '' : ' disabled')+'><span>'+escapeHtml(item.text)+'</span></label>'+
+        (signedIn ? '<button type="button" class="item-del" data-list="'+list.id+'" data-item="'+item.id+'" aria-label="Remove item">&times;</button>' : '')+
+      '</li>';
+    }).join('') || '<li style="border:none; padding:4px 2px; color:var(--text-soft); font-size:12.5px;">No items yet.</li>';
     card.innerHTML =
-      '<div class="head"><span class="icon-badge" style="--accent:'+accent+';--accent-soft:'+soft+'"><svg><use href="#'+group.icon+'"/></svg></span><h4>'+group.title+'</h4></div>'+
-      '<ul class="pack-list">'+items+'</ul>';
-    grid.appendChild(card);
-  });
+      '<div class="head"><div class="head-left"><span class="icon-badge" style="--accent:'+accent+';--accent-soft:'+soft+'"><svg><use href="#'+(list.icon || 'i-bag')+'"/></svg></span><h4>'+escapeHtml(list.title)+'</h4></div>'+
+        (signedIn ? '<button type="button" class="list-del" aria-label="Delete list">&times;</button>' : '')+
+      '</div>'+
+      '<ul class="pack-list">'+items+'</ul>'+
+      (signedIn ? '<div class="add-item-row"><input type="text" placeholder="Add item…"><button type="button">+</button></div>' : '');
+    card.querySelectorAll('.pack-list input[type=checkbox]').forEach(function(box){
+      box.addEventListener('change', function(){ toggleChecklistItem(box.dataset.list, box.dataset.item, box.checked); });
+    });
+    card.querySelectorAll('.item-del').forEach(function(btn){
+      btn.addEventListener('click', function(){ removeChecklistItem(btn.dataset.list, btn.dataset.item); });
+    });
+    var delListBtn = card.querySelector('.list-del');
+    if(delListBtn) delListBtn.addEventListener('click', function(){
+      if(confirm('Delete "' + list.title + '" and all its items?')) window.tripChecklistDelete(list.id).catch(function(){});
+    });
+    var addRow = card.querySelector('.add-item-row');
+    if(addRow){
+      var addInput = addRow.querySelector('input');
+      var addBtn = addRow.querySelector('button');
+      var doAdd = function(){
+        var text = (addInput.value || '').trim();
+        if(!text) return;
+        addChecklistItem(list.id, text);
+        addInput.value = '';
+      };
+      addBtn.addEventListener('click', doAdd);
+      addInput.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); doAdd(); } });
+    }
+    return card;
+  }
 
-  try{
-    document.querySelectorAll('.pack-list input[type="checkbox"]').forEach(function(box){
-      var key = 'trip-pack-'+box.dataset.key;
-      var saved = localStorage.getItem(key);
-      if(saved === '1') box.checked = true;
-      box.addEventListener('change', function(){
-        try{ localStorage.setItem(key, box.checked ? '1' : '0'); }catch(e){}
+  function renderChecklists(){
+    var grid = document.getElementById('packGrid');
+    var hint = document.getElementById('checklistHint');
+    if(!grid) return;
+    var signedIn = !!(window.tripGoogleSignedIn && window.tripGoogleSignedIn());
+    if(hint) hint.textContent = signedIn ? 'Tap to check off, add items, or start a new list — synced with your travel partner.' : 'Sign in above to check items off, add your own, or start a new list.';
+    grid.innerHTML = '';
+    currentLists().forEach(function(list){ grid.appendChild(checklistCardEl(list, signedIn)); });
+    if(signedIn){
+      var addCard = document.createElement('div');
+      addCard.className = 'pack-card new-list';
+      addCard.innerHTML = '<input type="text" placeholder="New checklist name…"><button type="button">+ Add checklist</button>';
+      var input = addCard.querySelector('input'), btn = addCard.querySelector('button');
+      btn.addEventListener('click', function(){
+        var name = (input.value || '').trim();
+        if(!name) return;
+        window.tripChecklistSave('list-' + Date.now(), {title: name, icon: 'i-bag', accent: 'gold', items: [], order: Date.now()}).catch(function(){});
+        input.value = '';
+      });
+      grid.appendChild(addCard);
+    }
+  }
+
+  function subscribeChecklists(){
+    window.tripChecklistsSubscribe(function(all){
+      checklistsData = all;
+      if(!Object.keys(all).length && window.tripGoogleSignedIn && window.tripGoogleSignedIn()){
+        DEFAULT_CHECKLISTS.forEach(function(def, i){
+          window.tripChecklistSave(def.id, Object.assign({order: i}, defaultListSnapshot(def.id))).catch(function(){});
+        });
+      }
+      renderChecklists();
+    });
+  }
+  renderChecklists();
+
+  // ---------------------------------------------------------------------
+  // Expenses — shared, multi-currency spend tracker.
+  // ---------------------------------------------------------------------
+  var expensesData = [];
+  var ratesEUR = null;
+  var STATIC_RATES_EUR = {EUR:1, USD:1.16, CHF:0.94, INR:116.86}; // approximate fallback; INR anchored to the real Ryanair charge rate
+  var CURRENCY_SYMBOL = {EUR:'€', CHF:'CHF ', USD:'$', INR:'₹'};
+  var CATEGORY_ICON = {Food:'i-coin', Transport:'i-car', Shopping:'i-bag', Activities:'i-mountain', Other:'i-doc'};
+
+  function toINR(amount, currency){
+    var r = ratesEUR || STATIC_RATES_EUR;
+    if(currency === 'INR') return amount;
+    if(currency === 'EUR') return amount * r.INR;
+    return amount * (r.INR / r[currency]);
+  }
+  function loadRatesOnce(){
+    if(ratesEUR || !window.tripFetchRates) return;
+    window.tripFetchRates().then(function(r){
+      ratesEUR = r || STATIC_RATES_EUR;
+      renderExpenses();
+    });
+  }
+
+  function renderExpenses(){
+    var hint = document.getElementById('expenseHint');
+    var form = document.getElementById('expenseForm');
+    var totalsEl = document.getElementById('expenseTotals');
+    var listEl = document.getElementById('expenseList');
+    if(!listEl) return;
+    var signedIn = !!(window.tripGoogleSignedIn && window.tripGoogleSignedIn());
+    if(form) form.hidden = !signedIn;
+    if(hint) hint.textContent = signedIn ? 'Logged for both of you, converted to INR at the bottom.' : 'Sign in above to log spending on the go, in whichever currency you paid in.';
+    if(!signedIn){
+      if(totalsEl) totalsEl.innerHTML = '';
+      listEl.innerHTML = '<div class="expense-empty">Sign in to view and log expenses.</div>';
+      return;
+    }
+    if(!ratesEUR) loadRatesOnce();
+
+    var byCurrency = {}, grandINR = 0;
+    expensesData.forEach(function(e){
+      byCurrency[e.currency] = (byCurrency[e.currency] || 0) + Number(e.amount);
+      grandINR += toINR(Number(e.amount), e.currency);
+    });
+    if(totalsEl){
+      if(!expensesData.length){
+        totalsEl.innerHTML = '';
+      } else {
+        var totalsHtml = Object.keys(byCurrency).map(function(cur){
+          return '<div class="expense-total-card"><div class="et-label">'+cur+' spent</div><div class="et-amount">'+CURRENCY_SYMBOL[cur]+fmtAmount(byCurrency[cur])+'</div></div>';
+        }).join('');
+        totalsHtml += '<div class="expense-total-card grand"><div class="et-label">Grand total (INR)</div><div class="et-amount">&#8377;'+fmtAmount(grandINR)+'</div></div>';
+        totalsHtml += '<div class="expense-rate-note">'+(ratesEUR ? 'Converted at today’s exchange rates' : 'Converted at approximate rates — will refresh once online')+'</div>';
+        totalsEl.innerHTML = totalsHtml;
+      }
+    }
+    if(!expensesData.length){
+      listEl.innerHTML = '<div class="expense-empty">No expenses logged yet.</div>';
+      return;
+    }
+    var sorted = expensesData.slice().sort(function(a, b){ return (b.createdAt || 0) - (a.createdAt || 0); });
+    listEl.innerHTML = sorted.map(function(e){
+      var icon = CATEGORY_ICON[e.category] || 'i-coin';
+      var who = e.addedBy ? escapeHtml(String(e.addedBy).split('@')[0]) : '';
+      return '<div class="expense-row">'+
+        '<span class="ex-cat"><svg><use href="#'+icon+'"/></svg></span>'+
+        '<div class="ex-main"><div class="ex-note">'+escapeHtml(e.note || e.category || 'Expense')+'</div>'+
+          '<div class="ex-meta">'+escapeHtml(e.date || '')+' &middot; '+escapeHtml(e.category || 'Other')+(who ? ' &middot; '+who : '')+'</div></div>'+
+        '<div class="ex-amount">'+(CURRENCY_SYMBOL[e.currency] || '')+fmtAmount(e.amount)+'<span class="ex-inr">&#8776; &#8377;'+fmtAmount(toINR(Number(e.amount), e.currency))+'</span></div>'+
+        '<button type="button" class="ex-del" data-id="'+e.id+'" aria-label="Delete expense">&times;</button>'+
+      '</div>';
+    }).join('');
+    listEl.querySelectorAll('.ex-del').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        if(confirm('Delete this expense?')) window.tripExpenseDelete(btn.getAttribute('data-id')).catch(function(){});
       });
     });
-  }catch(e){}
+  }
+
+  function subscribeExpenses(){
+    window.tripExpensesSubscribe(function(list){
+      expensesData = list;
+      renderExpenses();
+    });
+  }
+  renderExpenses();
+
+  (function wireExpenseForm(){
+    var addBtn = document.getElementById('expAddBtn');
+    var dateEl = document.getElementById('expDate');
+    if(dateEl && !dateEl.value) dateEl.value = new Date().toISOString().slice(0, 10);
+    if(!addBtn) return;
+    addBtn.addEventListener('click', function(){
+      var amountEl = document.getElementById('expAmount');
+      var currencyEl = document.getElementById('expCurrency');
+      var categoryEl = document.getElementById('expCategory');
+      var noteEl = document.getElementById('expNote');
+      var hint = document.getElementById('expHint');
+      var amount = parseFloat(amountEl.value);
+      if(!amount || amount <= 0){
+        if(hint) hint.textContent = 'Enter a valid amount.';
+        return;
+      }
+      addBtn.disabled = true;
+      window.tripExpenseAdd({
+        amount: amount,
+        currency: currencyEl.value,
+        category: categoryEl.value,
+        note: (noteEl.value || '').trim(),
+        date: dateEl.value || new Date().toISOString().slice(0, 10)
+      }).then(function(){
+        amountEl.value = ''; noteEl.value = '';
+        if(hint) hint.textContent = '';
+        addBtn.disabled = false;
+      }).catch(function(){
+        if(hint) hint.textContent = 'Could not save — check your connection.';
+        addBtn.disabled = false;
+      });
+    });
+  })();
+
+  window.tripOnAuthChange = function(){ renderChecklists(); renderExpenses(); };
 
   document.querySelectorAll('.topnav a').forEach(function(a){
     a.addEventListener('click', function(ev){
@@ -2237,7 +2575,7 @@
 
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
-  import { initializeFirestore, persistentLocalCache, persistentMultipleTabManager, doc, setDoc, deleteDoc, getDoc, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
+  import { initializeFirestore, persistentLocalCache, persistentMultipleTabManager, doc, setDoc, deleteDoc, getDoc, addDoc, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
   import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect, getRedirectResult, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
   import { firebaseConfig } from "./firebase-config.js";
   import { googleConfig } from "./google-config.js";
@@ -2313,6 +2651,7 @@
       folderBtn.hidden = true;
       signOutBtn.hidden = true;
     }
+    if(window.tripOnAuthChange) window.tripOnAuthChange();
   }
 
   window.tripGoogleSignedIn = function(){ return !!currentUserEmail; };
@@ -2493,6 +2832,56 @@
   window.tripAttachThumbnail = function(thumbnailLink){
     return driveFetch(thumbnailLink).then(function(r){ return r.ok ? r.blob() : null; })
       .then(function(blob){ return blob ? URL.createObjectURL(blob) : null; })
+      .catch(function(){ return null; });
+  };
+
+  // ---------------------------------------------------------------------
+  // Checklists — shared, editable lists (packing, or anything else).
+  // ---------------------------------------------------------------------
+  window.tripChecklistsSubscribe = function(onChange){
+    if(!db) return;
+    onSnapshot(collection(db, 'checklists'), function(snap){
+      var out = {};
+      snap.forEach(function(d){ out[d.id] = d.data(); });
+      onChange(out);
+    }, function(err){ console.error('checklists subscription error', err); });
+  };
+  window.tripChecklistSave = function(listId, data){
+    if(!db) return Promise.reject(new Error('no-db'));
+    return setDoc(doc(db, 'checklists', listId), data);
+  };
+  window.tripChecklistDelete = function(listId){
+    if(!db) return Promise.reject(new Error('no-db'));
+    return deleteDoc(doc(db, 'checklists', listId));
+  };
+
+  // ---------------------------------------------------------------------
+  // Expenses — shared, multi-currency (EUR/CHF/USD/INR) spend tracker.
+  // ---------------------------------------------------------------------
+  window.tripExpensesSubscribe = function(onChange){
+    if(!db) return;
+    onSnapshot(collection(db, 'expenses'), function(snap){
+      var out = [];
+      snap.forEach(function(d){ out.push(Object.assign({id: d.id}, d.data())); });
+      onChange(out);
+    }, function(err){ console.error('expenses subscription error', err); });
+  };
+  window.tripExpenseAdd = function(expense){
+    if(!db) return Promise.reject(new Error('no-db'));
+    expense.addedBy = currentUserEmail || null;
+    expense.createdAt = Date.now();
+    return addDoc(collection(db, 'expenses'), expense);
+  };
+  window.tripExpenseDelete = function(expenseId){
+    if(!db) return Promise.reject(new Error('no-db'));
+    return deleteDoc(doc(db, 'expenses', expenseId));
+  };
+  // Live EUR-based rates from a free, no-key, ECB-backed source; callers
+  // fall back to static approximate rates if this fails (offline, etc).
+  window.tripFetchRates = function(){
+    return fetch('https://api.frankfurter.app/latest?from=EUR&to=USD,CHF,INR')
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(j){ return (j && j.rates) ? {EUR: 1, USD: j.rates.USD, CHF: j.rates.CHF, INR: j.rates.INR} : null; })
       .catch(function(){ return null; });
   };
 </script>
