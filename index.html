@@ -399,9 +399,16 @@
   .expense-row .ex-meta{font-size:11.5px; color:var(--text-soft); margin-top:2px;}
   .expense-row .ex-amount{flex:none; font:700 14.5px "IBM Plex Mono"; font-variant-numeric:tabular-nums; text-align:right;}
   .expense-row .ex-amount .ex-inr{display:block; font:500 11px "IBM Plex Mono"; color:var(--text-soft); font-weight:500;}
-  .expense-row .ex-del{flex:none; background:none; border:none; color:var(--text-soft); font-size:17px; line-height:1; cursor:pointer; padding:4px;}
-  .expense-row .ex-del:hover{color:var(--italy);}
+  .ex-actions{display:flex; gap:2px; flex:none;}
+  .ex-icon-btn{background:none; border:none; color:var(--text-soft); cursor:pointer; padding:5px; border-radius:7px; display:grid; place-items:center;}
+  .ex-icon-btn svg{width:14px;height:14px;}
+  .ex-icon-btn.ex-del{font-size:17px; line-height:1;}
+  .ex-icon-btn:hover{background:var(--surface-2); color:var(--text);}
+  .ex-icon-btn.ex-del:hover{color:var(--italy);}
   .expense-empty{font-size:13px; color:var(--text-soft); padding:12px 2px;}
+  .expense-row-edit{flex-direction:column; align-items:stretch; gap:10px;}
+  .expense-edit-actions{display:flex; gap:8px; justify-content:flex-end;}
+  .expense-edit-actions .ghost{background:var(--surface-2); color:var(--text); border:1px solid var(--line);}
 
   /* ---------- cost sheet ---------- */
   .cost-stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:14px; margin-bottom:22px;}
@@ -1587,6 +1594,15 @@
   <p class="section-sub" style="margin-top:14px;">The Etihad and Ryanair amounts are actual charges. Colosseum and Duomo are converted from EUR using the FX rate on the Ryanair charge (&#8377;116.86/&euro;1) since that's the only real conversion rate on file — treat those two as approximate. The Swiss transport row is your own itinerary email's Half Fare Card estimate (not yet purchased), converted at a rough market rate (~&#8377;95/CHF, not from a transaction) — and it doesn't include the Half Fare Card itself, CHF 120 per adult (~CHF 240 for two) if you don't already hold one. The Milan&rarr;Switzerland transfer is still not booked and isn't in this total.</p>
 </section>
 
+<dialog id="expAttachDialog">
+  <div class="dlg-head" style="--accent:var(--gold);--accent-soft:var(--gold-soft)">
+    <span class="ico"><svg><use href="#i-doc"/></svg></span>
+    <h3 id="expAttachTitle">Receipt</h3>
+    <button class="dlg-close" onclick="expAttachDialog.close()" aria-label="Close"><svg width="18" height="18"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="dlg-body" id="expAttachBody"></div>
+</dialog>
+
 <section id="expenses">
   <div class="section-head">
     <div>
@@ -2150,6 +2166,21 @@
 
   var ATTACH_DIALOGS = ['dlgFlight','dlgRomeStay','dlgColosseum','dlgTrain','dlgRentalCar','dlgIDP','dlgPolignano','dlgMilanStay','dlgDuomo','dlgAlpsStay','dlgAirbnb','dlgBariFlight','dlgTransfer'];
 
+  function buildAttachSection(container, key){
+    container.innerHTML =
+      '<div class="attach-head"><span class="eyebrow">Attachments</span>'+
+        '<label class="attach-add"><input type="file" accept="image/*,application/pdf" hidden><svg><use href="#i-bag"/></svg> Add file</label>'+
+      '</div>'+
+      '<div class="attach-list" id="attach-list-'+key+'"><div class="attach-empty">Loading…</div></div>'+
+      '<div class="attach-hint" id="attach-hint-'+key+'"></div>';
+    var input = container.querySelector('input[type=file]');
+    input.addEventListener('change', function(){
+      var file = input.files && input.files[0];
+      if(file) uploadAttachment(key, file);
+      input.value = '';
+    });
+  }
+
   function initAttachments(){
     ATTACH_DIALOGS.forEach(function(id){
       var dlg = document.getElementById(id);
@@ -2157,23 +2188,27 @@
       if(!body) return;
       var section = document.createElement('div');
       section.className = 'attach-section';
-      section.innerHTML =
-        '<div class="attach-head"><span class="eyebrow">Attachments</span>'+
-          '<label class="attach-add"><input type="file" accept="image/*,application/pdf" hidden><svg><use href="#i-bag"/></svg> Add file</label>'+
-        '</div>'+
-        '<div class="attach-list" id="attach-list-'+id+'"><div class="attach-empty">Loading…</div></div>'+
-        '<div class="attach-hint" id="attach-hint-'+id+'"></div>';
       body.appendChild(section);
-      var input = section.querySelector('input[type=file]');
-      input.addEventListener('change', function(){
-        var file = input.files && input.files[0];
-        if(file) uploadAttachment(id, file);
-        input.value = '';
-      });
+      buildAttachSection(section, id);
       if(dlg){
         dlg.addEventListener('toggle', function(){ if(dlg.open) refreshAttachList(id); });
       }
     });
+  }
+
+  function openExpenseAttachDialog(expenseId, label){
+    var key = 'exp-' + expenseId;
+    var titleEl = document.getElementById('expAttachTitle');
+    if(titleEl) titleEl.textContent = 'Receipt — ' + label;
+    var body = document.getElementById('expAttachBody');
+    if(!body) return;
+    body.innerHTML = '';
+    var section = document.createElement('div');
+    section.className = 'attach-section';
+    body.appendChild(section);
+    buildAttachSection(section, key);
+    refreshAttachList(key);
+    if(window.expAttachDialog && window.expAttachDialog.showModal) window.expAttachDialog.showModal();
   }
 
   function refreshAttachList(id){
@@ -2471,22 +2506,95 @@
       return;
     }
     var sorted = expensesData.slice().sort(function(a, b){ return (b.createdAt || 0) - (a.createdAt || 0); });
-    listEl.innerHTML = sorted.map(function(e){
-      var icon = CATEGORY_ICON[e.category] || 'i-coin';
-      var who = e.addedBy ? escapeHtml(String(e.addedBy).split('@')[0]) : '';
-      return '<div class="expense-row">'+
-        '<span class="ex-cat"><svg><use href="#'+icon+'"/></svg></span>'+
-        '<div class="ex-main"><div class="ex-note">'+escapeHtml(e.note || e.category || 'Expense')+'</div>'+
-          '<div class="ex-meta">'+escapeHtml(e.date || '')+' &middot; '+escapeHtml(e.category || 'Other')+(who ? ' &middot; '+who : '')+'</div></div>'+
-        '<div class="ex-amount">'+(CURRENCY_SYMBOL[e.currency] || '')+fmtAmount(e.amount)+'<span class="ex-inr">&#8776; &#8377;'+fmtAmount(toINR(Number(e.amount), e.currency))+'</span></div>'+
-        '<button type="button" class="ex-del" data-id="'+e.id+'" aria-label="Delete expense">&times;</button>'+
-      '</div>';
-    }).join('');
+    listEl.innerHTML = sorted.map(expenseRowHtml).join('');
+
     listEl.querySelectorAll('.ex-del').forEach(function(btn){
       btn.addEventListener('click', function(){
         if(confirm('Delete this expense?')) window.tripExpenseDelete(btn.getAttribute('data-id')).catch(function(){});
       });
     });
+    listEl.querySelectorAll('.ex-attach').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        openExpenseAttachDialog(btn.getAttribute('data-id'), btn.getAttribute('data-label'));
+      });
+    });
+    listEl.querySelectorAll('.ex-edit').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        editingExpenseId = btn.getAttribute('data-id');
+        renderExpenses();
+      });
+    });
+    listEl.querySelectorAll('.ee-cancel').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        editingExpenseId = null;
+        renderExpenses();
+      });
+    });
+    listEl.querySelectorAll('.ee-save').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var row = btn.closest('.expense-row-edit');
+        if(!row) return;
+        var amount = parseFloat(row.querySelector('.ee-amount').value);
+        if(!amount || amount <= 0){ alert('Enter a valid amount.'); return; }
+        var data = {
+          amount: amount,
+          currency: row.querySelector('.ee-currency').value,
+          category: row.querySelector('.ee-category').value,
+          note: row.querySelector('.ee-note').value.trim(),
+          date: row.querySelector('.ee-date').value
+        };
+        btn.disabled = true;
+        window.tripExpenseUpdate(btn.getAttribute('data-id'), data).then(function(){
+          editingExpenseId = null;
+          renderExpenses();
+        }).catch(function(){
+          alert('Could not save changes — check your connection.');
+          btn.disabled = false;
+        });
+      });
+    });
+  }
+
+  var editingExpenseId = null;
+  var EXPENSE_CURRENCIES = ['EUR', 'CHF', 'USD', 'INR'];
+  var EXPENSE_CATEGORIES = ['Food', 'Transport', 'Shopping', 'Activities', 'Other'];
+
+  function expenseRowHtml(e){
+    if(editingExpenseId === e.id) return expenseEditRowHtml(e);
+    var icon = CATEGORY_ICON[e.category] || 'i-coin';
+    var who = e.addedBy ? escapeHtml(String(e.addedBy).split('@')[0]) : '';
+    var label = escapeHtml(e.note || e.category || 'Expense');
+    return '<div class="expense-row">'+
+      '<span class="ex-cat"><svg><use href="#'+icon+'"/></svg></span>'+
+      '<div class="ex-main"><div class="ex-note">'+label+'</div>'+
+        '<div class="ex-meta">'+escapeHtml(e.date || '')+' &middot; '+escapeHtml(e.category || 'Other')+(who ? ' &middot; '+who : '')+'</div></div>'+
+      '<div class="ex-amount">'+(CURRENCY_SYMBOL[e.currency] || '')+fmtAmount(e.amount)+'<span class="ex-inr">&#8776; &#8377;'+fmtAmount(toINR(Number(e.amount), e.currency))+'</span></div>'+
+      '<div class="ex-actions">'+
+        '<button type="button" class="ex-icon-btn ex-attach" data-id="'+e.id+'" data-label="'+label+'" aria-label="Receipt"><svg><use href="#i-doc"/></svg></button>'+
+        '<button type="button" class="ex-icon-btn ex-edit" data-id="'+e.id+'" aria-label="Edit expense"><svg><use href="#i-edit"/></svg></button>'+
+        '<button type="button" class="ex-icon-btn ex-del" data-id="'+e.id+'" aria-label="Delete expense">&times;</button>'+
+      '</div>'+
+    '</div>';
+  }
+
+  function expenseEditRowHtml(e){
+    var currencyOpts = EXPENSE_CURRENCIES.map(function(c){ return '<option value="'+c+'"'+(c === e.currency ? ' selected' : '')+'>'+c+'</option>'; }).join('');
+    var categoryOpts = EXPENSE_CATEGORIES.map(function(c){ return '<option value="'+c+'"'+(c === e.category ? ' selected' : '')+'>'+c+'</option>'; }).join('');
+    return '<div class="expense-row expense-row-edit">'+
+      '<div class="expense-form-row">'+
+        '<input type="number" class="expense-input ee-amount" step="0.01" min="0" value="'+escapeHtml(e.amount)+'" placeholder="Amount">'+
+        '<select class="expense-select ee-currency">'+currencyOpts+'</select>'+
+        '<select class="expense-select ee-category">'+categoryOpts+'</select>'+
+      '</div>'+
+      '<div class="expense-form-row">'+
+        '<input type="text" class="expense-input ee-note" style="flex:2;" value="'+escapeHtml(e.note || '')+'" placeholder="What was it?">'+
+        '<input type="date" class="expense-input ee-date" value="'+escapeHtml(e.date || '')+'">'+
+      '</div>'+
+      '<div class="expense-edit-actions">'+
+        '<button type="button" class="google-btn ee-save" data-id="'+e.id+'" style="background:var(--gold); color:#241f17;">Save</button>'+
+        '<button type="button" class="google-btn ghost ee-cancel">Cancel</button>'+
+      '</div>'+
+    '</div>';
   }
 
   function subscribeExpenses(){
@@ -2567,6 +2675,7 @@
   window.dlgPolignanoDay2 = document.getElementById('dlgPolignanoDay2');
   window.dlgBariDay = document.getElementById('dlgBariDay');
   window.dlgMilanDay = document.getElementById('dlgMilanDay');
+  window.expAttachDialog = document.getElementById('expAttachDialog');
   document.querySelectorAll('dialog').forEach(function(dlg){
     dlg.addEventListener('click', function(e){ if(e.target === dlg) dlg.close(); });
   });
@@ -2875,6 +2984,10 @@
   window.tripExpenseDelete = function(expenseId){
     if(!db) return Promise.reject(new Error('no-db'));
     return deleteDoc(doc(db, 'expenses', expenseId));
+  };
+  window.tripExpenseUpdate = function(expenseId, data){
+    if(!db) return Promise.reject(new Error('no-db'));
+    return setDoc(doc(db, 'expenses', expenseId), data, {merge: true});
   };
   // Live EUR-based rates from a free, no-key, ECB-backed source; callers
   // fall back to static approximate rates if this fails (offline, etc).
