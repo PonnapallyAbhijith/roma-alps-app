@@ -320,6 +320,8 @@
   .wx-temp .ico svg{width:26px;height:26px;}
   .wx-temp .nums{font:700 20px/1 "IBM Plex Mono";}
   .wx-temp .nums .lo{color:var(--text-soft); font-weight:500; font-size:15px;}
+  .wx-card{cursor:pointer;} .wx-card:hover{border-color:var(--gold);} .wx-card .tap{font-size:11px; color:var(--gold); margin-top:8px; font-weight:600;}
+  #wxDlg{max-width:560px; width:94vw; padding:18px;} #wxDlg h3{margin:0 0 4px;} #wxDlg .wx-day{margin-top:14px;} #wxDlg .wx-day h4{margin:0 0 4px; font:600 13px 'IBM Plex Sans';} #wxDlg .wx-dry{font-size:12.5px; margin-bottom:6px;} .wx-bars{display:flex; gap:2px; align-items:flex-end; height:56px;} .wx-bars div{flex:1; background:#5aa0d8; border-radius:2px 2px 0 0; min-height:2px;} .wx-bars div.dry{background:#6bb77b;} .wx-hrs{display:flex; gap:2px; font-size:9px; color:var(--text-soft);} .wx-hrs span{flex:1; text-align:center;} #wxDlg .wx-x{float:right;}
   .wx-card .note{font-size:12px; color:var(--text-soft); line-height:1.5;}
   .wx-precip{display:flex; align-items:center; gap:6px; font:600 12px/1 "IBM Plex Sans"; color:var(--swiss); margin-bottom:10px;}
   .wx-precip svg{width:14px; height:14px;}
@@ -1645,6 +1647,7 @@
   <div class="expense-list" id="expenseList"></div>
 </section>
 
+<dialog id="wxDlg"><button type="button" class="map-btn wx-x" id="wxClose" aria-label="Close">&times;</button><div id="wxBody"></div></dialog>
 </main>
 
 <footer>
@@ -2682,15 +2685,45 @@
       card.querySelector('.ico use').setAttribute('href', '#'+icon(Math.max.apply(null, d.code)));
       card.querySelector('.wx-precip').innerHTML = '<svg><use href="#i-drop"/></svg>Up to '+pr+'% chance of rain <span class="precip-lo">&middot; live forecast, '+stamp+'</span>';
     }
+    var store = {};
+    function dryText(hrs){ // hrs: [[hour,prob]] daytime 7-22
+      var runs=[], cur=null;
+      hrs.forEach(function(h){ if(h[1]<=25){ if(!cur) cur=[h[0],h[0]]; else cur[1]=h[0]; } else if(cur){ runs.push(cur); cur=null; } });
+      if(cur) runs.push(cur);
+      function f(h){ return (h<10?'0':'')+h+':00'; }
+      return runs.length ? runs.map(function(r){ return f(r[0])+'&ndash;'+f(r[1]+1); }).join(', ') : 'none &mdash; showers likely all day';
+    }
+    function showDlg(i){
+      var d = store[i], card = document.querySelector('.wx-card[data-wx="'+i+'"]');
+      var body = document.getElementById('wxBody');
+      if(!d || !d.ht){ body.innerHTML = '<h3>'+card.querySelector('.place').innerHTML+'</h3><p>Hourly detail needs a connection — open the app online once to load it.</p>'; document.getElementById('wxDlg').showModal(); return; }
+      var days = {};
+      d.ht.forEach(function(t, k){ var day=t.slice(0,10), h=+t.slice(11,13); if(h>=7 && h<=22) (days[day]=days[day]||[]).push([h, d.hp[k]==null?0:d.hp[k], d.hT[k]]); });
+      var html = '<h3>'+card.querySelector('.place').innerHTML+' &middot; hour by hour</h3><div style="font-size:12px;color:var(--text-soft)">Rain chance per hour, local time, 07:00&ndash;22:00. Green = dry (25% or less).</div>';
+      Object.keys(days).forEach(function(day){
+        var hrs = days[day], label = new Date(day+'T12:00').toLocaleDateString(undefined,{weekday:'short',day:'numeric',month:'short'});
+        html += '<div class="wx-day"><h4>'+label+'</h4><div class="wx-dry">Dry windows: <b>'+dryText(hrs)+'</b></div><div class="wx-bars">'+
+          hrs.map(function(h){ return '<div class="'+(h[1]<=25?'dry':'')+'" style="height:'+Math.max(h[1],3)+'%" title="'+h[0]+':00 — '+h[1]+'% rain, '+Math.round(h[2])+'°C"></div>'; }).join('')+
+          '</div><div class="wx-hrs">'+hrs.map(function(h){ return '<span>'+(h[0]%3==1?h[0]:'')+'</span>'; }).join('')+'</div></div>';
+      });
+      body.innerHTML = html;
+      document.getElementById('wxDlg').showModal();
+    }
+    document.querySelectorAll('.wx-card').forEach(function(c){
+      var n = document.createElement('div'); n.className='tap'; n.textContent='Tap for hourly rain & dry windows'; c.appendChild(n);
+      c.addEventListener('click', function(){ showDlg(+c.getAttribute('data-wx')); });
+    });
+    document.getElementById('wxClose').addEventListener('click', function(){ document.getElementById('wxDlg').close(); });
+    document.getElementById('wxDlg').addEventListener('click', function(e){ if(e.target===this) this.close(); });
     legs.forEach(function(l, i){
       var key = 'wx-'+i, stamp = new Date().toLocaleDateString(undefined,{day:'numeric',month:'short'});
-      var url = 'https://api.open-meteo.com/v1/forecast?latitude='+l.lat+'&longitude='+l.lon+'&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weathercode&timezone=auto&start_date='+l.from+'&end_date='+l.to;
+      var url = 'https://api.open-meteo.com/v1/forecast?latitude='+l.lat+'&longitude='+l.lon+'&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weathercode&hourly=precipitation_probability,temperature_2m&timezone=auto&start_date='+l.from+'&end_date='+l.to;
       fetch(url).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(j){
-        var d = {tmax:j.daily.temperature_2m_max, tmin:j.daily.temperature_2m_min, pp:j.daily.precipitation_probability_max, code:j.daily.weathercode};
+        var d = {tmax:j.daily.temperature_2m_max, tmin:j.daily.temperature_2m_min, pp:j.daily.precipitation_probability_max, code:j.daily.weathercode, ht:j.hourly.time, hp:j.hourly.precipitation_probability, hT:j.hourly.temperature_2m};
         try{ localStorage.setItem(key, JSON.stringify({d:d, stamp:stamp})); }catch(e){}
-        apply(i, d, 'updated '+stamp);
+        store[i]=d; apply(i, d, 'updated '+stamp);
       }).catch(function(){
-        try{ var c = JSON.parse(localStorage.getItem(key)); if(c) apply(i, c.d, 'saved '+c.stamp); }catch(e){}
+        try{ var c = JSON.parse(localStorage.getItem(key)); if(c){ store[i]=c.d; apply(i, c.d, 'saved '+c.stamp); } }catch(e){}
       });
     });
   })();
