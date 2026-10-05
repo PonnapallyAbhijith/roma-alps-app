@@ -1483,6 +1483,7 @@
     <p class="section-sub">Live forecast for each leg (Open-Meteo), refreshed whenever you're online. Where a date is beyond the forecast window it shows October averages.</p>
   </div>
 
+  <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;"><button type="button" class="google-btn" id="wxRefresh">&#8635; Refresh forecast</button><span id="wxStatus" style="font-size:12px; color:var(--text-soft);"></span></div>
   <div class="weather-grid">
     <div class="wx-card" data-wx="0">
       <div class="place">Rome</div>
@@ -2715,17 +2716,30 @@
     });
     document.getElementById('wxClose').addEventListener('click', function(){ document.getElementById('wxDlg').close(); });
     document.getElementById('wxDlg').addEventListener('click', function(e){ if(e.target===this) this.close(); });
-    legs.forEach(function(l, i){
+    function refreshAll(){
+    var btn=document.getElementById('wxRefresh'), st=document.getElementById('wxStatus'); if(btn) btn.disabled=true; if(st) st.textContent='Refreshing…';
+    var failed = false;
+    var jobs = legs.map(function(l, i){
       var key = 'wx-'+i, stamp = new Date().toLocaleDateString(undefined,{day:'numeric',month:'short'});
       var url = 'https://api.open-meteo.com/v1/forecast?latitude='+l.lat+'&longitude='+l.lon+'&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weathercode&hourly=precipitation_probability,temperature_2m&timezone=auto&start_date='+l.from+'&end_date='+l.to;
-      fetch(url).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(j){
+      return fetch(url).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(j){
         var d = {tmax:j.daily.temperature_2m_max, tmin:j.daily.temperature_2m_min, pp:j.daily.precipitation_probability_max, code:j.daily.weathercode, ht:j.hourly.time, hp:j.hourly.precipitation_probability, hT:j.hourly.temperature_2m};
         try{ localStorage.setItem(key, JSON.stringify({d:d, stamp:stamp})); }catch(e){}
         store[i]=d; apply(i, d, 'updated '+stamp);
       }).catch(function(){
+        failed = true;
         try{ var c = JSON.parse(localStorage.getItem(key)); if(c){ store[i]=c.d; apply(i, c.d, 'saved '+c.stamp); } }catch(e){}
       });
     });
+    Promise.all(jobs.map(function(p){ return p.then(function(){return 1;}, function(){return 0;}); })).then(function(){
+      if(btn) btn.disabled=false;
+      if(st) st.textContent = (navigator.onLine && !failed) ? 'Updated '+new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}) : 'Offline — showing saved forecast';
+    });
+    }
+    var rb=document.getElementById('wxRefresh'); if(rb) rb.addEventListener('click', refreshAll);
+    window.addEventListener('online', refreshAll);
+    document.addEventListener('visibilitychange', function(){ if(!document.hidden && navigator.onLine) refreshAll(); });
+    refreshAll();
   })();
 
   window.tripOnAuthChange = function(){
