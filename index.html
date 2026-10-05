@@ -443,11 +443,11 @@
   }
 
   /* ---------- trip map ---------- */
-  .mapshell{display:grid; grid-template-columns:1.75fr 1fr; gap:16px; align-items:stretch; position:relative;}
+  .mapshell{display:grid; grid-template-columns:minmax(0,1.75fr) minmax(0,1fr); gap:16px; align-items:stretch; position:relative;}
   .mapstage{
     position:relative; border-radius:18px; overflow:hidden; border:1px solid var(--line); box-shadow:var(--shadow);
     background:linear-gradient(160deg,var(--map-sea1),var(--map-sea2));
-    aspect-ratio:620/520; min-height:420px;
+    min-width:0; width:100%; min-height:420px;
     transition:inset .32s cubic-bezier(.2,.65,.18,1);
   }
   .map-backdrop{position:fixed; inset:0; background:rgba(10,8,4,0.62); backdrop-filter:blur(2px); z-index:190;}
@@ -503,6 +503,7 @@
   .mode-badge .mb-ico svg{width:12px;height:12px;}
 
   .daypanel{
+    min-width:0; overflow:hidden;
     background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:18px;
     display:flex; flex-direction:column; gap:10px; box-shadow:var(--shadow);
   }
@@ -554,7 +555,7 @@
   .day-chip.active .dc-n{color:var(--accent,var(--gold));}
 
   @media (max-width:760px){
-    .mapshell{grid-template-columns:1fr;}
+    .mapshell{grid-template-columns:minmax(0,1fr);}
     .mapstage{aspect-ratio:4/3.1;}
   }
 </style>
@@ -1477,39 +1478,39 @@
       <div class="eyebrow">Get ready</div>
       <h2>Weather &amp; what to pack</h2>
     </div>
-    <p class="section-sub">Typical conditions and rain chance for the region and week, from October climate averages — not a forecast. Check the real forecast closer to departure.</p>
+    <p class="section-sub">Live forecast for each leg (Open-Meteo), refreshed whenever you're online. Where a date is beyond the forecast window it shows October averages.</p>
   </div>
 
   <div class="weather-grid">
-    <div class="wx-card">
+    <div class="wx-card" data-wx="0">
       <div class="place">Rome</div>
       <div class="dates">9&ndash;11 Oct</div>
       <div class="wx-temp"><span class="ico"><svg><use href="#i-sun"/></svg></span><span class="nums">22&deg; <span class="lo">/ 12&deg;C</span></span></div>
       <div class="wx-precip"><svg><use href="#i-drop"/></svg>~25% chance of rain <span class="precip-lo">&middot; ~3 wet days/mo typical</span></div>
       <div class="note">Mild and mostly sunny. Pack a light layer for evenings and a compact umbrella just in case.</div>
     </div>
-    <div class="wx-card">
+    <div class="wx-card" data-wx="1">
       <div class="place">Polignano a Mare</div>
       <div class="dates">11&ndash;14 Oct</div>
       <div class="wx-temp"><span class="ico"><svg><use href="#i-sun"/></svg></span><span class="nums">24&deg; <span class="lo">/ 16&deg;C</span></span></div>
       <div class="wx-precip"><svg><use href="#i-drop"/></svg>~20% chance of rain <span class="precip-lo">&middot; driest leg of the trip</span></div>
       <div class="note">Warmer coastal air on the Puglia cliffs — still swim-weather most years. Pack sunscreen and one warmer layer for the evening passeggiata.</div>
     </div>
-    <div class="wx-card">
+    <div class="wx-card" data-wx="2">
       <div class="place">Milan</div>
       <div class="dates">14&ndash;16 Oct</div>
       <div class="wx-temp"><span class="ico"><svg><use href="#i-cloud"/></svg></span><span class="nums">18&deg; <span class="lo">/ 10&deg;C</span></span></div>
       <div class="wx-precip"><svg><use href="#i-drop"/></svg>~35% chance of rain <span class="precip-lo">&middot; Po Valley autumn haze</span></div>
       <div class="note">Can turn damp and hazy in autumn. A light rain jacket earns its space in the bag.</div>
     </div>
-    <div class="wx-card">
+    <div class="wx-card" data-wx="3">
       <div class="place">Jungfrau region</div>
       <div class="dates">16&ndash;18 Oct</div>
       <div class="wx-temp"><span class="ico"><svg><use href="#i-snow"/></svg></span><span class="nums">8&deg; <span class="lo">/ 1&deg;C</span></span></div>
       <div class="wx-precip"><svg><use href="#i-drop"/></svg>~40% chance of precipitation <span class="precip-lo">&middot; rain in the valley, snow up high</span></div>
       <div class="note">Alpine and crisp — snow is possible at altitude (Wengen, Jungfraujoch). Real layers needed here.</div>
     </div>
-    <div class="wx-card">
+    <div class="wx-card" data-wx="4">
       <div class="place">Cham &amp; lowland CH</div>
       <div class="dates">19&ndash;21 Oct</div>
       <div class="wx-temp"><span class="ico"><svg><use href="#i-cloud"/></svg></span><span class="nums">13&deg; <span class="lo">/ 5&deg;C</span></span></div>
@@ -2513,7 +2514,13 @@
         var totalsHtml = Object.keys(byCurrency).map(function(cur){
           return '<div class="expense-total-card"><div class="et-label">'+cur+' spent</div><div class="et-amount">'+CURRENCY_SYMBOL[cur]+fmtAmount(byCurrency[cur])+'</div></div>';
         }).join('');
-        totalsHtml += '<div class="expense-total-card grand"><div class="et-label">Grand total (INR)</div><div class="et-amount">&#8377;'+fmtAmount(grandINR)+'</div></div>';
+        var byCat = {};
+        expensesData.forEach(function(e){ var c = e.category || 'Other'; byCat[c] = (byCat[c] || 0) + toINR(Number(e.amount), e.currency); });
+        totalsHtml += Object.keys(byCat).map(function(c){
+          return '<div class="expense-total-card"><div class="et-label">'+c+'</div><div class="et-amount">&#8377;'+fmtAmount(byCat[c])+'</div></div>';
+        }).join('');
+        totalsHtml += '<div class="expense-total-card grand"><div class="et-label">Total expenses &middot; '+expensesData.length+' logged (INR)</div><div class="et-amount">&#8377;'+fmtAmount(grandINR)+'</div></div>';
+        totalsHtml += '<div class="expense-total-card"><div class="et-label">Plus booked costs &rarr; overall</div><div class="et-amount">&#8377;'+fmtAmount(grandINR + 461396.49)+'</div></div>';
         totalsHtml += '<div class="expense-rate-note">'+(ratesEUR ? 'Converted at today’s exchange rates' : 'Converted at approximate rates — will refresh once online')+'</div>';
         totalsEl.innerHTML = totalsHtml;
       }
@@ -2647,11 +2654,43 @@
         date: dateEl.value || new Date().toISOString().slice(0, 10)
       }).then(function(){
         amountEl.value = ''; noteEl.value = '';
-        if(hint) hint.textContent = '';
+        if(hint) hint.textContent = 'Added ✓ — total expenses updated below.';
         addBtn.disabled = false;
       }).catch(function(){
         if(hint) hint.textContent = 'Could not save — check your connection.';
         addBtn.disabled = false;
+      });
+    });
+  })();
+
+
+  /* ---------- live weather (Open-Meteo, no key) ---------- */
+  (function liveWeather(){
+    var legs = [
+      {lat:41.90,lon:12.50,from:'2026-10-09',to:'2026-10-11'},
+      {lat:40.99,lon:17.22,from:'2026-10-11',to:'2026-10-14'},
+      {lat:45.46,lon:9.19,from:'2026-10-14',to:'2026-10-16'},
+      {lat:46.60,lon:7.96,from:'2026-10-16',to:'2026-10-18'},
+      {lat:47.18,lon:8.46,from:'2026-10-19',to:'2026-10-20'}
+    ];
+    function icon(code){ return code>=71 ? 'i-snow' : code>=51 ? 'i-drop' : code>=3 ? 'i-cloud' : 'i-sun'; }
+    function apply(i, d, stamp){
+      var card = document.querySelector('.wx-card[data-wx="'+i+'"]'); if(!card || !d) return;
+      var hi = Math.round(Math.max.apply(null, d.tmax)), lo = Math.round(Math.min.apply(null, d.tmin));
+      var pr = Math.round(Math.max.apply(null, d.pp));
+      card.querySelector('.nums').innerHTML = hi+'&deg; <span class="lo">/ '+lo+'&deg;C</span>';
+      card.querySelector('.ico use').setAttribute('href', '#'+icon(Math.max.apply(null, d.code)));
+      card.querySelector('.wx-precip').innerHTML = '<svg><use href="#i-drop"/></svg>Up to '+pr+'% chance of rain <span class="precip-lo">&middot; live forecast, '+stamp+'</span>';
+    }
+    legs.forEach(function(l, i){
+      var key = 'wx-'+i, stamp = new Date().toLocaleDateString(undefined,{day:'numeric',month:'short'});
+      var url = 'https://api.open-meteo.com/v1/forecast?latitude='+l.lat+'&longitude='+l.lon+'&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weathercode&timezone=auto&start_date='+l.from+'&end_date='+l.to;
+      fetch(url).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(j){
+        var d = {tmax:j.daily.temperature_2m_max, tmin:j.daily.temperature_2m_min, pp:j.daily.precipitation_probability_max, code:j.daily.weathercode};
+        try{ localStorage.setItem(key, JSON.stringify({d:d, stamp:stamp})); }catch(e){}
+        apply(i, d, 'updated '+stamp);
+      }).catch(function(){
+        try{ var c = JSON.parse(localStorage.getItem(key)); if(c) apply(i, c.d, 'saved '+c.stamp); }catch(e){}
       });
     });
   })();
